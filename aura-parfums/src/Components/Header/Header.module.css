@@ -1,0 +1,70 @@
+.container {
+    padding: 20px 0px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav {
+    height: 52px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.headerDefault {
+    background-color: white;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.headerHomepage {
+    background-color: white;
+}
+
+.headerHomepage nav {
+    border-top: 2px solid #791616;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.headerCatalogs nav {
+    border-top: 2px solid #791616;
+}
+
+.headerCatalogs {
+    background-color: white;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.headerContacts {
+    background-color: white;
+    border-bottom: 2px solid #791616;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.headerBrands {
+    background-color: white;
+}
+
+.headerBrands .logo {
+    display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    width: 130px;
+    height: 130px;
+}
+
+/* ------------------------------------------------------------------------ */
