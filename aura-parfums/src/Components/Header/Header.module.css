@@ -1,15 +1,55 @@
-.container {
-    padding: 20px 0px;
+a {
+    text-decoration: none;
+    color: black;
 }
 
-ul {
+.logo {
+    height: 145;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.logo img {
+    width: 200px;
+    height: 94px;
+}
+
+.nanContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 52px;
+}
+
+.nanContainer ul {
     list-style: none;
     display: flex;
-    gap: 30px;
 }
 
-nav {
-    height: 52px;
+.nanContainer ul li {
+    padding: 10px;
+    line-height: 30px;
+}
+
+.input input {
+    width: 560px;
+    padding: 12px 16px;
+
+    margin-right: 40px;
+    margin-left: 34px;
+}
+
+.userLinks {
+    display: flex;
+    align-items: center;
+
+    width: 152px;
+    height: 42px;
+
+    gap: 10px;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -24,14 +64,17 @@ nav {
     background-color: white;
 }
 
-.headerHomepage nav {
+.headerHomepage .navigation {
     border-top: 2px solid #791616;
+    padding-top: 34px;
+    padding-bottom: 35px;
 }
 
 /* ------------------------------------------------------------------------ */
 
-.headerCatalogs nav {
+.headerCatalogs .navigation {
     border-top: 2px solid #791616;
+    padding-top: 30px;
 }
 
 .headerCatalogs {
@@ -40,31 +83,24 @@ nav {
 
 /* ------------------------------------------------------------------------ */
 
-.headerContacts {
-    background-color: white;
+.headerContacts .navigation {
     border-bottom: 2px solid #791616;
+    padding-bottom: 30px;
 }
 
 /* ------------------------------------------------------------------------ */
 
 .headerBrands {
-    background-color: white;
+    border-bottom: 1.5px solid #791616
 }
 
 .headerBrands .logo {
     display: none;
 }
 
-/* ------------------------------------------------------------------------ */
-
-.logo {
-    display: flex;
-    justify-content: center;
-}
-
-.logo img {
-    width: 130px;
-    height: 130px;
+.headerBrands .navigation {
+    padding-top: 47px;
+    padding-bottom: 30px;
 }
 
 /* ------------------------------------------------------------------------ */
