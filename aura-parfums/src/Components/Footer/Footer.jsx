@@ -29,4 +29,7 @@ const Footer = () => {
     )
 }
 
+
+//borysenko commit
+
 export default Footer;
