@@ -28,10 +28,10 @@ const Header = () => {
 
     return (
         <header className={[styles.container, styles[getHeaderClass()]].join(" ")}>
-            
+
             <div className={styles.logo}>
                 <Link to="/">
-                    <img src="https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?size=338&ext=jpg&ga=GA1.1.632798143.1712966400&semt=ais" alt="" />
+                    <img src={"Images/AuraLogo.png"} alt="" />
                 </Link>
             </div>
 
@@ -39,11 +39,24 @@ const Header = () => {
                 <div className={styles.nanContainer}>
                     <div>
                         <ul>
-                            <li><Link to="/catalogs">Каталог</Link></li>
-                            <li><Link to="/brands">Бренды</Link></li>
-                            <li><Link to="/contacts">Контакты</Link></li>
-                            <li>Подобрать аромат</li>
-                            {/* <li><Link to="/homepage">Homepage</Link></li> */}
+                            <li>
+                                <Link to="/catalogs">
+                                    <span style={{ color: "#791616" }}>Каталог</span>
+                                </Link>
+                                <img src={"Images/chevronsmalldown.png"} alt="" />
+                            </li>
+
+                            <li>
+                                <Link to="/brands"><span>Бренды</span></Link>
+                            </li>
+
+                            <li>
+                                <Link to="/contacts"><span>Контакты</span></Link>
+                            </li>
+
+                            <li>
+                                <span>Подобрать аромат</span>
+                            </li>
                         </ul>
                     </div>
 

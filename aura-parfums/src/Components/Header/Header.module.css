@@ -4,11 +4,14 @@ a {
 }
 
 .logo {
-    height: 145;
+    height: 93.13px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 24px;
+    padding-bottom: 26px;
+    padding-top: 25px;
+
+    /* background-color: red; */
 }
 
 .logo img {
@@ -24,22 +27,38 @@ a {
     height: 52px;
 }
 
+
+/* ------------------------------------------------------------------------ */
 .nanContainer ul {
     list-style: none;
     display: flex;
+    align-items: center;
+    gap: 37px;
 }
 
 .nanContainer ul li {
     padding: 10px;
-    line-height: 30px;
+    font-size: 24px;
 }
+
+.nanContainer ul li:nth-child(1) {
+    display: flex;
+    align-items: center;
+}
+
+.nanContainer ul li img {
+    margin-left: 14px;
+}
+/* ------------------------------------------------------------------------ */
 
 .input input {
     width: 560px;
-    padding: 12px 16px;
+    padding: 12px 0px;
 
     margin-right: 40px;
     margin-left: 34px;
+    border: 2px solid black;
+    border-radius: 3px;
 }
 
 .userLinks {
@@ -54,15 +73,7 @@ a {
 
 /* ------------------------------------------------------------------------ */
 
-.headerDefault {
-    background-color: white;
-}
-
 /* ------------------------------------------------------------------------ */
-
-.headerHomepage {
-    background-color: white;
-}
 
 .headerHomepage .navigation {
     border-top: 2px solid #791616;
@@ -75,10 +86,6 @@ a {
 .headerCatalogs .navigation {
     border-top: 2px solid #791616;
     padding-top: 30px;
-}
-
-.headerCatalogs {
-    background-color: white;
 }
 
 /* ------------------------------------------------------------------------ */
