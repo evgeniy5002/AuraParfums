@@ -1,0 +1,79 @@
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 46px;
+    .burger_icon{
+        display: none;
+        @media (max-width:1400px) {
+            display: block;
+        }
+    }
+    .menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    gap: 57px;
+    @media (max-width:1517px) {
+        gap: calc(30px + (57 - 30) * ((100vw - 320px) / (1517 - 320)));
+    }
+    @media (max-width:1400px) {
+        display: none;
+    }
+
+        li {
+            padding: 10px;
+            font-size: 24px;
+            text-wrap: nowrap;
+            &:first-child {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+    }
+
+    .search_form {
+        display: flex;
+        position: relative;
+        width: 100%;
+        input {
+            border: 2px solid black;
+            border-radius: 3px;
+            width: 100%;
+            height: 50px;
+        }
+    
+        button{
+            position: absolute;
+            top: 16.5px;
+            left: 19px;
+            height: 17px;
+            width: 17px;
+            border-radius: 3px;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    
+    }
+
+}
+
+
+.userLinks {
+    display: flex;
+    align-items: center;
+    height: 42px;
+    gap: 30px;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Outlet, Routes, Route } from "react-router-dom";
-import styles from "./Catalogs.module.css";
+import styles from "./Catalogs.module.scss";
 
 const Catalogs = () => {
     return (

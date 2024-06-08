@@ -1,4 +1,11 @@
-.container {
+.footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer_container {
     display: flex;
     justify-content: center;
     padding-top: 30px;

@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./HomePage.module.css";
+import styles from "./HomePage.module.scss";
 
 const HomePage = () => {
     return (
-        <div className={styles.container}>
+        <main className={styles.main}>
 
-        </div>
+        </main>
     )
 }
 

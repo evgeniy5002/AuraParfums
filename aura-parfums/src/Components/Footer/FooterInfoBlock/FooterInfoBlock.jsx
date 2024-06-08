@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./FooterInfoBlock.module.css";
+import styles from "./FooterInfoBlock.module.scss";
 
 const FooterInfoBlock = ({ title, items }) => {
     return (

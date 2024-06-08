@@ -2,9 +2,11 @@
 
 *{
   font-family: 'Mulish';
-  box-sizing: content-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: none;
+  background: none;
 }
 
 body {
@@ -19,12 +21,16 @@ header, main, footer, .wrapper{
   align-items: center;
 }
 
-main {
-  flex: 1 1 auto;
-}
+
 
 .wrapper{
   min-height: 100vh;
+  main {
+    flex: 1 1 auto;
+    .container{
+        background: #000;
+    }
+  }
 }
 
 

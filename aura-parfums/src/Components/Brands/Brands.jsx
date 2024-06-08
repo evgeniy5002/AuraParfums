@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Brands.module.css";
+import styles from "./Brands.module.scss";
 
 const Brands = () => {
     return (
