@@ -3,10 +3,8 @@ import styles from "./FooterInfoBlock.module.scss";
 
 const FooterInfoBlock = ({ title, items }) => {
     return (
-        <div className={styles.container}>
-            <div className={styles.title}>
-                <span>{title}</span>
-            </div>
+        <div className={styles.footer_column}>
+            <h3 className={styles.title}>{title}</h3>
 
             <div className={styles.items}>
                 <ul>

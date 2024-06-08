@@ -11,8 +11,14 @@ a {
     align-items: center;
     width: 100%;
     gap: 46px;
+
+    padding: 35px 15px;
+    @media (max-width:1517px) {
+        gap: calc(15px + (46 - 15) * ((100vw - 320px) / (1517 - 320)));
+    }
     .burger_icon{
         display: none;
+        height: 50px;
         @media (max-width:1400px) {
             display: block;
         }
@@ -74,6 +80,9 @@ a {
 .userLinks {
     display: flex;
     align-items: center;
-    height: 42px;
     gap: 30px;
+    img{
+        width: 24px;
+        height: 24px;
+    }
 }
