@@ -12,7 +12,7 @@ export const ProductsBlock = ({products}) =>{
                 <p>Rating: {product.rating}</p>
                 <p>Sale: {product.sale ? 'Yes' : 'No'}</p>
                 <p>Bestseller: {product.bestseller ? 'Yes' : 'No'}</p>
-                <p>{price}</p>
+                <p>{product.price}</p>
             </div>
         );
     });
