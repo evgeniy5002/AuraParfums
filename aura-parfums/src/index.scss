@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+
+$red: "#791616";
 *{
   font-family: 'Mulish';
   box-sizing: border-box;
@@ -7,6 +9,7 @@
   padding: 0;
   border: none;
   background: none;
+  transition: .2s;
 }
 
 body {
@@ -29,7 +32,6 @@ header, main, footer, .wrapper{
   main {
     flex: 1 1 auto;
     .container{
-        background: #000;
     }
   }
 }

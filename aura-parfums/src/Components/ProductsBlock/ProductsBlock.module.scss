@@ -1,0 +1,15 @@
+.products_block{
+    display: grid;
+    gap: 15px;
+}
+
+.products_block_three_columns{
+    grid-template-columns: repeat(3, 1fr);
+    img{
+        max-width: 100%;
+    }
+}
+
+.products_block_four_columns{
+    grid-template-columns: repeat(4, 1fr);
+}
