@@ -9,7 +9,7 @@ const FooterInfoBlock = ({ title, items }) => {
             <div className={styles.items}>
                 <ul>
                     {items.map((item) => {
-                        return <li className={styles.item}>{item}</li>
+                        return <li key={item} className={styles.item}>{item}</li>
                     })}
                 </ul>
             </div>

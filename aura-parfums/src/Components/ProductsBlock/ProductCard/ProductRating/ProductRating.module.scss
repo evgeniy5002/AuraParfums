@@ -1,0 +1,26 @@
+.rating {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .star {
+    path{
+        fill: #FFFFFF;
+        stroke: #791616;
+        stroke-width: 24px;
+    }
+
+  }
+
+  .filled{
+    path{
+        fill: #791616;
+    }
+  }
+  
+//   .filled {
+//     background: #ffc107; /* Цвет заполненной звезды */
+//   }
+  

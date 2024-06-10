@@ -18,21 +18,21 @@ function App() {
         image: "Images/products/ariana-grande-parfum.jpg",
         brand: "Ariana Grande",
         gender: "Unisex",
-        rating: 4.5,
+        rating: 1.2,
         sale: true,
         bestseller: false,
         sizes: [
-            { size: "3 ml", price: 10.99, chosen: true },
-            { size: "5 ml", price: 15.99, chosen: false },
-            { size: "8 ml", price: 19.99, chosen: false },
-            { size: "10 ml", price: 24.99, chosen: false },
-            { size: "15 ml", price: 29.99, chosen: false },
-            { size: "20 ml", price: 39.99, chosen: false }
+            { id: 1, size: "3 ml", price: 10.99, chosen: true },
+            { id: 2, size: "5 ml", price: 15.99, chosen: false },
+            { id: 3, size: "8 ml", price: 19.99, chosen: false },
+            { id: 4, size: "10 ml", price: 24.99, chosen: false },
+            { id: 5, size: "15 ml", price: 29.99, chosen: false },
+            { id: 6, size: "20 ml", price: 39.99, chosen: false }
         ],
         bigSizes: [
-            { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-            { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-            { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+            { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+            { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+            { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
         ]
     },
     {
@@ -45,17 +45,17 @@ function App() {
         sale: false,
         bestseller: true,
         sizes: [
-            { size: "3 ml", price: 11.99, chosen: true },
-            { size: "5 ml", price: 16.99, chosen: false },
-            { size: "8 ml", price: 20.99, chosen: false },
-            { size: "10 ml", price: 25.99, chosen: false },
-            { size: "15 ml", price: 30.99, chosen: false },
-            { size: "20 ml", price: 40.99, chosen: false }
+            { id: 1, size: "3 ml", price: 11.99, chosen: true },
+            { id: 2, size: "5 ml", price: 16.99, chosen: false },
+            { id: 3, size: "8 ml", price: 20.99, chosen: false },
+            { id: 4, size: "10 ml", price: 25.99, chosen: false },
+            { id: 5, size: "15 ml", price: 30.99, chosen: false },
+            { id: 6, size: "20 ml", price: 40.99, chosen: false }
         ],
         bigSizes: [
-            { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-            { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-            { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+            { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+            { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+            { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
         ]
     },
     {
@@ -64,20 +64,20 @@ function App() {
         image: "Images/products/billie-eilish-beige.jpg",
         brand: "Billie Eilish",
         gender: "Unisex",
-        rating: 4.7,
+        rating: 3.9,
         sale: true,
         bestseller: true,
         sizes: [
-            { size: "3 ml", price: 11.99, chosen: true },
-            { size: "5 ml", price: 16.99, chosen: false },
-            { size: "8 ml", price: 20.99, chosen: false },
-            { size: "10 ml", price: 25.99, chosen: false },
-            { size: "15 ml", price: 30.99, chosen: false },
-            { size: "20 ml", price: 40.99, chosen: false }
+            { id: 1, size: "3 ml", price: 11.99, chosen: true },
+            { id: 2, size: "5 ml", price: 16.99, chosen: false },
+            { id: 3, size: "8 ml", price: 20.99, chosen: false },
+            { id: 4, size: "10 ml", price: 25.99, chosen: false },
+            { id: 5, size: "15 ml", price: 30.99, chosen: false },
+            { id: 6, size: "20 ml", price: 40.99, chosen: false }
         ],
         bigSizes: [
-            { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-            { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+            { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+            { id: 8, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
         ]
     },
     {
@@ -86,21 +86,21 @@ function App() {
         image: "Images/products/black-opium.jpg",
         brand: "Yves Saint Laurent",
         gender: "Women",
-        rating: 4.3,
+        rating:3.1,
         sale: false,
         bestseller: true,
         sizes: [
-            { size: "3 ml", price: 12.99, chosen: true },
-            { size: "5 ml", price: 17.99, chosen: false },
-            { size: "8 ml", price: 22.99, chosen: false },
-            { size: "10 ml", price: 27.99, chosen: false },
-            { size: "15 ml", price: 33.99, chosen: false },
-            { size: "20 ml", price: 43.99, chosen: false }
+            { id: 1, size: "3 ml", price: 12.99, chosen: true },
+            { id: 2, size: "5 ml", price: 17.99, chosen: false },
+            { id: 3, size: "8 ml", price: 22.99, chosen: false },
+            { id: 4, size: "10 ml", price: 27.99, chosen: false },
+            { id: 5, size: "15 ml", price: 33.99, chosen: false },
+            { id: 6, size: "20 ml", price: 43.99, chosen: false }
         ],
         bigSizes: [
-            { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-            { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-            { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+            { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+            { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+            { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
         ]
     },
     {
@@ -113,17 +113,17 @@ function App() {
         sale: true,
         bestseller: false,
         sizes: [
-            { size: "3 ml", price: 9.99, chosen: true },
-            { size: "5 ml", price: 14.99, chosen: false },
-            { size: "8 ml", price: 18.99, chosen: false },
-            { size: "10 ml", price: 23.99, chosen: false },
-            { size: "15 ml", price: 28.99, chosen: false },
-            { size: "20 ml", price: 38.99, chosen: false }
+            { id: 1, size: "3 ml", price: 9.99, chosen: true },
+            { id: 2, size: "5 ml", price: 14.99, chosen: false },
+            { id: 3, size: "8 ml", price: 18.99, chosen: false },
+            { id: 4, size: "10 ml", price: 23.99, chosen: false },
+            { id: 5, size: "15 ml", price: 28.99, chosen: false },
+            { id: 6, size: "20 ml", price: 38.99, chosen: false }
         ],
         bigSizes: [
-            { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-            { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-            { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+            { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+            { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+            { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
         ]
     },
     {
@@ -136,17 +136,17 @@ function App() {
         sale: true,
         bestseller: false,
         sizes: [
-          { size: "3 ml", price: 10.99, chosen: true },
-          { size: "5 ml", price: 15.99, chosen: false },
-          { size: "8 ml", price: 19.99, chosen: false },
-          { size: "10 ml", price: 24.99, chosen: false },
-          { size: "15 ml", price: 29.99, chosen: false },
-          { size: "20 ml", price: 39.99, chosen: false }
+          { id: 1, size: "3 ml", price: 10.99, chosen: true },
+          { id: 2, size: "5 ml", price: 15.99, chosen: false },
+          { id: 3, size: "8 ml", price: 19.99, chosen: false },
+          { id: 4, size: "10 ml", price: 24.99, chosen: false },
+          { id: 5, size: "15 ml", price: 29.99, chosen: false },
+          { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
       ]
     },
     {
@@ -155,21 +155,21 @@ function App() {
         image: "Images/products/Kilian Moonlight.jpg",
         brand: "Kilian",
         gender: "Unisex",
-        rating: 4.9,
+        rating: 3.1,
         sale: false,
         bestseller: true,
         sizes: [
-          { size: "3 ml", price: 10.99, chosen: false },
-          { size: "5 ml", price: 15.99, chosen: false },
-          { size: "8 ml", price: 19.99, chosen: false },
-          { size: "10 ml", price: 24.99, chosen: false },
-          { size: "15 ml", price: 29.99, chosen: false },
-          { size: "20 ml", price: 39.99, chosen: false }
+          { id: 1, size: "3 ml", price: 10.99, chosen: false },
+          { id: 2, size: "5 ml", price: 15.99, chosen: false },
+          { id: 3, size: "8 ml", price: 19.99, chosen: false },
+          { id: 4, size: "10 ml", price: 24.99, chosen: false },
+          { id: 5, size: "15 ml", price: 29.99, chosen: false },
+          { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
       ]
     },
     {
@@ -182,17 +182,17 @@ function App() {
         sale: true,
         bestseller: false,
         sizes: [
-          { size: "3 ml", price: 10.99, chosen: true },
-          { size: "5 ml", price: 15.99, chosen: false },
-          { size: "8 ml", price: 19.99, chosen: false },
-          { size: "10 ml", price: 24.99, chosen: false },
-          { size: "15 ml", price: 29.99, chosen: false },
-          { size: "20 ml", price: 39.99, chosen: false }
+          { id: 1, size: "3 ml", price: 10.99, chosen: true },
+          { id: 2, size: "5 ml", price: 15.99, chosen: false },
+          { id: 3, size: "8 ml", price: 19.99, chosen: false },
+          { id: 4, size: "10 ml", price: 24.99, chosen: false },
+          { id: 5, size: "15 ml", price: 29.99, chosen: false },
+          { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
       ]
     },
     { 
@@ -201,21 +201,21 @@ function App() {
         image: "Images/products/kilian-blue-moon.jpg",
         brand: "Kilian",
         gender: "Unisex",
-        rating: 4.8,
+        rating: 3.5,
         sale: false,
         bestseller: true,
         sizes: [
-          { size: "3 ml", price: 10.99, chosen: true },
-          { size: "5 ml", price: 15.99, chosen: false },
-          { size: "8 ml", price: 19.99, chosen: false },
-          { size: "10 ml", price: 24.99, chosen: false },
-          { size: "15 ml", price: 29.99, chosen: false },
-          { size: "20 ml", price: 39.99, chosen: false },
+          { id: 1, size: "3 ml", price: 10.99, chosen: true },
+          { id: 2, size: "5 ml", price: 15.99, chosen: false },
+          { id: 3, size: "8 ml", price: 19.99, chosen: false },
+          { id: 4, size: "10 ml", price: 24.99, chosen: false },
+          { id: 5, size: "15 ml", price: 29.99, chosen: false },
+          { id: 6, size: "20 ml", price: 39.99, chosen: false },
         ],
         bigSizes: [
-          { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
         ]
     },
     {
@@ -228,17 +228,17 @@ function App() {
         sale: true,
         bestseller: false,
         sizes: [
-          { size: "3 ml", price: 10.99, chosen: true },
-          { size: "5 ml", price: 15.99, chosen: false },
-          { size: "8 ml", price: 19.99, chosen: false },
-          { size: "10 ml", price: 24.99, chosen: false },
-          { size: "15 ml", price: 29.99, chosen: false },
-          { size: "20 ml", price: 39.99, chosen: false }
+          { id: 1, size: "3 ml", price: 10.99, chosen: true },
+          { id: 2, size: "5 ml", price: 15.99, chosen: false },
+          { id: 3, size: "8 ml", price: 19.99, chosen: false },
+          { id: 4, size: "10 ml", price: 24.99, chosen: false },
+          { id: 5, size: "15 ml", price: 29.99, chosen: false },
+          { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
       ]
     },
     {
@@ -251,18 +251,18 @@ function App() {
         sale: false,
         bestseller: false,
         sizes: [
-          { size: "3 ml", price: 10.99, chosen: true },
-          { size: "5 ml", price: 15.99, chosen: false },
-          { size: "8 ml", price: 19.99, chosen: false },
-          { size: "10 ml", price: 24.99, chosen: false },
-          { size: "15 ml", price: 29.99, chosen: false },
-          { size: "20 ml", price: 39.99, chosen: false }
+          { id: 1, size: "3 ml", price: 10.99, chosen: true },
+          { id: 2, size: "5 ml", price: 15.99, chosen: false },
+          { id: 3, size: "8 ml", price: 19.99, chosen: false },
+          { id: 4, size: "10 ml", price: 24.99, chosen: false },
+          { id: 5, size: "15 ml", price: 29.99, chosen: false },
+          { id: 6, size: "20 ml", price: 39.99, chosen: false }
           
         ],
         bigSizes: [
-            { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-            { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-            { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+            { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+            { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+            { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
         ]
     },
     {
@@ -275,17 +275,17 @@ function App() {
         sale: true,
         bestseller: true,
         sizes: [
-          { size: "3 ml", price: 10.99, chosen: true },
-          { size: "5 ml", price: 15.99, chosen: false },
-          { size: "8 ml", price: 19.99, chosen: false },
-          { size: "10 ml", price: 24.99, chosen: false },
-          { size: "15 ml", price: 29.99, chosen: false },
-          { size: "20 ml", price: 39.99, chosen: false }
+          { id: 1, size: "3 ml", price: 10.99, chosen: true },
+          { id: 2, size: "5 ml", price: 15.99, chosen: false },
+          { id: 3, size: "8 ml", price: 19.99, chosen: false },
+          { id: 4, size: "10 ml", price: 24.99, chosen: false },
+          { id: 5, size: "15 ml", price: 29.99, chosen: false },
+          { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
       ]
     },
     {
@@ -298,17 +298,17 @@ function App() {
         sale: true,
         bestseller: false,
         sizes: [
-          { size: "3 ml", price: 10.99, chosen: true },
-          { size: "5 ml", price: 15.99, chosen: false },
-          { size: "8 ml", price: 19.99, chosen: false },
-          { size: "10 ml", price: 24.99, chosen: false },
-          { size: "15 ml", price: 29.99, chosen: false },
-          { size: "20 ml", price: 39.99, chosen: false }
+          { id: 1, size: "3 ml", price: 10.99, chosen: true },
+          { id: 2, size: "5 ml", price: 15.99, chosen: false },
+          { id: 3, size: "8 ml", price: 19.99, chosen: false },
+          { id: 4, size: "10 ml", price: 24.99, chosen: false },
+          { id: 5, size: "15 ml", price: 29.99, chosen: false },
+          { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
       ]
     },
     {
@@ -317,21 +317,21 @@ function App() {
         image: "Images/products/tiziana-terenzi.jpg",
         brand: "Tiziana Terenzi",
         gender: "Unisex",
-        rating: 4.5,
+        rating: 2.3,
         sale: false,
         bestseller: true,
         sizes: [
-          { size: "3 ml", price: 10.99, chosen: true },
-          { size: "5 ml", price: 15.99, chosen: false },
-          { size: "8 ml", price: 19.99, chosen: false },
-          { size: "10 ml", price: 24.99, chosen: false },
-          { size: "15 ml", price: 29.99, chosen: false },
-          { size: "20 ml", price: 39.99, chosen: false }
+          { id: 1, size: "3 ml", price: 10.99, chosen: true },
+          { id: 2, size: "5 ml", price: 15.99, chosen: false },
+          { id: 3, size: "8 ml", price: 19.99, chosen: false },
+          { id: 4, size: "10 ml", price: 24.99, chosen: false },
+          { id: 5, size: "15 ml", price: 29.99, chosen: false },
+          { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
       ]
     },
     {
@@ -344,17 +344,17 @@ function App() {
         sale: true,
         bestseller: false,
         sizes: [
-          { size: "3 ml", price: 10.99, chosen: true },
-          { size: "5 ml", price: 15.99, chosen: false },
-          { size: "8 ml", price: 19.99, chosen: false },
-          { size: "10 ml", price: 24.99, chosen: false },
-          { size: "15 ml", price: 29.99, chosen: false },
-          { size: "20 ml", price: 39.99, chosen: false }
+          { id: 1, size: "3 ml", price: 10.99, chosen: true },
+          { id: 2, size: "5 ml", price: 15.99, chosen: false },
+          { id: 3, size: "8 ml", price: 19.99, chosen: false },
+          { id: 4, size: "10 ml", price: 24.99, chosen: false },
+          { id: 5, size: "15 ml", price: 29.99, chosen: false },
+          { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
       ]
     },
     {
@@ -367,17 +367,17 @@ function App() {
         sale: false,
         bestseller: true,
         sizes: [
-          { size: "3 ml", price: 10.99, chosen: true },
-          { size: "5 ml", price: 15.99, chosen: false },
-          { size: "8 ml", price: 19.99, chosen: false },
-          { size: "10 ml", price: 24.99, chosen: false },
-          { size: "15 ml", price: 29.99, chosen: false },
-          { size: "20 ml", price: 39.99, chosen: false }
+          { id: 1, size: "3 ml", price: 10.99, chosen: true },
+          { id: 2, size: "5 ml", price: 15.99, chosen: false },
+          { id: 3, size: "8 ml", price: 19.99, chosen: false },
+          { id: 4, size: "10 ml", price: 24.99, chosen: false },
+          { id: 5, size: "15 ml", price: 29.99, chosen: false },
+          { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
       ]
     },
     {
@@ -390,18 +390,18 @@ function App() {
         sale: true,
         bestseller: true,
         sizes: [
-          { size: "3 ml", price: 10.99, chosen: true },
-          { size: "5 ml", price: 15.99, chosen: false },
-          { size: "8 ml", price: 19.99, chosen: false },
-          { size: "10 ml", price: 24.99, chosen: false },
-          { size: "15 ml", price: 29.99, chosen: false },
-          { size: "20 ml", price: 39.99, chosen: false }
+          { id: 1, size: "3 ml", price: 10.99, chosen: true },
+          { id: 2, size: "5 ml", price: 15.99, chosen: false },
+          { id: 3, size: "8 ml", price: 19.99, chosen: false },
+          { id: 4, size: "10 ml", price: 24.99, chosen: false },
+          { id: 5, size: "15 ml", price: 29.99, chosen: false },
+          { id: 6, size: "20 ml", price: 39.99, chosen: false }
           
       ],
       bigSizes: [
-          { size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
       ]
     }
 ];

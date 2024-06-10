@@ -27,7 +27,7 @@ a {
     list-style: none;
     display: flex;
     align-items: center;
-
+    font-weight: 500;
     gap: 57px;
     @media (max-width:1517px) {
         gap: calc(30px + (57 - 30) * ((100vw - 320px) / (1517 - 320)));

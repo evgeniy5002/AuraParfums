@@ -7,8 +7,11 @@ const HomePage = ({products}) => {
    
     return (
         <main className={styles.main}>
-            <ProductsBlock bestsellers={true} loadCardsCount={4} products={products} maxColumns={4}>
-
+            <ProductsBlock 
+                bestsellers={true} 
+                loadCardsCount={4} 
+                products={products} 
+                maxColumns={4}>
             </ProductsBlock>
 
 
