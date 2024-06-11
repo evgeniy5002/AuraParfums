@@ -38,13 +38,6 @@ export const ProductCard = ({ product, productsBlockColumns }) => {
         <a href="#" className={styles["product-card"]} key={product.name}>
             <img src={product.image}  alt={product.name}/>
             <div className={styles["product-card_content"]}>
-                {/* <div className={`${styles["product-card_rating"]} ${styles["rating"]}`}>
-                    <div className={styles["rating_star"]}></div>
-                    <div className={styles["rating_star"]}></div>
-                    <div className={styles["rating_star"]}></div>
-                    <div className={styles["rating_star"]}></div>
-                    <div className={styles["rating_star"]}></div>
-                </div> */}
                 <ProductRating rating={product.rating} />
                 <p className={styles["product-card_brand"]}>{product.brand}</p>
                 <h1 className={styles["product-card_title"]}>{product.name}</h1>
@@ -76,6 +69,10 @@ export const ProductCard = ({ product, productsBlockColumns }) => {
                     <a href="#" className={`${styles.red}`}>Купити</a>
                     <div>{price}$</div>
                 </div>
+            </div>
+            <div className={styles["product-card_categories"]}>
+                {product.bestseller ? <div className={`${styles["category"]} ${styles["bestseller"]}`}>Bestseller</div> : ""}
+                {product.sale ? <div className={`${styles["category"]} ${styles["sale"]}`}>Sale</div> : ""}
             </div>
         </a>
     );
