@@ -1,7 +1,7 @@
 .products_block{
     display: grid;
     gap: 35px;
-    
+    margin-bottom: 104px;
 }
 
 .products_block_three_columns{
@@ -13,7 +13,7 @@
 
 .products_block_four_columns{
     grid-template-columns: repeat(4, 1fr);
-    @media (max-width:1517px) {
+    @media ((max-width:1517px) and (min-width: 1350)) {
         gap: calc(15px + (35 - 15) * ((100vw - 320px) / (1517 - 320)));
     }
     @media (max-width:1350px) {

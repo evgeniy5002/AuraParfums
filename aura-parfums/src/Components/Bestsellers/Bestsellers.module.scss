@@ -1,0 +1,36 @@
+.bestsellers{
+    padding-top: 182px;
+    width: 100%;
+    border: 1px #791616 solid;
+    border-width: 1px 0 0 0;
+    &_text{         
+        margin-left: 80px;
+        margin-bottom: 80px;
+        .titles{
+            position: relative;
+            *{
+                &:first-child{
+                    position: absolute;
+                    left: 10px;
+                    bottom: 10px;
+                    opacity: .1;
+                    color: #791616;
+                    font-size: 200px;
+                }
+                &:last-child{
+                    font-size: 128px;
+                    color: #791616;
+                }
+            }
+        }
+
+        p{
+            font-style: italic;
+            max-width: 797px;
+            text-align: center;
+            font-size: 24px;
+            color: #791616;
+            margin-left: 170px;
+        }
+    }
+}

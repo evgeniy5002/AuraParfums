@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 
 $red: "#791616";
 *{
@@ -12,11 +12,21 @@ $red: "#791616";
   transition: .2s;
 }
 
+
+a{
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
 }
 
-
+.default-button{
+  padding: 15px 60px;
+  color: #FFFFFF;
+  background: #791616;
+}
 
 header, main, footer, .wrapper{
   width: 100%;
@@ -41,5 +51,6 @@ header, main, footer, .wrapper{
   max-width: 1517px;
   padding: 0 15px;
   width: 100%;
+  margin: 0 auto;
 }
 
