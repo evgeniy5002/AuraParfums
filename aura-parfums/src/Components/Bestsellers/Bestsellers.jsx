@@ -16,7 +16,7 @@ const Bestsellers = ({products}) => {
                     </p>
                 </div>
                 
-                <ProductsBlock products={products} bestsellers={true} maxColumns={4} loadCardsCount={4}></  ProductsBlock>
+                <ProductsBlock products={products} bestsellers={true} ></  ProductsBlock>
             </div>
         </div>
         

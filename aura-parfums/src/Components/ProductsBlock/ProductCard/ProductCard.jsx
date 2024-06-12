@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./ProductCard.module.scss";
-
 import ProductRating from "./ProductRating/ProductRating";
 
 export const ProductCard = ({ product, productsBlockColumns }) => {
@@ -35,18 +34,17 @@ export const ProductCard = ({ product, productsBlockColumns }) => {
     const price = findPriceBySize(sizes, bigSizes, chosenSize);
     console.log(chosenSize);
     return (
-        <a href="#" className={styles["product-card"]} key={product.name}>
+        <a className={styles["product-card"]} key={product.name}>
             <img src={product.image}  alt={product.name}/>
             <div className={styles["product-card_content"]}>
                 <ProductRating rating={product.rating} />
                 <p className={styles["product-card_brand"]}>{product.brand}</p>
-                <h1 className={styles["product-card_title"]}>{product.name}</h1>
+                <h1 className={styles["product-card_title"]}>{product.name} {product.gender}</h1>
                 <div className={styles["product_sizes"]}>
                 {sizes.map((sizeObj, index) => (
                     <a
                         onClick={() => setChosenSize(sizeObj.id)}
                         key={index} 
-                        href="#" 
                         className={`${styles["product_size"]} ${chosenSize === sizeObj.id ? styles["red"] : ""} ${styles["product_square-block"]}`}
                     >
                         {sizeObj.size}
@@ -58,7 +56,6 @@ export const ProductCard = ({ product, productsBlockColumns }) => {
                     <a
                         onClick={() => setChosenSize(sizeObj.id)}
                         key={index} 
-                        href="#" 
                         className={`${styles["product_size"]} ${chosenSize === sizeObj.id ? styles["active"] : ""} ${styles["product_square-block"]}`}
                     >
                         {sizeObj.size}
@@ -66,7 +63,7 @@ export const ProductCard = ({ product, productsBlockColumns }) => {
                 ))}
                 </div>
                 <div className={styles["product_buy-block"]}>
-                    <a href="#" className={`${styles.red}`}>Купити</a>
+                    <a className={`${styles.red}`}>Купити</a>
                     <div>{price}$</div>
                 </div>
             </div>

@@ -3,6 +3,9 @@
     width: 100%;
     border: 1px #791616 solid;
     border-width: 1px 0 0 0;
+    @media (max-width:1200px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
     &_text{         
         margin-left: 80px;
         margin-bottom: 80px;
@@ -16,9 +19,12 @@
                     opacity: .1;
                     color: #791616;
                     font-size: 200px;
+                    font-weight: 800;
                 }
                 &:last-child{
                     font-size: 128px;
+                    font-weight: 800;
+                    letter-spacing: -2px;
                     color: #791616;
                 }
             }

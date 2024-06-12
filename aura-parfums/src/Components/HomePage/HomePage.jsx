@@ -3,22 +3,21 @@ import styles from "./HomePage.module.scss";
 import { ProductsBlock } from "../ProductsBlock/ProductsBlock";
 import CatalogLink from "../CatalogLink/CatalogLink";
 import Bestsellers, { bestsellers } from "../Bestsellers/Bestsellers"
+import FragnanceChoice from "../FragnanceChoice/FragnanceChoice";
+import BrandsBlock from "../BrandsBlock/BrandsBlock";
+import NewFragnances from "../NewFragnances/NewFragnances";
 
 const HomePage = ({products}) => {
    
     return (
         <main className={styles.main}>
             <CatalogLink></CatalogLink>
-            <ProductsBlock 
-                bestsellers={true} 
-                loadCardsCount={4} 
-                products={products} 
-                maxColumns={4}>
-            </ProductsBlock>
+            <NewFragnances products={products}></NewFragnances>
             <Bestsellers
                 products = {products}
             ></Bestsellers>
-
+            <FragnanceChoice></FragnanceChoice>
+            <BrandsBlock brandsCount={28}></BrandsBlock>
         </main>
     )
 }

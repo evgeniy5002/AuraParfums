@@ -2,13 +2,37 @@ import React from "react";
 import styles from "./ProductsBlock.module.scss";
 import { ProductCard } from "./ProductCard/ProductCard";
 
-export const ProductsBlock = ({ bestsellers, products, loadCardsCount, maxColumns }) => {
+export const ProductsBlock = ({niche = false, fullBottles = false, lux = false, male = false, female = false,  newProducts = false, bestsellers = false, products, loadCardsCount = 4, maxColumns = 4 }) => {
     products.sort((a, b) => b.rating - a.rating);
 
-    const productElements = (bestsellers ? products.filter(product => product.bestseller) : products).slice(0, loadCardsCount).map((product) => (
-        <ProductCard key={product.name} product={product} productsBlockColumns={maxColumns} />
-    ));
+    let filteredProducts = products;
+    if (bestsellers) {
+      filteredProducts = filteredProducts.filter(product => product.bestseller);
+    }
+    if (newProducts) {
+      filteredProducts = filteredProducts.filter(product => product.new);
+    }
+    if (fullBottles) {
+        filteredProducts = filteredProducts.filter(product => product.fullBottles);
+    }
+    if (lux) {
+        filteredProducts = filteredProducts.filter(product => product.lux);
+    }
+    if (niche) {
+        filteredProducts = filteredProducts.filter(product => product.niche);
+    }
+    if (male) {
+        filteredProducts = filteredProducts.filter(product => product.gender === 'male' );
+    }
+    if (female) {
+        filteredProducts = filteredProducts.filter(product => product.gender === 'female' );
+    }
+   
 
+  
+    const productElements = filteredProducts.slice(0, loadCardsCount).map((product) => (
+      <ProductCard key={product.name} product={product} productsBlockColumns={maxColumns} />
+    ));
 
 
     if (maxColumns == 3) {

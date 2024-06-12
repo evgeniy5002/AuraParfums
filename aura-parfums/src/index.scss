@@ -13,19 +13,43 @@ $red: "#791616";
 }
 
 
-a{
+a, button{
   margin: 0;
   padding: 0;
+  cursor: pointer;
 }
 
 body {
   margin: 0;
 }
 
+
 .default-button{
+  border: 1px solid #791616;
   padding: 15px 60px;
   color: #FFFFFF;
+  border-radius: 3px;
   background: #791616;
+  &:hover{
+    color: #791616;
+    background: #FFFFFF;
+  }
+}
+
+
+.default-button-white{
+  color: #791616;
+  font-weight: 900;
+  font-size: 24px;
+  background: #FFFFFF;
+  padding: 15px 60px;
+  border-radius: 1px;
+  border: 1px solid #791616;
+  &:hover{
+    padding: 15px 60px;
+    color: #FFFFFF;
+    background: #791616;
+  }
 }
 
 header, main, footer, .wrapper{
