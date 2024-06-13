@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .catalog-link-block {
     display: grid;
     position: relative;
@@ -6,10 +8,7 @@
     grid-template-rows: 1fr 1fr;
     gap: 20px;
     overflow: hidden;
-    margin-bottom: 200px;
-    @media (max-width:1517px) {
-        margin-bottom: calc(80px + (200 - 80) * ((100vw - 320px) / (1517 - 320)));
-    }
+    @include AV('margin-bottom', 200, 80);
     width: 100%;
     img{
         width: 100%;
@@ -52,29 +51,25 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 110px 120px 70px 110px;
-        @media (max-width:1517px) {
-            padding-top: calc(30px + (110 - 50) * ((100vw - 320px) / (1517 - 320)));
-            padding-right: calc(30px + (120 - 50) * ((100vw - 320px) / (1517 - 320)));
-            padding-bottom: calc(30px + (70 - 50) * ((100vw - 320px) / (1517 - 320)));
-            padding-left: calc(30px + (110 - 50) * ((100vw - 320px) / (1517 - 320)));
-        }
+        @include AV('padding-top', 110, 30);
+        @include AV('padding-right', 120, 30);
+        @include AV('padding-bottom', 70, 30);
+        @include AV('padding-left', 110, 30);
+
         h2{
             font-family: "Newsreader";
             font-weight: 700;
-            color: #791616;
-            font-size: 40px;
-            @media (max-width:1517px) {
-                font-size: calc(20px + (40 - 24) * ((100vw - 320px) / (1517 - 320)));
-            }
+            color: $red;
+            @include fsz40;
+            @include AV('font-size', 40, 24);
+            
         }
         p{
             font-style: italic;
             margin: 14px 0 44px;
-            @media (max-width:1517px) {
-                margin-bottom: calc(20px + (44 - 20) * ((100vw - 320px) / (1517 - 320)));
-                font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1517 - 320)));
-            }
+
+            @include AV('margin-bottom', 44, 20);
+            @include AV('font-size', 16, 12);
         }
     }
 }

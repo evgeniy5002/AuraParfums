@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
-
-$red: "#791616";
+@import 'variables.scss';
 *{
   font-family: 'Mulish';
   box-sizing: border-box;
@@ -11,6 +10,8 @@ $red: "#791616";
   background: none;
   transition: .2s;
 }
+
+
 
 
 a, button{
@@ -25,30 +26,30 @@ body {
 
 
 .default-button{
-  border: 1px solid #791616;
+  border: 1px solid $red;
   padding: 15px 60px;
   color: #FFFFFF;
   border-radius: 3px;
-  background: #791616;
+  background: $red;
   &:hover{
-    color: #791616;
+    color: $red;
     background: #FFFFFF;
   }
 }
 
 
 .default-button-white{
-  color: #791616;
+  color: $red;
   font-weight: 900;
-  font-size: 24px;
+  @include fsz24;
   background: #FFFFFF;
   padding: 15px 60px;
   border-radius: 1px;
-  border: 1px solid #791616;
+  border: 1px solid $red;
   &:hover{
     padding: 15px 60px;
     color: #FFFFFF;
-    background: #791616;
+    background: $red;
   }
 }
 

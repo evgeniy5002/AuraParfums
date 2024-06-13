@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./ProductCard.module.scss";
-import ProductRating from "./ProductRating/ProductRating";
+import ProductRating from "../ProductRating/ProductRating";
 
 export const ProductCard = ({ product, productsBlockColumns }) => {
     let bigSizes, sizes;
@@ -32,7 +32,7 @@ export const ProductCard = ({ product, productsBlockColumns }) => {
     };
 
     const price = findPriceBySize(sizes, bigSizes, chosenSize);
-    console.log(chosenSize);
+
     return (
         <a className={styles["product-card"]} key={product.name}>
             <img src={product.image}  alt={product.name}/>

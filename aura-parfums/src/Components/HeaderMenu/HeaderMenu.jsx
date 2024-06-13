@@ -12,7 +12,7 @@ export const HeaderMenu = () => {
                 <ul className={styles.menu}>
                     <li>
                         <Link to="/catalogs">
-                            <span style={{ color: "#791616" }}>Каталог</span>
+                            <span style={{ color: "$red" }}>Каталог</span>
                         </Link>
                         <img src={"Images/arrow-icon.svg"} alt="arrow-down" />
                     </li>

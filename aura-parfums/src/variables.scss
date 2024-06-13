@@ -1,0 +1,74 @@
+$red: #791616;
+
+
+@mixin AV($property, $maxVal, $minVal) {
+  #{$property}: #{$maxVal}px;
+  @media (max-width: 1517px) {
+    #{$property}: calc(#{$minVal}px + (#{$maxVal} - #{$minVal}) * ((100vw - 320px) / (1517 - 320)));
+  }
+}
+
+
+@mixin fsz200{
+    font-size: 200px;
+    @media (max-width:1517px) {
+      font-size: calc(64px + (200 - 64) * ((100vw - 320px) / (1517 - 320)));
+    }
+  }
+  @mixin fsz128{
+    font-size: 128px;
+    @media (max-width:1517px) {
+      font-size: calc(64px + (128 - 64) * ((100vw - 320px) / (1517 - 320)));
+    }
+  }
+  
+  @mixin fsz64{
+    font-size: 64px;
+    @media (max-width:1517px) {
+      font-size: calc(40px + (64 - 40) * ((100vw - 320px) / (1517 - 320)));
+    }
+  }
+
+  @mixin fsz48{
+    font-size: 48px;
+    @media (max-width:1517px) {
+      font-size: calc(24px + (48 - 24) * ((100vw - 320px) / (1517 - 320)));
+    }
+  }
+  
+  
+  @mixin fsz40{
+    font-size: 40px;
+    @media (max-width:1517px) {
+      font-size: calc(24px + (40 - 24) * ((100vw - 320px) / (1517 - 320)));
+    }
+  }
+  
+  @mixin fsz24{
+    font-size: 24px;
+    @media (max-width:1517px) {
+      font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1517 - 320)));
+    }
+  }
+
+  @mixin fsz20{
+    font-size: 20px;
+    @media (max-width:1517px) {
+      font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1517 - 320)));
+    }
+  }
+  
+  @mixin fsz16{
+    font-size: 16px;
+    @media (max-width:1517px) {
+      font-size: calc(14px + (16 - 12) * ((100vw - 320px) / (1517 - 320)));
+    }
+  }
+  
+  @mixin fsz14{
+    font-size: 14px;
+    @media (max-width:1517px) {
+      font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (1517 - 320)));
+    }
+  }
+  

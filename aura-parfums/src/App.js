@@ -11,12 +11,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
 
-  const images = [
-    'Images/brands/image 1.png',
-    'Images/brands/image 2.png',
-    'Images/brands/image 3.png',
 
-  ];
 
   const products = [
     {
@@ -474,7 +469,7 @@ function App() {
           <Routes >
             <Route path="/"  element={<Main />}>
               <Route index element={<HomePage products={products}/>} />
-              <Route path="catalogs/*" element={<Catalogs />} />
+              <Route path="catalogs/*" element={<Catalogs products={products}/>} />
               <Route path="contacts" element={<Contacts />} />
               <Route path="brands" element={<Brands />} />
             </Route>

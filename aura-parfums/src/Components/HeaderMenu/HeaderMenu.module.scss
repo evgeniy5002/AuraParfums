@@ -1,4 +1,4 @@
-
+@import '../../variables.scss';
 a {
     text-decoration: none;
     color: black;
@@ -10,12 +10,8 @@ a {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    gap: 46px;
-
     padding: 35px 15px;
-    @media (max-width:1517px) {
-        gap: calc(15px + (46 - 15) * ((100vw - 320px) / (1517 - 320)));
-    }
+    @include AV('gap', 46, 15);
     .burger_icon{
         display: none;
         height: 50px;
@@ -29,16 +25,14 @@ a {
     align-items: center;
     font-weight: 500;
     gap: 57px;
-    @media (max-width:1517px) {
-        gap: calc(30px + (57 - 30) * ((100vw - 320px) / (1517 - 320)));
-    }
+    @include AV('gap', 57, 30);
     @media (max-width:1400px) {
         display: none;
     }
 
         li {
             padding: 10px;
-            font-size: 24px;
+            @include fsz24;
             text-wrap: nowrap;
             &:first-child {
                 display: flex;

@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 a {
     text-decoration: none;
     color: black;
@@ -11,7 +13,7 @@ a {
     justify-content: center;
     align-items: center;
     width: 100%;
-    border-bottom: 2px solid #791616;
+    border-bottom: 2px solid $red;
 }
 
 // .logo img {

@@ -1,3 +1,5 @@
+
+@import '../../../variables.scss';
 .product-card{
     text-align: center;
     position: relative;
@@ -22,15 +24,15 @@
         }
     }
     .product-card_brand{
-        color: #791616;
+        color: $red;
         font-weight: 500;
-        font-size: 20px;
+        @include fsz20;
         line-height: 25.1px;
         margin: 10px 0 8px 0;
     }
     .product-card_title{
         font-weight: 700;
-        font-size: 20px;
+        @include fsz20;
         text-transform: uppercase;
         text-wrap: nowrap;
     }
@@ -61,24 +63,24 @@
 
     }
     .product_square-block{
-        font-size: 14px;
+        @include fsz14;
         padding: 9px 0;
-        border: 1px #791616 solid;
+        border: 1px $red solid;
         &:hover{
-            background: #791616;
+            background: $red;
             color: #FFFFFF;
         }
     }
 
     .red{
-        background: #791616;
-        font-size: 14px;
+        background: $red;
+        @include fsz14;
         padding: 9px 0;
         color: #FFFFFF;
-        border: 1px #791616 solid;
+        border: 1px $red solid;
         // &:hover{
         //     background: none;
-        //     color: #791616;
+        //     color: $red;
         // }
     }
     
@@ -92,9 +94,9 @@
                 border-width: 1px 0 1px 1px;
             }
             &:last-child{
-                font-size: 14px;
+                @include fsz14;
                 padding: 9px 0;
-                border: 1px #791616 solid;
+                border: 1px $red solid;
             }
         }
     }
@@ -117,7 +119,7 @@
         }
         .sale{
             width: min-content;
-            background: #791616;
+            background: $red;
         }
     }
 }

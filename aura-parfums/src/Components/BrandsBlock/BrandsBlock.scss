@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .brands{
   width: 100%;
   display: flex;
@@ -6,15 +8,15 @@
   margin-top: 94px;
   gap: 45px;
   h2{
-    color: #791616;
-    font-size: 48px;
+    color: $red;
+    @include fsz48;
   }
 }
 .slider-block {
 
     width: 100%;
     padding: 20px 0;
-    border: 1px #791616 solid;
+    border: 1px $red solid;
     border-width: 1px 0 0 0;
   
     .sliderrr {
@@ -32,10 +34,10 @@
         width: 24px;
         height: 24px;
         background: none;
-        border: 1px #791616 solid;
+        border: 1px $red solid;
         
         &.swiper-pagination-bullet-active {
-          background: #791616;
+          background: $red;
    
 
         }
@@ -49,10 +51,6 @@
         img {
           width: 100%;
           max-width: 250px;
-          // width: 100px;
-          // height: 100px;
-          // object-fit: cover;
-          // border-radius: 10px;
         }
       }
     }

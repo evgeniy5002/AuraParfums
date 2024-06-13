@@ -14,10 +14,14 @@ const NewFragnances = ({ products }) => {
         <div className={styles["new-fragnances"]}>
             <div className={styles["new-fragnances_header"]}>
                 <img src="Images/new-fragnances-bg.jpg" alt="" />
-                <div className={styles["new-fragnances_text"]}>
-                    <h2>New Fragrances</h2>
-                    <p>Презентуємо наші новинки</p>
+                <div className={`${styles["new-fragnances_container"]} container`}>
+                   
+                    <div className={styles["new-fragnances_text"]}>
+                        <h2>New Fragrances</h2>
+                        <p>Презентуємо наші новинки</p>
+                    </div>
                 </div>
+                
             </div>
             <div className={styles["categories"]}>
                 <button onClick={() => handleClick({ niche: true })} className={styles["category"]}>Нішева парфумерія</button>
@@ -27,7 +31,7 @@ const NewFragnances = ({ products }) => {
                 <button onClick={() => handleClick({ bestsellers: true })} className={styles["category"]}>Бестселлери</button>
                 <button onClick={() => handleClick({ fullBottles: true })} className={styles["category"]}>Цілі флакони</button>
             </div>
-            <div className="container">
+    
                 <ProductsBlock 
                 products={products} 
                 niche={category.niche} 
@@ -39,7 +43,7 @@ const NewFragnances = ({ products }) => {
                 newProducts={category.new} 
                 maxColumns={4} 
                 loadCardsCount={4} />
-            </div>
+        
         </div>
     );
 }

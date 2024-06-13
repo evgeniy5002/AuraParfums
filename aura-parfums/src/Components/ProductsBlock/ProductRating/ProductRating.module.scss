@@ -1,3 +1,5 @@
+@import '../../../variables.scss';
+
 .rating {
     display: flex;
     gap: 20px;
@@ -8,14 +10,14 @@
   .star {
     path{
         fill: #FFFFFF;
-        stroke: #791616;
+        stroke: $red;
         stroke-width: 24px;
     }
   }
 
   .filled{
     path{
-        fill: #791616;
+        fill: $red;
     }
   }
   

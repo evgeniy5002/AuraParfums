@@ -1,7 +1,10 @@
+@import '../../variables.scss';
+
 .products_block{
     display: grid;
     gap: 35px;
-    margin-bottom: 104px;
+    // margin-bottom: 104px;
+    @include AV('margin-bottom', 104, 50)
 }
 
 .products_block_three_columns{
@@ -13,9 +16,7 @@
 
 .products_block_four_columns{
     grid-template-columns: repeat(4, 1fr);
-    @media ((max-width:1517px) and (min-width: 1350)) {
-        gap: calc(15px + (35 - 15) * ((100vw - 320px) / (1517 - 320)));
-    }
+    @include AV('gap', 35, 15);
     @media (max-width:1350px) {
         grid-template-columns: repeat(3, 1fr);
     }

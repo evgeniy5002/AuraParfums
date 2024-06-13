@@ -6,18 +6,20 @@ import Bestsellers, { bestsellers } from "../Bestsellers/Bestsellers"
 import FragnanceChoice from "../FragnanceChoice/FragnanceChoice";
 import BrandsBlock from "../BrandsBlock/BrandsBlock";
 import NewFragnances from "../NewFragnances/NewFragnances";
+import CatalogMenu from "../CatalogMenu/CatalogMenu";
 
 const HomePage = ({products}) => {
    
     return (
         <main className={styles.main}>
             <CatalogLink></CatalogLink>
+            <CatalogMenu></CatalogMenu>
             <NewFragnances products={products}></NewFragnances>
             <Bestsellers
                 products = {products}
             ></Bestsellers>
             <FragnanceChoice></FragnanceChoice>
-            <BrandsBlock brandsCount={28}></BrandsBlock>
+            <BrandsBlock></BrandsBlock>
         </main>
     )
 }

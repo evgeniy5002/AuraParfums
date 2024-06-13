@@ -1,13 +1,12 @@
 import { Pagination} from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
 import 'swiper/scss';
 import 'swiper/scss/pagination';
 import styles from './BrandsBlock.scss'
 
 
-const BrandsBlock = ({brandsCount}) => {
+const BrandsBlock = ({brandsCount = 28}) => {
     const images = Array.from({ length: brandsCount}, (_, index) => `Images/brands/Image ${index + 1}.png`);
   return (
       <div className="brands">
@@ -19,11 +18,13 @@ const BrandsBlock = ({brandsCount}) => {
             modules={[Pagination]}
             loop={true}
             spaceBetween={50}
-            slidesPerView={4}
             pagination={{ clickable: true }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
-            slidesPerGroup={4}
+            breakpoints={{
+              0: { slidesPerView: 1, slidesPerGroup: 1 },
+              550: { slidesPerView: 2, slidesPerGroup: 2 },
+              768: { slidesPerView: 3, slidesPerGroup: 3},
+              1100: { slidesPerView: 4, slidesPerGroup: 4},
+            }}
             >
             
             {images.map((image, index) => (

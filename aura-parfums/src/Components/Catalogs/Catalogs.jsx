@@ -1,13 +1,60 @@
-import React from "react";
-import { Link, Outlet, Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import styles from "./Catalogs.module.scss";
+import CatalogMenu from "../CatalogMenu/CatalogMenu";
+import { ProductsBlock } from "../ProductsBlock/ProductsBlock";
+import Bestsellers from "../Bestsellers/Bestsellers";
+import FragnanceChoice from "../FragnanceChoice/FragnanceChoice";
+import BrandsBlock from "../BrandsBlock/BrandsBlock";
+import Filters from "../Filters/Filters";
 
-const Catalogs = () => {
+const Catalogs = ({ products }) => {
+    const location = useLocation();
+    const [category, setCategory] = useState("");
+
+    useEffect(() => {
+        if (location.state && location.state.selectedCategory) {
+            setCategory(location.state.selectedCategory);
+            console.log(category);
+        }
+    }, [location.state]);
+
+    const filterProductsByCategory = (products, category) => {
+        switch (category) {
+            case "niche":
+                return products.filter(product => product.niche);
+            case "lux":
+                return products.filter(product => product.lux);
+            case "female":
+                return products.filter(product => product.gender === "female");
+            case "male":
+                return products.filter(product => product.gender === "male");
+            case "bestsellers":
+                return products.filter(product => product.bestseller);
+            case "fullBottles":
+                return products.filter(product => product.fullBottle);
+            default:
+                return products;
+        }
+    };
+
+    const filteredProducts = filterProductsByCategory(products, category);
+
     return (
-        <div className={styles.container}>
-            <span>Catalogs page</span>
-        </div>
-    )
+        <>
+            <CatalogMenu />
+            <div className={styles["catalog-body"]}> 
+                <div className={`${styles["catalog-container"]} container`}>
+                    <Filters></Filters>
+                    <ProductsBlock products={filteredProducts} maxColumns={3} />
+                </div>
+            </div>
+            
+            <Bestsellers products={products} />
+            <FragnanceChoice />
+            <BrandsBlock />
+        </>
+    );
 }
 
 export default Catalogs;
