@@ -8,6 +8,7 @@ import styles from './BrandsBlock.scss'
 
 const BrandsBlock = ({brandsCount = 28, brands}) => {
     // const images = Array.from({ length: brandsCount}, (_, index) => `Images/brands/Image ${index + 1}.png`);
+    console.log(brands)
   return (
       <div className="brands">
         <h2>БРЕНДИ</h2>
@@ -29,7 +30,7 @@ const BrandsBlock = ({brandsCount = 28, brands}) => {
             
             {brands.map((brand) => (
                 <SwiperSlide key={brand.id}>
-                    <img src={brand.image} alt={brand.brand} />
+                    <img src={brand.image} alt={brand.name} />
                 </SwiperSlide>
             ))}
             </Swiper>

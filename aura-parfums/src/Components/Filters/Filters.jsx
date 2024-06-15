@@ -2,31 +2,28 @@ import React from "react";
 import styles from "./Filters.module.scss";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Filter from "../Filter/Filter";
 // import { Range, getTrackBackground } from 'react-range';
-const Filters = ({ products }) => {
+const Filters = ({ products, brands, sizes }) => {
     const [price, setPrice] = useState("")
     const location = useLocation();
     const navigate = useNavigate();
+    
     const updateURL = (category, value) => {
         const params = new URLSearchParams(location.search);
         params.set(category, value);
-        console.log(params.toString());
+        
         navigate(`/catalogs?${params.toString()}`, { replace: true });
     };
-
     function trackRange(e) {
         setPrice(e.target.value);
-        console.log(price);
+        
         updateURL('price', price);
     }
     return(
         <div className={styles["filters"]}>
-            <div className={styles["filter"]}>
-                <button>Бренди</button>
-                <div className={styles["filter-options"]}>
-                    
-                </div>
-            </div>
+            <Filter filterName={"Бренди"} options={brands}></Filter>
+            <Filter filterName={"Об’єм"} options={sizes}></Filter>
             <div className={styles["filter"]}>Об’єм</div>
             <input max={200} onChange={trackRange} type="range" name="priceRange" />
             <label htmlFor="priceRange">price range</label>

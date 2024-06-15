@@ -8,7 +8,7 @@ import FragnanceChoice from "../FragnanceChoice/FragnanceChoice";
 import BrandsBlock from "../BrandsBlock/BrandsBlock";
 import Filters from "../Filters/Filters";
 
-const Catalogs = ({ products }) => {
+const Catalogs = ({ products, brands, sizes }) => {
     const location = useLocation();
     const [searchParams] = useSearchParams();
     const [category, setCategory] = useState("");
@@ -46,14 +46,14 @@ const Catalogs = ({ products }) => {
             <CatalogMenu />
             <div className={styles["catalog-body"]}> 
                 <div className={`${styles["catalog-container"]} container`}>
-                    <Filters></Filters>
+                    <Filters brands={brands} sizes={sizes}></Filters>
                     <ProductsBlock  products={filteredProducts} maxColumns={3} />
                 </div>
             </div>
             
             <Bestsellers products={products} />
             <FragnanceChoice />
-            <BrandsBlock />
+            <BrandsBlock brands={brands}/>
         </>
     );
 }

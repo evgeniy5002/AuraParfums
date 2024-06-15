@@ -9,7 +9,7 @@ import NewFragnances from "../NewFragnances/NewFragnances";
 import CatalogMenu from "../CatalogMenu/CatalogMenu";
 
 const HomePage = ({products, brands}) => {
-    console.log(brands);
+
     return (
         <main className={styles.main}>
             <CatalogLink></CatalogLink>
