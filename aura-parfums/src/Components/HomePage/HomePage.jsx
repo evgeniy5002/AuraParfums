@@ -8,8 +8,8 @@ import BrandsBlock from "../BrandsBlock/BrandsBlock";
 import NewFragnances from "../NewFragnances/NewFragnances";
 import CatalogMenu from "../CatalogMenu/CatalogMenu";
 
-const HomePage = ({products}) => {
-   
+const HomePage = ({products, brands}) => {
+    console.log(brands);
     return (
         <main className={styles.main}>
             <CatalogLink></CatalogLink>
@@ -19,7 +19,7 @@ const HomePage = ({products}) => {
                 products = {products}
             ></Bestsellers>
             <FragnanceChoice></FragnanceChoice>
-            <BrandsBlock></BrandsBlock>
+            <BrandsBlock brands={brands}></BrandsBlock>
         </main>
     )
 }

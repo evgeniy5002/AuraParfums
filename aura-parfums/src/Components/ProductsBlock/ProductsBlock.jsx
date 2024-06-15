@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ProductsBlock.module.scss";
 import { ProductCard } from "./ProductCard/ProductCard";
 
-export const ProductsBlock = ({niche = false, fullBottles = false, lux = false, male = false, female = false,  newProducts = false, bestsellers = false, products, loadCardsCount = 4, maxColumns = 4 }) => {
+export const ProductsBlock = ({niche = false, fullBottles = false, lux = false, male = false, female = false,  newProducts = false, bestsellers = false, products, loadCardsCount = products.length, maxColumns = 4 }) => {
     products.sort((a, b) => b.rating - a.rating);
 
     let filteredProducts = products;

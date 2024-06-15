@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./CatalogMenu.module.scss";
-import { useState } from "react";
-import { useLocation } from 'react-router-dom';
-import { Link } from "react-router-dom";
 
 const CatalogMenu = ({ products }) => {
-
     const location = useLocation();
+    const navigate = useNavigate();
     const path = location.pathname;
+
+    const [category, setCategory] = useState("");
 
     const categories = [
         { key: "niche", label: "Нішева парфумерія" },
@@ -18,65 +18,28 @@ const CatalogMenu = ({ products }) => {
         { key: "fullBottles", label: "Цілі флакони" },
     ];
 
-    const [category, setCategory] = useState("");
+    const updateURL = (category, value) => {
+        const params = new URLSearchParams(location.search);
+        params.set(category, value);
+        console.log(params.toString());
+        navigate(`/catalogs?${params.toString()}`, { replace: true });
+    };
 
-    function handleClick(category) {
+    const handleClick = (category) => {
         setCategory(category);
-    }
-    if (path.includes('catalogs')) {
-        return (
-            <div className={styles["catalog-menu"]}>
-                <div className={`${styles["catalog-menu_container"]} container`}>
-                    <h2>Каталог ароматів</h2>
-                    <p>Виключно оригінальна продукція</p>
-                    <div className={styles["categories"]}>
-                        <button 
-                        onClick={() => handleClick({ niche: true })} 
-                        className={styles["category"]}>
-                            Нішева <br></br> парфумерія
-                        </button>
-                        <button 
-                        onClick={() => handleClick({ lux: true })} 
-                        className={styles["category"]}>
-                            Люксова <br></br> парфумерія
-                        </button>
-                        <button 
-                        onClick={() => handleClick({ female: true })} 
-                        className={styles["category"]}>
-                            Жіноча <br></br> парфумерія
-                        </button>
-                        <button 
-                        onClick={() => handleClick({ male: true })} 
-                        className={styles["category"]}>
-                            Чоловіча <br></br> парфумерія
-                        </button>
-                        <button 
-                        onClick={() => handleClick({ bestsellers: true })} 
-                        className={styles["category"]}>
-                            Бестселлери
-                        </button>
-                        <button 
-                        onClick={() => handleClick({ fullBottles: true })} 
-                        className={styles["category"]}>
-                            Цілі <br></br> флакони
-                        </button>
-                    </div>
-                </div>
-            </div>
-        );
-    }else{
-        return (
+        updateURL('category', category);
+    };
+
+    return (
         <div className={styles["catalog-menu"]}>
             <div className={`${styles["catalog-menu_container"]} container`}>
                 <h2>Каталог ароматів</h2>
                 <p>Виключно оригінальна продукція</p>
                 <div className={styles["categories"]}>
                     {categories.map(({ key, label }) => (
-                        <Link
+                        <button
                             key={key}
-                            to="/catalogs"
-                            state = {{ selectedCategory: key }}
-                            
+                            onClick={() => handleClick(key)}
                             className={styles["category"]}
                         >
                             {label.split(" ").map((line, index) => (
@@ -84,16 +47,12 @@ const CatalogMenu = ({ products }) => {
                                     {line} <br />
                                 </React.Fragment>
                             ))}
-                        </Link>
+                        </button>
                     ))}
                 </div>
             </div>
         </div>
     );
-    }
-
-
-  
-}
+};
 
 export default CatalogMenu;
