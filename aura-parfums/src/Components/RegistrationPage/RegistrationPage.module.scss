@@ -1,0 +1,51 @@
+@import '../../variables.scss';
+
+.registration-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .registration-container {
+        @include AV("margin", 97, 0);
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            .inputs {
+                input {
+                    display: block;
+                    width: 560px;
+                    padding: 11px 0px 11px 25px;
+                    border: 1.5px solid $red;
+                    margin-bottom: 15px;
+                }
+
+                input::placeholder {
+                    color: $red;
+                    @include fsz16;
+                    font-weight: 300;
+                }
+            }
+
+            .message {
+                @include fsz12;
+                font-weight: 300;
+                width: 435px;
+                margin-bottom: 35px;
+            }
+
+            .registration-btn {
+                width: 196px;
+                margin: auto;
+                padding: 15px 30px;
+
+                @include fsz16;
+                font-weight: 300;
+
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -29,14 +29,14 @@ const Header = () => {
 
     return (
         <header className={[styles.container, styles[getHeaderClass()]].join(" ")}>
-            
+
             <div className={styles.logo}>
                 <Link to="/">
                     <img src={"Images/AuraLogo.png"} alt="" />
                 </Link>
             </div>
-            
-                <HeaderMenu></HeaderMenu>
+
+            <HeaderMenu></HeaderMenu>
 
         </header>
     );

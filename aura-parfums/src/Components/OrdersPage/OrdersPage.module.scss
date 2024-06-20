@@ -1,0 +1,40 @@
+@import '../../variables.scss';
+
+.orders-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .orders-container {
+        @include AV("margin", 97, 0);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include fsz16;
+        font-weight: 400;
+
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .message {
+            margin-top: 15px;
+        }
+
+        .catalog-btn {
+            width: 208px;
+
+            margin-top: 30px;
+            padding: 15px 30px;
+
+            @include fsz16;
+            font-weight: 300;
+
+            color: #fff;
+            background-color: #000;
+        }
+    }
+}

@@ -1,86 +1,98 @@
 @import '../../variables.scss';
 
-.new-fragnances{
+.new-fragnances {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     @include AV('margin-top', 112, 50);
-    .new-fragnances_header{
-        .new-fragnances_container{
+
+    .new-fragnances_header {
+        .new-fragnances_container {
             display: flex;
             flex-direction: column;
             align-items: center;
             color: #FFFFFF;
-            .new-fragnances_text{
+
+            .new-fragnances_text {
                 z-index: 2;
                 max-width: 627px;
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                h2{
+
+                h2 {
                     @include fsz64;
                     font-weight: 800;
                     align-self: flex-start;
                 }
-                p{
+
+                p {
                     font-weight: 300;
                     font-style: italic;
                     @include fsz24;
                     letter-spacing: 1px;
                     align-self: flex-end;
                 }
-       
-            
+
+
             }
         }
-        
+
         width: 100%;
         background: $red;
 
         padding: 70px 0;
         overflow: hidden;
         position: relative;
-        img{
+
+        img {
             position: absolute;
             width: 100%;
             top: 0;
             left: 0;
             opacity: .2;
         }
-        
+
     }
-    .categories{
+
+    .categories {
         max-width: 1920px;
         width: 100%;
         display: flex;
         margin-bottom: 104px;
+
         @media (max-width: 1600px) {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
+
         @media (max-width: 768px) {
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
+
         @media (max-width: 550px) {
-            grid-template-columns: repeat(1,1fr);
+            grid-template-columns: repeat(1, 1fr);
         }
-        .category{
+
+        .category {
             border: 1px #000000 solid;
             color: #000000;
-            &:not(:last-child){
+
+            &:not(:last-child) {
                 border-width: 1px 0 1px 1px;
             }
+
             @include fsz24;
             width: 100%;
             padding: 18px 0;
             white-space: nowrap;
-            &:hover{
+
+            &:hover {
                 color: #FFFFFF;
                 background: $red;
-              }
+            }
         }
 
     }
 }
-

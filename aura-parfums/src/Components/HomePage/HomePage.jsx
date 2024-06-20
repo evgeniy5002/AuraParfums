@@ -8,15 +8,14 @@ import BrandsBlock from "../BrandsBlock/BrandsBlock";
 import NewFragnances from "../NewFragnances/NewFragnances";
 import CatalogMenu from "../CatalogMenu/CatalogMenu";
 
-const HomePage = ({products}) => {
-   
+const HomePage = ({ products }) => {
     return (
         <main className={styles.main}>
             <CatalogLink></CatalogLink>
             <CatalogMenu></CatalogMenu>
             <NewFragnances products={products}></NewFragnances>
             <Bestsellers
-                products = {products}
+                products={products}
             ></Bestsellers>
             <FragnanceChoice></FragnanceChoice>
             <BrandsBlock></BrandsBlock>

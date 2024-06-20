@@ -1,28 +1,32 @@
 @import '../../variables.scss';
 
-.products_block{
+.products_block {
     display: grid;
     gap: 35px;
     // margin-bottom: 104px;
     @include AV('margin-bottom', 104, 50)
 }
 
-.products_block_three_columns{
+.products_block_three_columns {
     grid-template-columns: repeat(3, 1fr);
-    img{
+
+    img {
         width: 100%;
     }
 }
 
-.products_block_four_columns{
+.products_block_four_columns {
     grid-template-columns: repeat(4, 1fr);
     @include AV('gap', 35, 15);
+
     @media (max-width:1350px) {
         grid-template-columns: repeat(3, 1fr);
     }
+
     @media (max-width:1000px) {
         grid-template-columns: repeat(2, 1fr);
     }
+
     @media (max-width:768px) {
         grid-template-columns: repeat(1, 1fr);
     }

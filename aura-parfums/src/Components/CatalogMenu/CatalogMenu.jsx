@@ -23,6 +23,7 @@ const CatalogMenu = ({ products }) => {
     function handleClick(category) {
         setCategory(category);
     }
+
     if (path.includes('catalogs')) {
         return (
             <div className={styles["catalog-menu"]}>
@@ -30,70 +31,70 @@ const CatalogMenu = ({ products }) => {
                     <h2>Каталог ароматів</h2>
                     <p>Виключно оригінальна продукція</p>
                     <div className={styles["categories"]}>
-                        <button 
-                        onClick={() => handleClick({ niche: true })} 
-                        className={styles["category"]}>
+                        <button
+                            onClick={() => handleClick({ niche: true })}
+                            className={styles["category"]}>
                             Нішева <br></br> парфумерія
                         </button>
-                        <button 
-                        onClick={() => handleClick({ lux: true })} 
-                        className={styles["category"]}>
+                        <button
+                            onClick={() => handleClick({ lux: true })}
+                            className={styles["category"]}>
                             Люксова <br></br> парфумерія
                         </button>
-                        <button 
-                        onClick={() => handleClick({ female: true })} 
-                        className={styles["category"]}>
+                        <button
+                            onClick={() => handleClick({ female: true })}
+                            className={styles["category"]}>
                             Жіноча <br></br> парфумерія
                         </button>
-                        <button 
-                        onClick={() => handleClick({ male: true })} 
-                        className={styles["category"]}>
+                        <button
+                            onClick={() => handleClick({ male: true })}
+                            className={styles["category"]}>
                             Чоловіча <br></br> парфумерія
                         </button>
-                        <button 
-                        onClick={() => handleClick({ bestsellers: true })} 
-                        className={styles["category"]}>
+                        <button
+                            onClick={() => handleClick({ bestsellers: true })}
+                            className={styles["category"]}>
                             Бестселлери
                         </button>
-                        <button 
-                        onClick={() => handleClick({ fullBottles: true })} 
-                        className={styles["category"]}>
+                        <button
+                            onClick={() => handleClick({ fullBottles: true })}
+                            className={styles["category"]}>
                             Цілі <br></br> флакони
                         </button>
                     </div>
                 </div>
             </div>
         );
-    }else{
+    } else {
         return (
-        <div className={styles["catalog-menu"]}>
-            <div className={`${styles["catalog-menu_container"]} container`}>
-                <h2>Каталог ароматів</h2>
-                <p>Виключно оригінальна продукція</p>
-                <div className={styles["categories"]}>
-                    {categories.map(({ key, label }) => (
-                        <Link
-                            key={key}
-                            to="/catalogs"
-                            state = {{ selectedCategory: key }}
-                            
-                            className={styles["category"]}
-                        >
-                            {label.split(" ").map((line, index) => (
-                                <React.Fragment key={index}>
-                                    {line} <br />
-                                </React.Fragment>
-                            ))}
-                        </Link>
-                    ))}
+            <div className={styles["catalog-menu"]}>
+                <div className={`${styles["catalog-menu_container"]} container`}>
+                    <h2>Каталог ароматів</h2>
+                    <p>Виключно оригінальна продукція</p>
+                    <div className={styles["categories"]}>
+                        {categories.map(({ key, label }) => (
+                            <Link
+                                key={key}
+                                to="/catalogs"
+                                state={{ selectedCategory: key }}
+
+                                className={styles["category"]}
+                            >
+                                {label.split(" ").map((line, index) => (
+                                    <React.Fragment key={index}>
+                                        {line} <br />
+                                    </React.Fragment>
+                                ))}
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
-    );
+        );
     }
 
 
-  
+
 }
 
 export default CatalogMenu;

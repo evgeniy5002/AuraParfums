@@ -1,0 +1,61 @@
+@import '../../variables.scss';
+
+.login-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .login-container {
+        @include AV("margin", 97, 0);
+
+        form {
+            .inputs {
+                display: flex;
+                flex-direction: column;
+
+                input {
+                    width: 560px;
+                    margin-bottom: 15px;
+                    padding: 11px 0px 11px 25px;
+                    border: 1.5px solid $red;
+                }
+
+                input::placeholder {
+                    @include fsz16;
+                    font-weight: 300;
+                    color: $red;
+                }
+
+                span {
+                    @include fsz12;
+                }
+            }
+
+            .submit-block {
+                button {
+                    display: block;
+
+                    margin: auto;
+                    padding: 15px 30px;
+
+                    @include fsz16;
+                    font-weight: 300;
+                    color: #fff;
+                    background-color: #000;
+                }
+            }
+        }
+
+        .register-offer {
+            margin-top: 10px;
+
+            @include fsz14;
+            font-weight: 300;
+            text-align: center;
+
+            .register-link {
+                font-weight: 800;
+            }
+        }
+    }
+}
