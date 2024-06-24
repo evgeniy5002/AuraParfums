@@ -1,9 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../../Hooks/useAuth";
+import { removeUser } from "../../../Store/Actions/userActions";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import styles from "./UserPageMenu.module.scss";
 
 const UserPageMenu = () => {
-    const [isLoggedIn, setLoggedIn] = React.useState(true);
+    const { isAuth } = useAuth();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const renderNavLink = (to, text) => {
         return (
@@ -13,27 +19,29 @@ const UserPageMenu = () => {
         );
     };
 
+    const handleLogOut = () => {
+        dispatch(removeUser());
+        navigate("login");
+    }
+
     return (
         <div className={styles["user-page-menu"]}>
             <nav className={styles["nav-container"]}>
-                {isLoggedIn ? (
-                    <>
-                        {renderNavLink("workshop", "Майстерня")}
-                        {renderNavLink("orders", "Замовлення")}
-                        {renderNavLink("profile", "Профіль")}
-
-                        {/* имитация выхода из аккаунта */}
-                        <div className={styles["nav-link"]} onClick={() => setLoggedIn(false)}>
-                            <span>Вийти</span>
-                        </div>
-                    </>
-                ) : (
-                    <>
-                        {renderNavLink("login", "Увійти")}
-                        {renderNavLink("registration", "Зареєструватись")}
-                        {renderNavLink("restore-password", "Відновити пароль")}
-                    </>
-                )}
+                {
+                    isAuth ? (
+                        <>
+                            {renderNavLink("workshop", "Майстерня")}
+                            {renderNavLink("orders", "Замовлення")}
+                            {renderNavLink("profile", "Профіль")}
+                            <button className={styles["nav-link"]} onClick={handleLogOut}>Вийти</button>
+                        </>
+                    ) : (
+                        <>
+                            {renderNavLink("login", "Увійти")}
+                            {renderNavLink("registration", "Зареєструватись")}
+                            {renderNavLink("restore-password", "Відновити пароль")}
+                        </>
+                    )}
             </nav>
         </div>
     );

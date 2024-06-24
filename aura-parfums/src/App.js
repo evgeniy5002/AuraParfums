@@ -15,8 +15,11 @@ import LoginPage from './Components/LoginPage/LoginPage';
 import ProfilePage from './Components/ProfilePage/ProfilePage';
 import OrdersPage from './Components/OrdersPage/OrdersPage';
 import WorkshopPage from './Components/WorkshopPage/WorkshopPage';
+import { useAuth } from './Hooks/useAuth';
 
 function App() {
+  const { isAuth } = useAuth();
+
   const products = [
     {
       id: 1,
@@ -475,13 +478,23 @@ function App() {
               <Route path="brands" element={<Brands />} />
               <Route path="fragnance-choice" element={<FragnanceChoice />} />
               <Route path="user-page/*" element={<UserPage />}>
-                <Route index element={<Navigate to="login" />} />
-                <Route path="login" element={<LoginPage />} />
-                <Route path="registration" element={<RegistrationPage />} />
-                <Route path="restore-password" element={<RestorePasswordPage />} />
-                <Route path="workshop" element={<WorkshopPage />} />
-                <Route path="orders" element={<OrdersPage />} />
-                <Route path="profile" element={<ProfilePage />} />
+                {
+                  isAuth ? (
+                    <>
+                      <Route index element={<Navigate to="profile" />} />
+                      <Route path="workshop" element={<WorkshopPage />} />
+                      <Route path="orders" element={<OrdersPage />} />
+                      <Route path="profile" element={<ProfilePage />} />
+                    </>
+                  ) : (
+                    <>
+                      <Route index element={<Navigate to="login" />} />
+                      <Route path="login" element={<LoginPage />} />
+                      <Route path="registration" element={<RegistrationPage />} />
+                      <Route path="restore-password" element={<RestorePasswordPage />} />
+                    </>
+                  )
+                }
               </Route>
               <Route path="wishlist" element={<Wishlist />} />
               <Route path="cart" element={<Cart />} />
