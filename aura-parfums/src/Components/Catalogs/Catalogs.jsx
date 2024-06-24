@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import styles from "./Catalogs.module.scss";
 import CatalogMenu from "../CatalogMenu/CatalogMenu";
 import { ProductsBlock } from "../ProductsBlock/ProductsBlock";
@@ -10,14 +10,15 @@ import Filters from "../Filters/Filters";
 
 const Catalogs = ({ products }) => {
     const location = useLocation();
+    const [searchParams] = useSearchParams();
     const [category, setCategory] = useState("");
 
     useEffect(() => {
-        if (location.state && location.state.selectedCategory) {
-            setCategory(location.state.selectedCategory);
-            console.log(category);
+        const categoryParam = searchParams.get("category");
+        if (categoryParam) {
+            setCategory(categoryParam);
         }
-    }, [location.state]);
+    }, [searchParams])
 
     const filterProductsByCategory = (products, category) => {
         switch (category) {
@@ -46,7 +47,7 @@ const Catalogs = ({ products }) => {
             <div className={styles["catalog-body"]}> 
                 <div className={`${styles["catalog-container"]} container`}>
                     <Filters></Filters>
-                    <ProductsBlock products={filteredProducts} maxColumns={3} />
+                    <ProductsBlock  products={filteredProducts} maxColumns={3} />
                 </div>
             </div>
             
