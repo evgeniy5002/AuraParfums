@@ -2,19 +2,9 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../Store/Actions/userActions";
 import { useNavigate } from "react-router-dom";
-import { getStoredUsers } from "../../Utils/getStoredUsers";
+import { checkUserExists } from "../../Utils/checkUserExists";
+import { saveUserToLocalStore } from "../../Utils/saveUserToLocalStore";
 import styles from "./RegistrationPage.module.scss";
-
-const checkUserExists = (email) => {
-    const storedUsers = getStoredUsers();
-    return storedUsers.some((user) => user.email === email);
-}
-
-const saveUserToLocalStore = (credentials) => {
-    let users = getStoredUsers();
-    users.push(credentials);
-    localStorage.setItem("users", JSON.stringify(users));
-}
 
 const RegistrationPage = () => {
     const dispatch = useDispatch();
@@ -22,9 +12,9 @@ const RegistrationPage = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const id = Math.floor(Math.random() * 9999999);
+    const [id] = useState(Math.floor(Math.random() * 9999999));
 
-    const handleRegistration = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
 
         if (checkUserExists(email)) {
@@ -40,13 +30,14 @@ const RegistrationPage = () => {
     return (
         <div className={styles["registration-page"]}>
             <div className={styles["registration-container"]}>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className={styles["inputs"]}>
                         <input
                             type="email"
                             value={email}
                             placeholder="E-mail"
                             onChange={(e) => setEmail(e.target.value)}
+                            required
                         />
 
                         <input
@@ -54,6 +45,7 @@ const RegistrationPage = () => {
                             value={password}
                             placeholder="Пароль"
                             onChange={(e) => setPassword(e.target.value)}
+                            required
                         />
                     </div>
 
@@ -61,11 +53,8 @@ const RegistrationPage = () => {
                         *Ваши личные данные будут использоваться для поддержки вашего опыта на этом сайте,
                         для управления доступом к вашей учетной записи и для других целей, описанных в нашей политике конфиденциальности.
                     </p>
-
-                    <button
-                        className={styles["registration-btn"]}
-                        onClick={handleRegistration}
-                    >
+                    
+                    <button type="submit" className={styles["registration-btn"]}>
                         Зарегистрироваться
                     </button>
                 </form>

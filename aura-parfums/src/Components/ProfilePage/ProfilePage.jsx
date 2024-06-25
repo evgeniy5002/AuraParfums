@@ -1,26 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { updatePassword } from "../../Store/Actions/userActions";
 import styles from "./ProfilePage.module.scss";
+import UserInfoForm from "./UserInfoForm/UserInfoForm.jsx";
+import PasswordChangeForm from "./PasswordChangeForm/PasswordChangeForm.jsx";
+
+const validatePasswordChange = (currentPassword, storedPassword, newPassword, confirmPassword) => {
+    return currentPassword === storedPassword && newPassword === confirmPassword;
+}
 
 const ProfilePage = () => {
+    const storedPassword = useSelector((state) => state.password);
+    const dispatch = useDispatch();
+
+    const [newPassword, setNewPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+    const [currentPassword, setCurrentPassword] = useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        if (validatePasswordChange(currentPassword, storedPassword, newPassword, confirmPassword)) {
+            dispatch(updatePassword(newPassword));
+
+            setNewPassword("");
+            setConfirmPassword("");
+            setCurrentPassword("");
+        }
+        else {
+            alert("Текущий пароль не соответствует паролю пользователя или пароли не совпадают");
+        }
+    }
+
     return (
         <div className={styles["profile-page"]}>
             <div className={styles["profile-container"]}>
-                <form action="">
-                    <div className={styles["grid-container"]}>
-                        <input type="text" placeholder="Номер телефону" />
-                        <input type="text" placeholder="Ім’я" />
-                        <input type="text" placeholder="Прізвище" />
-                    </div>
+                <form onSubmit={handleSubmit}>
+                    <UserInfoForm />
 
-                    <div className={styles["change-password"]}>
-                        <span className={styles["change-password_title"]}>Зміна пароля</span>
-                        <span className={styles["change-password_notice"]}>*залиште поля порожніми, щоб не змінювати</span>
-                    </div>
+                    <PasswordChangeForm
+                        currentPassword={currentPassword}
+                        newPassword={newPassword}
+                        confirmPassword={confirmPassword}
+                        setCurrentPassword={setCurrentPassword}
+                        setNewPassword={setNewPassword}
+                        setConfirmPassword={setConfirmPassword}
+                    />
 
-                    <div className={styles["grid-container"]}>
-                        <input type="text" placeholder="Поточий пароль" />
-                        <input type="text" placeholder="Новий пароль" />
-                        <input type="text" placeholder="Повторіть пароль" />
+                    <div className={styles["change-password-btn"]}>
+                        <button type="submit">Змінити пароль</button>
                     </div>
                 </form>
             </div>

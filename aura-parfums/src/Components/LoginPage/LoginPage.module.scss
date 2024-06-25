@@ -18,6 +18,7 @@
                     margin-bottom: 15px;
                     padding: 11px 0px 11px 25px;
                     border: 1.5px solid $red;
+                     @include fsz16;
                 }
 
                 input::placeholder {

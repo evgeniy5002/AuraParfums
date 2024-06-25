@@ -19,6 +19,7 @@
                     padding: 11px 0px 11px 25px;
                     border: 1.5px solid $red;
                     margin-bottom: 15px;
+                    @include fsz16;
                 }
 
                 input::placeholder {
@@ -36,7 +37,6 @@
             }
 
             .registration-btn {
-                width: 196px;
                 margin: auto;
                 padding: 15px 30px;
 

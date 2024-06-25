@@ -11,7 +11,7 @@ export const removeUser = () => ({
     type: REMOVE_USER,
 });
 
-export const updatePassword = (password) => ({
+export const updatePassword = (newPassword) => ({
     type: UPDATE_PASSWORD,
-    payload: { password }
+    payload: { newPassword }
 });

@@ -522,6 +522,8 @@ function App() {
     }
   ];
 
+  //console.log(brands);
+
   return (
     <div className="App">
       <div className='wrapper'>
@@ -529,7 +531,7 @@ function App() {
           <Routes >
             <Route path="/" element={<Main />}>
               <Route index element={<HomePage brands={brands} products={products} />} />
-              <Route path="catalogs/*" element={<Catalogs products={products} />} />
+              <Route path="catalogs/*" element={<Catalogs brands={brands} products={products} />} />
               <Route path="contacts" element={<Contacts />} />
               <Route path="brands" element={<Brands />} />
               <Route path="fragnance-choice" element={<FragnanceChoice />} />
@@ -537,7 +539,7 @@ function App() {
                 {
                   isAuth ? (
                     <>
-                      <Route index element={<Navigate to="profile" />} />
+                      <Route index element={<Navigate to="workshop" />} />
                       <Route path="workshop" element={<WorkshopPage />} />
                       <Route path="orders" element={<OrdersPage />} />
                       <Route path="profile" element={<ProfilePage />} />

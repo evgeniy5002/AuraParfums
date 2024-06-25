@@ -1,3 +1,4 @@
+
 import { Pagination } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,6 +8,7 @@ import styles from './BrandsBlock.scss'
 
 
 const BrandsBlock = ({ brandsCount = 28, brands }) => {
+  console.log("BrandsBlock: ", brands);
   return (
     <div className="brands">
       <h2>БРЕНДИ</h2>

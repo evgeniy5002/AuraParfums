@@ -8,10 +8,12 @@ import FragnanceChoice from "../FragnanceChoice/FragnanceChoice";
 import BrandsBlock from "../BrandsBlock/BrandsBlock";
 import Filters from "../Filters/Filters";
 
-const Catalogs = ({ products }) => {
+const Catalogs = ({ products, brands }) => {
     const location = useLocation();
     const [searchParams] = useSearchParams();
     const [category, setCategory] = useState("");
+
+console.log("Catalog brands: ", brands);
 
     useEffect(() => {
         const categoryParam = searchParams.get("category");
@@ -44,16 +46,16 @@ const Catalogs = ({ products }) => {
     return (
         <>
             <CatalogMenu />
-            <div className={styles["catalog-body"]}> 
+            <div className={styles["catalog-body"]}>
                 <div className={`${styles["catalog-container"]} container`}>
                     <Filters></Filters>
-                    <ProductsBlock  products={filteredProducts} maxColumns={3} />
+                    <ProductsBlock products={filteredProducts} maxColumns={3} />
                 </div>
             </div>
-            
+
             <Bestsellers products={products} />
             <FragnanceChoice />
-            <BrandsBlock />
+            <BrandsBlock brands={brands} />
         </>
     );
 }

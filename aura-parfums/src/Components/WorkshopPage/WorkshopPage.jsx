@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./WorkshopPage.module.scss";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import styles from "./WorkshopPage.module.scss";
 
 const WorkshopPage = () => {
     const navigate = useNavigate();

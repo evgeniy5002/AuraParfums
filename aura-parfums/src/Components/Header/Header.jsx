@@ -32,7 +32,7 @@ const Header = () => {
 
             <div className={styles.logo}>
                 <Link to="/">
-                    <img src={"Images/AuraLogo.png"} alt="" />
+                    <img src={"Images/header/AuraLogo.svg"} alt="" />
                 </Link>
             </div>
 

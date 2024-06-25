@@ -1,0 +1,22 @@
+@import '../../../variables.scss';
+
+.grid-container {
+    display: grid;
+    gap: 24px;
+
+    input:nth-child(1) {
+        grid-column: span 2;
+    }
+
+    input {
+        padding: 11px 0px 11px 25px;
+        border: 1.5px solid $red;
+        @include fsz16;
+    }
+
+    input::placeholder {
+        @include fsz16;
+        font-weight: 300;
+        color: $red;
+    }
+}
