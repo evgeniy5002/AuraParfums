@@ -25,11 +25,13 @@ const Header = () => {
 
         return 'header-default';
     };
-    
+
+    const styleName = getHeaderClass();
+
     return (
-        <header className={styles["header"]}>
-            <Logo />
-            <HeaderMenu styleName={getHeaderClass()} />
+        <header className={`${styles["header"]} ${styles[styleName]}`}>
+            <Logo styleName={styleName} />
+            <HeaderMenu styleName={styleName} />
         </header>
     );
 }

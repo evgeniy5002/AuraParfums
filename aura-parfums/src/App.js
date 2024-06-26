@@ -17,11 +17,15 @@ import OrdersPage from './Components/OrdersPage/OrdersPage';
 import WorkshopPage from './Components/WorkshopPage/WorkshopPage';
 import { useAuth } from './Hooks/useAuth';
 import ProductPage from './Components/ProductPage/ProductPage';
-import DescriptionPage from './Components/ProductPage/DescriptionPage/DescriptionPage';
+import { useEffect } from 'react';
+import { getStoredUsers } from './Utils/getStoredUsers';
+import { useDispatch } from 'react-redux';
+import { setUser } from './Store/Actions/userActions';
 
 
 function App() {
   const { isAuth } = useAuth();
+  const dispatch = useDispatch();
 
   const brands = [
     { id: 1, image: "Images/brands/abercombie.png", name: "Abercombie" },
@@ -553,7 +557,21 @@ function App() {
     }
   ];
 
-  //console.log(brands);
+  // Эта штука при загрузке страницы берет из localStorage id активного пользователя, затем находит его и устанавливает в state
+  useEffect(() => {
+    const storedUsers = getStoredUsers();
+    const activeUserId = parseInt(localStorage.getItem("activeUserId"));
+
+    if (activeUserId) {
+        const activeUser = storedUsers.find(user => user.id === activeUserId);
+
+        // console.log("STORED USERS ---- ", storedUsers);
+        // console.log("ACTIVE USER ID ---- ", activeUserId);
+        // console.log("ACTIVE USER ---- ", activeUser);
+        
+        dispatch(setUser(activeUser));
+    }
+}, []);
 
   return (
     <div className="App">

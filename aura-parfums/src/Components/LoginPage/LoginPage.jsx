@@ -25,6 +25,8 @@ const LoginPage = () => {
 
         if (authenticatedUser) {
             dispatch(setUser(authenticatedUser));
+            // Устанавливает id текущего активного пользователя
+            localStorage.setItem("activeUserId", authenticatedUser.id);
             navigate("/user-page/workshop");
         } else {
             alert("Invalid email or password");

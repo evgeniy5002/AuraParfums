@@ -29,6 +29,7 @@ const ProductPage = ({ products }) => {
     }
 
     const [chosenSize, setChosenSize] = useState(products[productID].sizes[0].id);
+    
     function findPriceBySize(sizes, bigSizes, chosenSize) {
         let price = null;
         const sizeObj = sizes.find(sizeObj => sizeObj.id === chosenSize);
@@ -53,14 +54,8 @@ const ProductPage = ({ products }) => {
     let addToCart;
 
     isAuth
-        ?
-        addToCart = () => {
-            dispatch(addCartItem({ productId: productID, count: productsOrderedCount }));
-        }
-        :
-        addToCart = () => {
-            dispatch(addGuestCartItem({ productId: productID, count: productsOrderedCount }));
-        }
+        ? addToCart = () => { dispatch(addCartItem({ productId: productID, count: productsOrderedCount })); }
+        : addToCart = () => { dispatch(addGuestCartItem({ productId: productID, count: productsOrderedCount })); }
 
 
     return (
@@ -108,7 +103,7 @@ const ProductPage = ({ products }) => {
                                         </div>
                                         <a onClick={addToCart} className={styles["buy-product-btn"]}>
                                             <p>Додати в кошик</p>
-                                            <img className={styles["cart-image"]} src="Images/cart.svg" alt="" />
+                                            <img className={styles["cart-image"]} src="/Images/cart.svg" alt="" />
                                         </a>
                                     </div>
                                     <p className={styles["price"]}>Ціна: <span>{price}</span>  $</p>

@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import styles from "./HeaderMenu.module.scss";
 
 const HeaderMenu = ({ styleName }) => {
@@ -30,22 +30,28 @@ const HeaderMenu = ({ styleName }) => {
                 <nav className={styles["nav-container"]}>
                     <ul className={styles["links"]}>
                         <li>
-                            <Link to="/catalogs">
+                            <NavLink className={({ isActive }) => `${isActive ? styles["active-link"] : ""}`} to="/catalogs">
                                 <span style={{ color: "$red" }}>Каталог</span>
-                            </Link>
-                            <img src={"Images/header/arrow-icon.svg"} alt="arrow-down" />
+                            </NavLink>
+                            <img src={"/Images/header/arrow-icon.svg"} alt="arrow-down" />
                         </li>
 
                         <li>
-                            <Link to="/brands"><span>Бренды</span></Link>
+                            <NavLink className={({ isActive }) => `${isActive ? styles["active-link"] : ""}`} to="/brands">
+                                <span>Бренди</span>
+                            </NavLink>
                         </li>
 
                         <li>
-                            <Link to="/contacts"><span>Контакты</span></Link>
+                            <NavLink className={({ isActive }) => `${isActive ? styles["active-link"] : ""}`} to="/contacts">
+                                <span>Контакти</span>
+                            </NavLink>
                         </li>
 
                         <li>
-                            <Link to="/fragnance-choice"><span>Подобрать аромат</span></Link>
+                            <NavLink className={({ isActive }) => `${isActive ? styles["active-link"] : ""}`}  to="/fragnance-choice">
+                                <span>Підібрати аромат</span>
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>
@@ -59,15 +65,15 @@ const HeaderMenu = ({ styleName }) => {
 
                 <div className={styles.userLinks}>
                     <Link to="/user-page">
-                        <img src={"Images/header/user-icon.svg"} alt="user" />
+                        <img src={"/Images/header/user-icon.svg"} alt="user" />
                     </Link>
 
                     <Link to="/wishlist">
-                        <img src={"Images/header/heart-icon.svg"} alt="heart" />
+                        <img src={"/Images/header/heart-icon.svg"} alt="heart" />
                     </Link>
 
                     <Link to="/cart">
-                        <img src={"Images/header/cart-icon.svg"} alt="cart" />
+                        <img src={"/Images/header/cart-icon.svg"} alt="cart" />
                     </Link>
                 </div>
             </div>

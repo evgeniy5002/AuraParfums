@@ -25,7 +25,7 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.payment}>
-                    <img src={"Images/payment.png"} alt="" />
+                    <img src={"/Images/payment.png"} alt="" />
                 </div>
             </div>
         </footer>

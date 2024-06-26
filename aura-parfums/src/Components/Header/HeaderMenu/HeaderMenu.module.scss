@@ -54,9 +54,12 @@ a {
                     }
                 }
 
-
                 @media (max-width: 1400px) {
                     display: none;
+                }
+
+                .active-link {
+                    color: $red;
                 }
             }
         }

@@ -16,9 +16,6 @@ const Catalogs = ({ products = [], brands = [], sizes = [] }) => {
     const [sizesChosen, setSizes] = useState([]);
     const [searchState, setSearch] = useState("");
 
-
-    console.log("Catalog brands: ", brands);
-
     useEffect(() => {
         const categoryParam = searchParams.get("category");
         const brandsParam = searchParams.get("brands");
@@ -69,6 +66,7 @@ const Catalogs = ({ products = [], brands = [], sizes = [] }) => {
     if (brandsChosen.length > 0) {
         filteredProducts = filteredProducts.filter(product => brandsChosen.includes(product.brand));
     }
+
     if (searchState) {
         if (searchState.toString().length > 0) {
             filteredProducts = filteredProducts.filter(product =>
@@ -76,6 +74,7 @@ const Catalogs = ({ products = [], brands = [], sizes = [] }) => {
             );
         }
     }
+    
     if (sizesChosen.length > 0) {
         filteredProducts = filteredProducts.filter(product => {
             return sizesChosen.every(sizeChosen =>
@@ -88,7 +87,7 @@ const Catalogs = ({ products = [], brands = [], sizes = [] }) => {
     return (
         <>
             <CatalogMenu />
-            
+
             <div className={styles["catalog-body"]}>
                 <div className={`${styles["catalog-container"]} container`}>
                     <Filters brands={brands} products={products} sizes={sizes}></Filters>

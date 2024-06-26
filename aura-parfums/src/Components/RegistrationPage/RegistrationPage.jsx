@@ -27,6 +27,7 @@ const RegistrationPage = () => {
         else {
             saveUserToLocalStore({ email, password, id, cartItems, name, surname, phoneNumber });
             dispatch(setUser({ email, password, id, cartItems, name, surname, phoneNumber }));
+            localStorage.setItem("activeUserId", id);
             navigate("/user-page/workshop");
         }
     }
