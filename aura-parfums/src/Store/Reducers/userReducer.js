@@ -4,7 +4,8 @@ import { setStoredUsers } from "../../Utils/setStoredUsers";
 const initialState = {
     email: null,
     password: null,
-    id: null
+    id: null,
+    cartItems: null
 };
 
 const userReducer = (state = initialState, action) => {
@@ -14,8 +15,26 @@ const userReducer = (state = initialState, action) => {
                 ...state,
                 email: action.payload.email,
                 password: action.payload.password,
-                id: action.payload.id
+                id: action.payload.id,
+                cartItems: action.payload.cartItems
             };
+        }
+
+        case "ADD_CART_ITEM": {
+            const newState = {
+                ...state,
+                cartItems: [...state.cartItems, action.payload.cartItem]
+            }
+
+            const storedUsers = getStoredUsers();
+            const userIndex = storedUsers.findIndex(user => user.id === state.id);
+
+            if (userIndex !== -1) {
+                storedUsers[userIndex].cartItems = newState.cartItems;
+                setStoredUsers(storedUsers);
+            }
+
+            return newState;
         }
 
         case "REMOVE_USER": {
@@ -24,6 +43,7 @@ const userReducer = (state = initialState, action) => {
                 email: null,
                 password: null,
                 id: null,
+                cartItems: null
             };
         }
 

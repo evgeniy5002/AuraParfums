@@ -12,7 +12,9 @@ const RegistrationPage = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [id] = useState(Math.floor(Math.random() * 9999999));
+
+    const [id] = useState(Math.floor(Math.random() * 9999999)); 
+    const [cartItems] = useState([]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -21,8 +23,8 @@ const RegistrationPage = () => {
             alert("Пользователь с таким email уже существует!");
         }
         else {
-            saveUserToLocalStore({ email, password, id });
-            dispatch(setUser({ email, password, id }));
+            saveUserToLocalStore({ email, password, id, cartItems });
+            dispatch(setUser({ email, password, id, cartItems}));
             navigate("/user-page/workshop");
         }
     }

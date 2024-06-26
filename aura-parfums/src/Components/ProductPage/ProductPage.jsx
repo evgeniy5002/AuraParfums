@@ -4,8 +4,13 @@ import NewFragnances from "../NewFragnances/NewFragnances";
 import Bestsellers from "../Bestsellers/Bestsellers";
 import { useLocation } from "react-router-dom";
 import styles from "./ProductPage.module.scss"
+import { getStoredUsers } from "../../Utils/getStoredUsers";
+import { setStoredUsers } from "../../Utils/setStoredUsers";
+import { useDispatch } from "react-redux";
+import { addCartItem } from "../../Store/Actions/userActions";
 
 const ProductPage = ({ products }) => {
+    const dispatch = useDispatch();
 
     const key = 'cartItems';
 
@@ -59,6 +64,8 @@ const ProductPage = ({ products }) => {
 
         checkAndCreateArrayInLocalStorage();
         const storedArray = JSON.parse(localStorage.getItem(key));
+        console.log("STORED ARRAY: ", storedArray);
+
         let itemExists = false;
         // storedArray.forEach(item => {
         //     if (item.productId === productID) {
@@ -71,6 +78,7 @@ const ProductPage = ({ products }) => {
         localStorage.setItem(key, JSON.stringify(storedArray));
         // }
 
+        dispatch(addCartItem({ productId: productID, count: productsOrderedCount }));
     }
 
     return (
