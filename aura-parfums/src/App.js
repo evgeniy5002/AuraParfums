@@ -6,8 +6,9 @@ import Catalogs from './Components/Catalogs/Catalogs';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Main from './Components/Main/Main';
-
+import ProductPage from './Components/ProductPage/ProductPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Cart from './Components/Cart/Cart';
 
 function App() {
 
@@ -65,8 +66,7 @@ function App() {
     { id: 51, image: "Images/brands/yves-saint-laurent.png", name: "Yves Saint Laurent" },
     { id: 52, image: "Images/brands/zadig-voltaire.png", name: "Zadig & Voltaire" },
     { id: 53, image: "Images/brands/zarkoperfume.png", name: "Zarkoperfume" }
-];
-
+  ];
 
   const sizes = [
     { id: 1, name: "3 ml" },
@@ -79,10 +79,12 @@ function App() {
     { id: 8, name: "50 ml" },
     { id: 9, name: "100 ml" }
   ]
+  
   const products = [
     {
-        id: 1,
+        id: 0,
         new: true,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: false,
         niche: false,
         name: "Ariana Grande Parfum",
@@ -101,14 +103,14 @@ function App() {
             { id: 6, size: "20 ml", price: 39.99, chosen: false }
         ],
         bigSizes: [
-            { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-            { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-            { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+            { id: 7, size: "30 ml", price: 49.99, chosen: false },
+            { id: 8, size: "50 ml", price: 69.99, chosen: false },
         ]
     },
     {
-        id: 2,
+        id: 1,
         new: true,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: false,
         niche: false,
         name: "Billie Eilish Red",
@@ -127,14 +129,15 @@ function App() {
             { id: 6, size: "20 ml", price: 40.99, chosen: false }
         ],
         bigSizes: [
-            { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-            { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-            { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+            { id: 7, size: "30 ml", price: 49.99, chosen: false },
+            { id: 8, size: "50 ml", price: 69.99, chosen: false },
+            { id: 9, size: "100 ml", price: 99.99, chosen: false }
         ]
     },
     {
-        id: 3,
+        id: 2,
         new: true,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: true,
         niche: false,
         name: "Billie Eilish Beige",
@@ -153,13 +156,14 @@ function App() {
             { id: 6, size: "20 ml", price: 40.99, chosen: false }
         ],
         bigSizes: [
-            { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-            { id: 8, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+            { id: 7, size: "30 ml", price: 49.99, chosen: false },
+            { id: 8, size: "100 ml", price: 99.99, chosen: false }
         ]
     },
     {
-        id: 4,
+        id: 3,
         new: true,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: true,
         niche: false,
         name: "Black Opium",
@@ -178,14 +182,15 @@ function App() {
             { id: 6, size: "20 ml", price: 43.99, chosen: false }
         ],
         bigSizes: [
-            { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-            { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-            { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+            { id: 7, size: "30 ml", price: 49.99, chosen: false },
+            { id: 8, size: "50 ml", price: 69.99, chosen: false },
+            { id: 9, size: "100 ml", price: 99.99, chosen: false }
         ]
     },
     {
-        id: 5,
+        id: 4,
         new: true,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: false,
         niche: true,
         name: "Grace by Grace",
@@ -204,14 +209,15 @@ function App() {
             { id: 6, size: "20 ml", price: 38.99, chosen: false }
         ],
         bigSizes: [
-            { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-            { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-            { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+            { id: 7, size: "30 ml", price: 49.99, chosen: false },
+            { id: 8, size: "50 ml", price: 69.99, chosen: false },
+            { id: 9, size: "100 ml", price: 99.99, chosen: false }
         ]
     },
     {
-        id: 6,
+        id: 5,
         new: false,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: true,
         niche: true,
         name: "Happy Hour",
@@ -230,14 +236,15 @@ function App() {
           { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml", price: 99.99, chosen: false }
       ]
     },
     {
-        id: 7,
+        id: 6,
         new: true,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: false,
         niche: false,
         name: "Kilian Moonlight",
@@ -256,14 +263,15 @@ function App() {
           { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml", price: 99.99, chosen: false }
       ]
     },
     {
-        id: 8,
+        id: 7,
         new: true,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: false,
         niche: false,
         name: "Kilian Blue Moon Ginger",
@@ -282,14 +290,15 @@ function App() {
           { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml", price: 99.99, chosen: false }
       ]
     },
     { 
-        id: 9,
+        id: 8,
         new: false,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: true,
         niche: false,
         name: "Kilian Blue Moon",
@@ -308,14 +317,15 @@ function App() {
           { id: 6, size: "20 ml", price: 39.99, chosen: false },
         ],
         bigSizes: [
-          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml", price: 99.99, chosen: false }
         ]
     },
     {
-        id: 10,
+        id: 9,
         new: true,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: false,
         niche: false,
         name: "Kilian Princess",
@@ -334,14 +344,15 @@ function App() {
           { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml", price: 99.99, chosen: false }
       ]
     },
     {
-        id: 11,
+        id: 10,
         new: false,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: false,
         niche: false,
         name: "Narciso Rodriguez",
@@ -361,14 +372,15 @@ function App() {
           
         ],
         bigSizes: [
-            { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-            { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-            { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+            { id: 7, size: "30 ml", price: 49.99, chosen: false },
+            { id: 8, size: "50 ml", price: 69.99, chosen: false },
+            { id: 9, size: "100 ml", price: 99.99, chosen: false }
         ]
     },
     {
-        id: 12,
+        id: 11,
         new: true,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: true,
         niche: true,
         name: "Nasomatto Narkotic",
@@ -387,14 +399,15 @@ function App() {
           { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml", price: 99.99, chosen: false }
       ]
     },
     {
-        id: 13,
+        id: 12,
         new: true,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: false,
         niche: false,
         name: "Red Wine Brown Sugar",
@@ -413,14 +426,15 @@ function App() {
           { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml", price: 99.99, chosen: false }
       ]
     },
     {
-        id: 14,
+        id: 13,
         new: true,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: true,
         niche: false,
         name: "Tiziana Terenzi",
@@ -439,14 +453,15 @@ function App() {
           { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml", price: 99.99, chosen: false }
       ]
     },
     {
-        id: 15,
+        id: 14,
         new: false,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: false,
         niche: true,
         name: "White Tea",
@@ -465,14 +480,15 @@ function App() {
           { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml", price: 99.99, chosen: false }
       ]
     },
     {
-        id: 16,
+        id: 15,
         new: true,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: false,
         niche: true,
         name: "Yves Saint Laurent Libre",
@@ -491,14 +507,15 @@ function App() {
           { id: 6, size: "20 ml", price: 39.99, chosen: false }
       ],
       bigSizes: [
-          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml", price: 99.99, chosen: false }
       ]
     },
     {
-        id: 17,
+        id: 16,
         new: false,
+        description: "Верхні ноти: рожевий перець, грейпфрут, жасмин Ноти серця: ялина, шафран, кедрНоти бази: мускус, амбра, дубовий мох",
         lux: false,
         niche: false,
         name: "Sending Love",
@@ -518,12 +535,12 @@ function App() {
           
       ],
       bigSizes: [
-          { id: 7, size: "30 ml - повнорозмірний флакон", price: 49.99, chosen: false },
-          { id: 8, size: "50 ml - повнорозмірний флакон", price: 69.99, chosen: false },
-          { id: 9, size: "100 ml - повнорозмірний флакон", price: 99.99, chosen: false }
+          { id: 7, size: "30 ml", price: 49.99, chosen: false },
+          { id: 8, size: "50 ml", price: 69.99, chosen: false },
+          { id: 9, size: "100 ml", price: 99.99, chosen: false }
       ]
     }
-];
+  ];
 
   
   
@@ -538,6 +555,8 @@ function App() {
               <Route path="catalogs/*" element={<Catalogs products={products} sizes={sizes} brands={brands}/>} />
               <Route path="contacts" element={<Contacts />} />
               <Route path="brands" element={<Brands />} />
+              <Route path="cart" element={<Cart></Cart>} />
+              <Route path="product-page" element={<ProductPage products={products} ></ProductPage>}></Route>
             </Route>
           </Routes>
         </BrowserRouter>

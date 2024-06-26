@@ -1,10 +1,23 @@
-
-import React from "react";
-import { Link } from "react-router-dom";
+import { React,useState } from "react";
 import styles from "./HeaderMenu.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {Link, useNavigate } from "react-router-dom";
+
 export const HeaderMenu = () => {
+    const navigate = useNavigate();
+
+    const [search, setSearch] = useState("")
+    function handleSearch (e) {
+        setSearch(e.target.value);
+        console.log(search);
+    };
+    function applySearch(e) {
+        e.preventDefault(); 
+        const params = new URLSearchParams();
+        params.set("search", search);
+        navigate(`/catalogs?${params.toString()}`, {replace: true}); 
+    }
     return (
         <div className={`${styles.header_container} container`}>
             <FontAwesomeIcon className={styles.burger_icon} icon={faBars} />
@@ -31,12 +44,11 @@ export const HeaderMenu = () => {
                 <input type="text" />
             </div> */}
 
-            <form className={styles.search_form}>
+            <form onSubmit={applySearch}  className={styles.search_form}>
                 <button type="submit">
                     <img src="Images/search-icon.svg" alt="" />
                 </button>
-                <input type="text" />
-               
+                <input onChange={handleSearch} type="text" />
             </form>
 
 
@@ -47,9 +59,8 @@ export const HeaderMenu = () => {
                 <a href="#">
                     <img src={"Images/heart-icon.svg"} alt="heart" />
                 </a>
-                <a href="#">
-                    <img src={"Images/cart-icon.svg"} alt="cart" />
-                </a>
+                <Link to="/cart"><img src={"Images/cart-icon.svg"} alt="cart" /></Link>
+     
             </div>
 
         </div>

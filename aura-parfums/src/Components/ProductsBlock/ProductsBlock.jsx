@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import styles from "./ProductsBlock.module.scss";
 import { ProductCard } from "./ProductCard/ProductCard";
 
-export const ProductsBlock = ({niche = false, fullBottles = false, lux = false, male = false, female = false,  newProducts = false, bestsellers = false, products, loadCardsCount = products.length, maxColumns = 4 }) => {
-    products.sort((a, b) => b.rating - a.rating);
+export const ProductsBlock = ({niche = false, fullBottles = false, lux = false, male = false, female = false,  newProducts = false, bestsellers = false,  products, loadCardsCount = 0, maxColumns = 4 }) => {
+    if (!products) {
+        return null; // Или другое поведение, если данные не загружены
+      }
 
+    products.sort((a, b) => b.rating - a.rating);
+    if(loadCardsCount == 0 ){
+        loadCardsCount = products.length
+    }
+
+    
+    
     let filteredProducts = products;
     if (bestsellers) {
       filteredProducts = filteredProducts.filter(product => product.bestseller);
