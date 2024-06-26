@@ -1,11 +1,59 @@
 @import '../../variables.scss';
 
 .container {
-    padding-top: 175px;
+    padding-top: 5%;
     padding-bottom: 150px;
+    padding-left: 15%;
+    padding-right: 15%;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    
+   
+    align-items: center;
 
-    border: 2px solid red;
+
+}
+@media (max-width: 1024px) {
+    .logoImg{
+        width: 800px;
+        height: 400px;    }
+  }
+@media (max-width: 768px) {
+    .logoImg{
+        width: 600px;
+        height: 300px;    }
+  }
+  @media (max-width: 425px) {
+    .logoImg{
+        width: 400px;
+        height: 200px;    }
+  }
+  @media (max-width: 375px) {
+    .logoImg{
+        width: 300px;
+        height: 150px;    }
+  }
+
+h2 {
+    @include fsz48;
+margin-top: 10%;
+}
+p {
+    color: $red;
+    font-style: italic;
+    @include fsz20
+}
+.brands{
+    width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            @include AV('margin-top', 84, 40);
+}
+.brand{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
 }
