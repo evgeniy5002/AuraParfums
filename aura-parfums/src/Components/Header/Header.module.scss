@@ -1,22 +1,6 @@
 @import '../../variables.scss';
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
-
-
-.logo {
-    padding: 25px 0;
+.header {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border-bottom: 2px solid $red;
 }
 
-// .logo img {
-//     width: 200px;
-//     height: 94px;
-// }

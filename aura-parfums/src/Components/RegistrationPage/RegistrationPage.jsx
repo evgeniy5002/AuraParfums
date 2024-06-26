@@ -12,9 +12,11 @@ const RegistrationPage = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
-    const [id] = useState(Math.floor(Math.random() * 9999999)); 
+    const [id] = useState(Math.floor(Math.random() * 9999999));
     const [cartItems] = useState([]);
+    const [name] = useState("");
+    const [surname] = useState("");
+    const [phoneNumber] = useState("");
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -23,8 +25,8 @@ const RegistrationPage = () => {
             alert("Пользователь с таким email уже существует!");
         }
         else {
-            saveUserToLocalStore({ email, password, id, cartItems });
-            dispatch(setUser({ email, password, id, cartItems}));
+            saveUserToLocalStore({ email, password, id, cartItems, name, surname, phoneNumber });
+            dispatch(setUser({ email, password, id, cartItems, name, surname, phoneNumber }));
             navigate("/user-page/workshop");
         }
     }
@@ -55,7 +57,7 @@ const RegistrationPage = () => {
                         *Ваши личные данные будут использоваться для поддержки вашего опыта на этом сайте,
                         для управления доступом к вашей учетной записи и для других целей, описанных в нашей политике конфиденциальности.
                     </p>
-                    
+
                     <button type="submit" className={styles["registration-btn"]}>
                         Зарегистрироваться
                     </button>

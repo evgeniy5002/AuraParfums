@@ -1,0 +1,119 @@
+@import '../../../variables.scss';
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-menu {
+    transition: 0s;
+    width: 100%;
+    border: 2px solid transparent;
+
+    .header-menu-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include AV('gap', 46, 15);
+
+        margin: 0px 40px;
+        padding: 35px 0px;
+
+        @media (min-width: 1600px) {
+            margin: 0px 200px;
+        }
+
+        .burger_icon {
+            display: none;
+            height: 50px;
+
+            @media (max-width: 1400px) {
+                display: block;
+            }
+        }
+
+        .nav-container {
+            .links {
+                display: flex;
+                align-items: center;
+                @include AV('gap', 57, 30);
+
+                list-style: none;
+                font-weight: 500;
+
+                li {
+                    padding: 10px;
+                    @include fsz24;
+                    text-wrap: nowrap;
+
+                    &:first-child {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                    }
+                }
+
+
+                @media (max-width: 1400px) {
+                    display: none;
+                }
+            }
+        }
+
+        .search_form {
+            display: flex;
+            width: 100%;
+
+            input {
+                border: 2px solid black;
+                border-width: 2px 2px 2px 0;
+                border-radius: 0 3px 3px 0;
+
+                width: 100%;
+                height: 50px;
+
+                @include fsz24;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            button {
+                border: 2px solid black;
+                border-width: 2px 0 2px 2px;
+                border-radius: 3px;
+                height: 50px;
+                width: 40px;
+                border-radius: 3px 0 0 3px;
+
+                img {
+                    width: 17px;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+.userLinks {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.header-catalogs,
+.header-homepage {
+    border-top-color: $red;
+}
+
+.header-contacts,
+.header-brands {
+    border-bottom-color: $red;
+}

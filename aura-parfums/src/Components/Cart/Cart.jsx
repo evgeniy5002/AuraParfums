@@ -1,19 +1,13 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import NewFragnances from "../NewFragnances/NewFragnances";
-import Bestsellers from "../Bestsellers/Bestsellers";
-import { useLocation } from "react-router-dom";
-import styles from "./Cart.module.scss";
-import { getStoredUsers } from "../../Utils/getStoredUsers";
 import { useSelector } from "react-redux";
 import { useAuth } from "../../Hooks/useAuth";
 
 const Cart = ({ products }) => {
-  const LS = localStorage;
-  // const cartItems = JSON.parse(LS.getItem("cartItems")) || [];
-
-  const cartItems = useSelector((state) => state.cartItems);
   const { isAuth } = useAuth();
+
+  const cartItems = useSelector(state => (
+    isAuth ? state.user.cartItems : state.guest.cartItems
+  ));
 
   return (
     <div>

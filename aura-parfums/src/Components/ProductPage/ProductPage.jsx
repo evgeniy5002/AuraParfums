@@ -1,45 +1,32 @@
 import { React, useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import NewFragnances from "../NewFragnances/NewFragnances";
 import Bestsellers from "../Bestsellers/Bestsellers";
 import { useLocation } from "react-router-dom";
 import styles from "./ProductPage.module.scss"
-import { getStoredUsers } from "../../Utils/getStoredUsers";
-import { setStoredUsers } from "../../Utils/setStoredUsers";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../../Store/Actions/userActions";
+import { addGuestCartItem } from "../../Store/Actions/guestActions";
+import { useAuth } from "../../Hooks/useAuth";
 
 const ProductPage = ({ products }) => {
     const dispatch = useDispatch();
-
-    const key = 'cartItems';
-
-    function checkAndCreateArrayInLocalStorage() {
-        const storedArray = localStorage.getItem(key);
-        if (!storedArray) {
-            const newArray = [];
-            localStorage.setItem(key, JSON.stringify(newArray));
-            console.log(`Массив с ключом "${key}" создан в localStorage.`);
-        } else {
-            console.log(`Массив с ключом "${key}" уже существует в localStorage.`);
-        }
-    }
-
     const location = useLocation();
-    let productID = parseInt((location.search).slice(1));
+    const { isAuth } = useAuth();
 
+    let productID = parseInt((location.search).slice(1));
 
     const [productsOrderedCount, setProductOrdered] = useState(1);
     useEffect(() => {
         setProductOrdered(1);
     }, [productID]);
+
     function minusItem() {
         setProductOrdered(prevCount => Math.max(prevCount - 1, 1));
     }
+
     function plusItem() {
         setProductOrdered(prevCount => prevCount + 1);
     }
-
 
     const [chosenSize, setChosenSize] = useState(products[productID].sizes[0].id);
     function findPriceBySize(sizes, bigSizes, chosenSize) {
@@ -58,28 +45,23 @@ const ProductPage = ({ products }) => {
 
     const price = findPriceBySize(products[productID].sizes, products[productID].bigSizes, chosenSize);
 
+    // Используется на onClick
+    // function addToCart() {
+    //     dispatch(addCartItem({ productId: productID, count: productsOrderedCount }));
+    // };
 
+    let addToCart;
 
-    function addToCart() {
+    isAuth
+        ?
+        addToCart = () => {
+            dispatch(addCartItem({ productId: productID, count: productsOrderedCount }));
+        }
+        :
+        addToCart = () => {
+            dispatch(addGuestCartItem({ productId: productID, count: productsOrderedCount }));
+        }
 
-        checkAndCreateArrayInLocalStorage();
-        const storedArray = JSON.parse(localStorage.getItem(key));
-        console.log("STORED ARRAY: ", storedArray);
-
-        let itemExists = false;
-        // storedArray.forEach(item => {
-        //     if (item.productId === productID) {
-        //         item.count += productsOrderedCount;
-        //         itemExists = true;
-        //     }
-        // });
-        // if (!itemExists) {
-        storedArray.push({ productId: productID, count: productsOrderedCount });
-        localStorage.setItem(key, JSON.stringify(storedArray));
-        // }
-
-        dispatch(addCartItem({ productId: productID, count: productsOrderedCount }));
-    }
 
     return (
         <>

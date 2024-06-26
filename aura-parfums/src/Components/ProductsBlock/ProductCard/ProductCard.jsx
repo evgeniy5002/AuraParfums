@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./ProductCard.module.scss";
 import { Link } from "react-router-dom";
 import ProductRating from "../ProductRating/ProductRating";
-import ProductPage from "../../ProductPage/ProductPage";
 
 export const ProductCard = ({ product, productsBlockColumns }) => {
     let bigSizes, sizes;

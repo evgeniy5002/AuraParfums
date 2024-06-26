@@ -17,6 +17,8 @@ import OrdersPage from './Components/OrdersPage/OrdersPage';
 import WorkshopPage from './Components/WorkshopPage/WorkshopPage';
 import { useAuth } from './Hooks/useAuth';
 import ProductPage from './Components/ProductPage/ProductPage';
+import DescriptionPage from './Components/ProductPage/DescriptionPage/DescriptionPage';
+
 
 function App() {
   const { isAuth } = useAuth();
@@ -563,7 +565,7 @@ function App() {
               <Route path="catalogs/*" element={<Catalogs brands={brands} products={products} />} />
               <Route path="contacts" element={<Contacts />} />
               <Route path="brands" element={<Brands />} />
-              <Route path="product-page" element={<ProductPage products={products} ></ProductPage>}></Route>
+              <Route path="product-page" element={<ProductPage products={products} ></ProductPage>} />
               <Route path="fragnance-choice" element={<FragnanceChoice />} />
               <Route path="user-page/*" element={<UserPage />}>
                 {

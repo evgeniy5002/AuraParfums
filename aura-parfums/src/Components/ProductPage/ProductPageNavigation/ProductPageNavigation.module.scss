@@ -1,0 +1,31 @@
+@import '../../../variables.scss';
+
+.product-page-navigation {
+    border-bottom: 1.5px solid $red;
+
+    .nav-container {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+
+        .nav-link {
+            border: 1.5px solid $red;
+            border-bottom: none;
+            padding: 15px 30px;
+            color: $red;
+
+            font-size: 16px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .nav-link:not(:last-child) {
+            border-right: none;
+        }
+
+        .active-nav-link {
+            background-color: $red;
+            color: white;
+        }
+    }
+}

@@ -5,7 +5,7 @@ import styles from "./WorkshopPage.module.scss";
 
 const WorkshopPage = () => {
     const navigate = useNavigate();
-    const email = useSelector((state => state.email));
+    const email = useSelector((state => state.user.email));
 
     const handleClick = () => {
         navigate('/catalogs');

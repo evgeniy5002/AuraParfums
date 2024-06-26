@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./Header.module.scss";
+import { React } from "react";
 import { useLocation } from 'react-router-dom';
-import { HeaderMenu } from "../HeaderMenu/HeaderMenu";
+import HeaderMenu from "./HeaderMenu/HeaderMenu";
+import Logo from "./Logo/Logo.jsx";
+import styles from "./Header.module.scss";
 
 const Header = () => {
     const location = useLocation();
@@ -10,35 +10,28 @@ const Header = () => {
     const getHeaderClass = () => {
         const path = location.pathname;
 
-        if (path.startsWith('/catalogs')) {
-            return 'headerCatalogs';
+        const headerClasses = {
+            '/catalogs': 'header-catalogs',
+            '/contacts': 'header-contacts',
+            '/brands': 'header-brands',
+            '/': 'header-homepage'
+        };
+
+        for (const key in headerClasses) {
+            if (path.startsWith(key)) {
+                return headerClasses[key];
+            }
         }
-        else if (path.startsWith('/contacts')) {
-            return 'headerContacts';
-        }
-        else if (path.startsWith('/brands')) {
-            return 'headerBrands';
-        }
-        else if (path.startsWith('/')) {
-            return 'headerHomepage';
-        }
-        else {
-            return 'headerDefault';
-        }
+
+        return 'header-default';
     };
-
+    
     return (
-        <header className={[styles.container, styles[getHeaderClass()]].join(" ")}>
-
-            <div className={styles.logo}>
-                <Link to="/">
-                    <img src={"Images/header/AuraLogo.svg"} alt="" />
-                </Link>
-            </div>
-
-            <HeaderMenu></HeaderMenu>
-
+        <header className={styles["header"]}>
+            <Logo />
+            <HeaderMenu styleName={getHeaderClass()} />
         </header>
     );
 }
+
 export default Header;
