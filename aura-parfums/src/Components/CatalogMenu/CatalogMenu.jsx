@@ -20,14 +20,22 @@ const CatalogMenu = ({ products }) => {
 
     const updateURL = (category, value) => {
         const params = new URLSearchParams(location.search);
-        params.set(category, value);
-        console.log(params.toString());
+        if (value) {
+            params.set(category, value);
+        } else {
+            params.delete(category);
+        }
         navigate(`/catalogs?${params.toString()}`, { replace: true });
     };
 
-    const handleClick = (category) => {
-        setCategory(category);
-        updateURL('category', category);
+    const handleClick = (selectedCategory) => {
+        if (category === selectedCategory) {
+            setCategory("");
+            updateURL('category', null);
+        } else {
+            setCategory(selectedCategory);
+            updateURL('category', selectedCategory);
+        }
     };
 
     return (
@@ -40,7 +48,7 @@ const CatalogMenu = ({ products }) => {
                         <button
                             key={key}
                             onClick={() => handleClick(key)}
-                            className={styles["category"]}
+                            className={`${styles["category"]} ${category === key ? "default-button" : ""}`}
                         >
                             {label.split(" ").map((line, index) => (
                                 <React.Fragment key={index}>

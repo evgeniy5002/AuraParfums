@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "./ProductCard.module.scss";
+import { Link } from "react-router-dom";
 import ProductRating from "../ProductRating/ProductRating";
+import ProductPage from "../../ProductPage/ProductPage";
 
 export const ProductCard = ({ product, productsBlockColumns }) => {
     let bigSizes, sizes;
@@ -34,33 +36,33 @@ export const ProductCard = ({ product, productsBlockColumns }) => {
     const price = findPriceBySize(sizes, bigSizes, chosenSize);
 
     return (
-        <a className={styles["product-card"]} key={product.name}>
-            <img src={product.image}  alt={product.name}/>
+        <Link to={`/product-page?${encodeURIComponent(product.id)}`} className={styles["product-card"]} key={product.name}>
+            <img src={product.image} alt={product.name} />
             <div className={styles["product-card_content"]}>
                 <ProductRating rating={product.rating} />
                 <p className={styles["product-card_brand"]}>{product.brand}</p>
-                <h1 className={styles["product-card_title"]}>{product.name} {product.gender}</h1>
+                <h1 className={styles["product-card_title"]}>{product.name}</h1>
                 <div className={styles["product_sizes"]}>
-                {sizes.map((sizeObj, index) => (
-                    <a
-                        onClick={() => setChosenSize(sizeObj.id)}
-                        key={index} 
-                        className={`${styles["product_size"]} ${chosenSize === sizeObj.id ? styles["red"] : ""} ${styles["product_square-block"]}`}
-                    >
-                        {sizeObj.size}
-                    </a>
-                ))}
+                    {sizes.map((sizeObj, index) => (
+                        <a
+                            onClick={() => setChosenSize(sizeObj.id)}
+                            key={index}
+                            className={`${styles["product_size"]} ${chosenSize === sizeObj.id ? styles["red"] : ""} ${styles["product_square-block"]}`}
+                        >
+                            {sizeObj.size}
+                        </a>
+                    ))}
                 </div>
                 <div className={`${styles["product_big-sizes"]} ${product.bigSizes.length < 3 ? styles["product_big-sizes_column"] : ""}`}>
-                {bigSizes.map((sizeObj, index) => (
-                    <a
-                        onClick={() => setChosenSize(sizeObj.id)}
-                        key={index} 
-                        className={`${styles["product_size"]} ${chosenSize === sizeObj.id ? styles["active"] : ""} ${styles["product_square-block"]}`}
-                    >
-                        {sizeObj.size}
-                    </a>
-                ))}
+                    {bigSizes.map((sizeObj, index) => (
+                        <a
+                            onClick={() => setChosenSize(sizeObj.id)}
+                            key={index}
+                            className={`${styles["product_size"]} ${chosenSize === sizeObj.id ? styles["active"] : ""} ${styles["product_square-block"]}`}
+                        >
+                            {sizeObj.size} {product.bigSizes.length < 3 ? " - повнорозмірний флакон" : ""}
+                        </a>
+                    ))}
                 </div>
                 <div className={styles["product_buy-block"]}>
                     <a className={`${styles.red}`}>Купити</a>
@@ -71,6 +73,6 @@ export const ProductCard = ({ product, productsBlockColumns }) => {
                 {product.bestseller ? <div className={`${styles["category"]} ${styles["bestseller"]}`}>Bestseller</div> : ""}
                 {product.sale ? <div className={`${styles["category"]} ${styles["sale"]}`}>Sale</div> : ""}
             </div>
-        </a>
+        </Link>
     );
 }

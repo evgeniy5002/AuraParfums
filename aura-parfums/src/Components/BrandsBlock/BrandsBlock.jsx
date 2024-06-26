@@ -6,9 +6,7 @@ import 'swiper/scss';
 import 'swiper/scss/pagination';
 import styles from './BrandsBlock.scss'
 
-
 const BrandsBlock = ({ brandsCount = 28, brands }) => {
-  console.log("BrandsBlock: ", brands);
   return (
     <div className="brands">
       <h2>БРЕНДИ</h2>
@@ -27,11 +25,10 @@ const BrandsBlock = ({ brandsCount = 28, brands }) => {
               1100: { slidesPerView: 4, slidesPerGroup: 4 },
             }}
           >
-
             {
               brands.map((brand) => (
                 <SwiperSlide key={brand.id}>
-                  <img src={brand.image} alt={brand.brand} />
+                  <img src={brand.image} alt={brand.name} />
                 </SwiperSlide>
               ))
             }

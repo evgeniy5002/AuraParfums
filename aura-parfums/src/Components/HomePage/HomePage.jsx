@@ -7,9 +7,7 @@ import BrandsBlock from "../BrandsBlock/BrandsBlock";
 import NewFragnances from "../NewFragnances/NewFragnances";
 import CatalogMenu from "../CatalogMenu/CatalogMenu";
 
-const HomePage = ({ products, brands }) => {
-    console.log("brands: ", brands);
-
+const HomePage = ({products, brands}) => {
     return (
         <main className={styles.main}>
             <CatalogLink></CatalogLink>
