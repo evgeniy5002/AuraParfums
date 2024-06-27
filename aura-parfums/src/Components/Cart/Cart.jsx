@@ -17,24 +17,6 @@ const Cart = ({ products }) => {
   ));
 
   return (
-
-    // <div className={styles["cart"]}>
-    //   <div className={styles["cart-container"]}>
-    //     {
-    //       cartItems.length > 0 ? (
-    //         cartItems.map(item => (
-    //           <div key={item.productId}>
-    //             <h1>{item.productId}</h1>
-    //             <h1>{item.count}</h1>
-    //           </div>
-    //         ))
-    //       ) : (
-    //         <p>Your cart is empty</p>
-    //       )
-    //     }
-    //   </div>
-    // </div>
-
     <main className='main'>
       <div className={`${styles["cart_container"]} container`}>
         <div className={styles["order-info"]}>
@@ -51,8 +33,8 @@ const Cart = ({ products }) => {
               </div>
               <div className={`${styles.delivery_option} ${styles.option}`}>
                 <div>
-                  <h4>Укр Пошта (Відділення за індексом)</h4>
-                  <p>Безкоштовна доставка від 900 грн</p>
+                    <h4>Укр Пошта (Відділення за індексом)</h4>
+                    <p>Безкоштовна доставка від 900 грн</p>
                 </div>
               </div>
             </div>
@@ -82,7 +64,7 @@ const Cart = ({ products }) => {
                   </h4>
                   <span>На суму замовлення від 900 грн діє безкоштовна доставка. Термін відправки   замовлення 1-4 дні.</span>
                   <p>
-                    Ваші особисті дані використовуватимуться для підтримки вашого досвіду на цьому  веб-сайті, для керування доступом до вашого облікового запису та для інших   цілей, описаних у нашій політика конфіденційності.
+                  Ваші особисті дані використовуватимуться для підтримки вашого досвіду на цьому  веб-сайті, для керування доступом до вашого облікового запису та для інших   цілей, описаних у нашій політика конфіденційності.
                   </p>
                 </div>
                 <div>

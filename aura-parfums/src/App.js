@@ -564,15 +564,15 @@ function App() {
     const activeUserId = parseInt(localStorage.getItem("activeUserId"));
 
     if (activeUserId) {
-        const activeUser = storedUsers.find(user => user.id === activeUserId);
+      const activeUser = storedUsers.find(user => user.id === activeUserId);
 
-        // console.log("STORED USERS ---- ", storedUsers);
-        // console.log("ACTIVE USER ID ---- ", activeUserId);
-        // console.log("ACTIVE USER ---- ", activeUser);
-        
+      // console.log("STORED USERS ---- ", storedUsers);
+      // console.log("ACTIVE USER ID ---- ", activeUserId);
+      // console.log("ACTIVE USER ---- ", activeUser);
+      if (activeUser)
         dispatch(setUser(activeUser));
     }
-}, []);
+  }, []);
 
   return (
     <div className="App">
