@@ -1,0 +1,11 @@
+@import '../../variables.scss';
+
+.cart {
+    width: 100%;
+    border-top: 2px solid $red;
+
+    .cart-container {
+        display: flex;
+        justify-content: center;
+    }
+}

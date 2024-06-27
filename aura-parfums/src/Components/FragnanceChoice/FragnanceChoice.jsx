@@ -6,7 +6,7 @@ const FragnanceChoice = () => {
     return (
         <div className={styles["fragnance-choice-block"]}>
             <div className={`${styles["fragnance-choice_container"]} container`}>
-                <img src="Images/parfume-choice-image.png" alt="" />
+                <img src="/Images/parfume-choice-image.png" alt="" />
                 <div className={styles["fragnance-choice-block_text"]}>
                     <h2>ПІДБІР ПАРФУМІВ ЗА ВАШИМИ ПОБАЖАННЯМИ</h2>
 

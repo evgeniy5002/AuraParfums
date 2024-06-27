@@ -13,7 +13,7 @@ const NewFragnances = ({ products }) => {
     return (
         <div className={styles["new-fragnances"]}>
             <div className={styles["new-fragnances_header"]}>
-                <img src="Images/new-fragnances-bg.jpg" alt="" />
+                <img src="/Images/new-fragnances-bg.jpg" alt="" />
                 <div className={`${styles["new-fragnances_container"]} container`}>
                    
                     <div className={styles["new-fragnances_text"]}>

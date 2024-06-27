@@ -5,9 +5,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-}
 
-.header-brands {
-    display: none;
+    .header-brands {
+        display: none;
+    }
+    
+    .header-cart {
+        display: block;
+    }
 }

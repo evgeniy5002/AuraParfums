@@ -6,7 +6,7 @@ const Logo = ({ styleName }) => {
     return (
         <div className={`${styles["logo"]} ${styles[styleName]}`}>
             <Link to="/">
-                <img src={"Images/header/AuraLogo.svg"} alt="" />
+                <img src={"/Images/header/AuraLogo.svg"} alt="" />
             </Link>
         </div>
     )

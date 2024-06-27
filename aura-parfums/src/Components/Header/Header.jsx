@@ -11,6 +11,7 @@ const Header = () => {
         const path = location.pathname;
 
         const headerClasses = {
+            '/cart': 'header-cart',
             '/catalogs': 'header-catalogs',
             '/contacts': 'header-contacts',
             '/brands': 'header-brands',
