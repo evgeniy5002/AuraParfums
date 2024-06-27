@@ -16,7 +16,25 @@ const Cart = ({ products }) => {
     isAuth ? state.user.cartItems : state.guest.cartItems
   ));
 
-  console.log("FROM CART ----", cartItems[0].size);
+  // console.log("FROM CART ----", cartItems[0].size);
+
+  cartItems.map((item, index) => {
+    console.log("FROM CART ----", item.size);
+  })
+
+  // <span>Product ID: {item.productId}</span>
+  // <span>Count: {item.count}</span>
+  // <span>Size ID: {item.size.id}</span>
+  // <span>Price: {item.size.price}</span>
+  // <span>Size: {item.size.size}</span>
+  // <span>Brand: {item.brand}</span>
+  // <span>Name: {item.name}</span>
+  // {/* <br />
+  // <div>{JSON.stringify(item)}</div>
+  // <br /> */}
+  // {/* <div>{JSON.stringify(item.size)}</div> */}
+  // <span>{item.size.id}</span>
+
 
   return (
     <main className='main'>
@@ -92,31 +110,44 @@ const Cart = ({ products }) => {
           </div>
         </div>
         <div className={styles["cart"]}>
-          <h2>Кошик</h2>
-          {cartItems.length > 0 ? (
-            cartItems.map(item => (
-              <div key={`${item.productId}-${item.sizeId}`}>
-                <span>Product ID: {item.productId}</span>
-                <span>Count: {item.count}</span>
-                {item.size ? (
-                  <>
-                    <span>Size ID: {item.size.id}</span>
-                    <span>Price: {item.size.price}</span>
-                    <span>Size: {item.size.size}</span>
-                  </>
-                ) : (
-                  <span>Size information not available</span>
-                )}
-                <span>Brand: {item.brand}</span>
-                <span>Name: {item.name}</span>
-              </div>
-            ))
-          ) : (
-            <p>Ваша корзина пуста</p>
-          )}
+          {
+            cartItems.length > 0 ? (
+              cartItems.map((item, index) => (
+                <div className={styles["cart-item"]} key={index}>
+                  <div>
+                    <img src="/Images/products/red-wine-brown-sugar.jpg" alt="" />
+                  </div>
+
+                  <div className={styles["cart-item-info"]}>
+                    <div className={styles["cart-item-info_top"]}>
+                      <span className={styles['cart-name']}>{item.name}</span>
+                      <span className={styles['cart-brand']}>{item.brand}</span>
+                    </div>
+
+                    <div className={styles["cart-item-info_bottom"]}>
+                      <div className={styles["counter-block"]}>
+                        <span className={styles["cart-size"]}>{item.size.size}</span>
+                        <div className={styles["cart-counter"]}>
+                          <img src="/Images/minussmall.svg" alt="" />
+                          <span>{item.count}</span>
+                          <img src="/Images/plussmall.svg" alt="" />
+                        </div>
+                      </div>
+
+                      <div>
+                        <span className={styles["cart-price"]}>{item.size.price}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>Ваша корзина пуста</p>
+            )
+          }
         </div>
       </div>
-    </main>
+    </main >
   );
 };
 

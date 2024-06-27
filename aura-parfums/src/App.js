@@ -560,18 +560,23 @@ function App() {
 
   // Эта штука при загрузке страницы берет из localStorage id активного пользователя, затем находит его и устанавливает в state
   useEffect(() => {
+    console.log("BEFORE ------", getStoredUsers()[0].cartItems[0]);
     const storedUsers = getStoredUsers();
     const activeUserId = parseInt(localStorage.getItem("activeUserId"));
 
     if (activeUserId) {
       const activeUser = storedUsers.find(user => user.id === activeUserId);
 
+      console.log("ACTIVE USER ----", activeUser)
+
       // console.log("STORED USERS ---- ", storedUsers);
       // console.log("ACTIVE USER ID ---- ", activeUserId);
-      console.log("ACTIVE USER ---- ", activeUser.cartItems.size);
+      
       if (activeUser)
         dispatch(setUser(activeUser));
     }
+
+    console.log("AFTER ------", getStoredUsers()[0].cartItems[0]);
   }, []);
 
   return (

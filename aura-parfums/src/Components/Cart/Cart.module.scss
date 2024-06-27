@@ -18,12 +18,83 @@
         @include fsz32;
     }
 
+    .cart {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        .cart-item {
+            display: flex;
+            height: 148px;
+
+            img {
+                width: 148px;
+                height: 148px;
+            }
+
+            .cart-item-info {
+                width: 100%;
+
+                .cart-item-info_top {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                .cart-item-info_bottom {
+                    margin-top: 4px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .counter-block {
+                        padding: 5px 10px 5px 5px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        .cart-counter {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            gap: 13px;
+                            padding: 4px 8px;
+                            border: 2px solid $red;
+                            border-radius: 3px;
+                            color: $red;
+
+                            img {
+                                cursor: pointer;
+                                width: 15px;
+                                height: 15px;
+                            }
+                        }
+                    }
+                }
+
+                .cart-name {
+                    font-size: 20px;
+                    font-weight: 800;
+                }
+
+                .cart-brand {
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: $red;
+                }
+
+                .cart-price {
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: $red;
+                }
+            }
+        }
+    }
+
     .order-info {
         display: flex;
         flex-direction: column;
         gap: 45px;
-
-
 
 
         .options {

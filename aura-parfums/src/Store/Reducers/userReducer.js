@@ -49,7 +49,7 @@ const userReducer = (state = initialState, action) => {
                     return item;
                 });
             } else {
-                newCartItems = [...state.cartItems, action.payload.cartItem];
+                newCartItems = [...state.cartItems, productId, count, size, brand, name];
             }
 
             const newState = {
@@ -64,8 +64,6 @@ const userReducer = (state = initialState, action) => {
 
             return newState;
         }
-
-
 
         case "REMOVE_USER": {
             return initialState;
