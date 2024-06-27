@@ -5,12 +5,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
-    .header-brands {
-        display: none;
-    }
-    
+.header-brands {
+    display: none;
+}
+
+.header-cart {
+    display: block;
+}
+
+@media (max-width: 1400px) {
     .header-cart {
-        display: block;
+        display: none;
     }
 }
