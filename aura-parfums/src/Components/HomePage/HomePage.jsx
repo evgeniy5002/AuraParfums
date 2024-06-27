@@ -9,7 +9,7 @@ import CatalogMenu from "../CatalogMenu/CatalogMenu";
 
 const HomePage = ({products, brands}) => {
     return (
-        <main className={styles.main}>
+        <main className="main">
             <CatalogLink></CatalogLink>
             <CatalogMenu></CatalogMenu>
             <NewFragnances products={products}></NewFragnances>

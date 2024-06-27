@@ -14,6 +14,7 @@ const UserInfoForm = ({
         <form onSubmit={handleInfoChange}>
             <div className={styles["grid-container"]}>
                 <input
+                    className="dflt-input"
                     type="text"
                     value={phoneNumber}
                     placeholder="Номер телефону"
@@ -21,6 +22,7 @@ const UserInfoForm = ({
                 />
 
                 <input
+                    className="dflt-input"
                     type="text"
                     value={name}
                     placeholder="Ім’я"
@@ -28,6 +30,7 @@ const UserInfoForm = ({
                 />
 
                 <input
+                    className="dflt-input"
                     type="text"
                     value={surname}
                     placeholder="Прізвище"

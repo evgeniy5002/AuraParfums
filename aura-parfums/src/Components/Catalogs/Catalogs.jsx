@@ -85,7 +85,7 @@ const Catalogs = ({ products = [], brands = [], sizes = [] }) => {
     }
 
     return (
-        <>
+        <main className="main">
             <CatalogMenu />
 
             <div className={styles["catalog-body"]}>
@@ -98,7 +98,7 @@ const Catalogs = ({ products = [], brands = [], sizes = [] }) => {
             <Bestsellers products={products} />
             <FragnanceChoice />
             <BrandsBlock brands={brands} />
-        </>
+        </main>
     );
 };
 

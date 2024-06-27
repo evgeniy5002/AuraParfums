@@ -5,13 +5,14 @@ const Contacts = () => {
     return (
         <div className={styles.container}>
             <div>
-                <h2>Контакты</h2>
+                <h2>Контакти</h2>
                 <p>У нас відсутній кол-центр, однак всі питання ми максимально швидко вирішуємо у текстовому вигляді.</p>
             </div>
-            <div>
-                <a><i className=""></i></a>
-                <a></a>
-                <a></a>
+            <div className={styles.icons}>
+                <br /><br />
+                <a><i class="bi-instagram"></i></a>
+                <a><i class="bi-facebook"></i></a>
+                <a><i class="bi-telegram"></i></a>
             </div>
         </div>
     )

@@ -1,8 +1,8 @@
 import { React, useState, useEffect } from "react";
-import NewFragnances from "../NewFragnances/NewFragnances";
 import Bestsellers from "../Bestsellers/Bestsellers";
 import { useLocation } from "react-router-dom";
 import styles from "./ProductPage.module.scss"
+import NewFragrances from "../NewFragnances/NewFragnances";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../../Store/Actions/userActions";
 import { addGuestCartItem } from "../../Store/Actions/guestActions";
@@ -14,6 +14,21 @@ const ProductPage = ({ products }) => {
     const { isAuth } = useAuth();
 
     let productID = parseInt((location.search).slice(1));
+    // const key = 'cartItems';
+
+    // function checkAndCreateArrayInLocalStorage() {
+    //     const storedArray = localStorage.getItem(key);
+    //     if (!storedArray) {
+    //         const newArray = [];
+    //         localStorage.setItem(key, JSON.stringify(newArray));
+    //         console.log(`Array with key "${key}" created in localStorage.`);
+    //     } else {
+    //         console.log(`Array with key "${key}" already exists in localStorage.`);
+    //     }
+    // }
+
+    // const location = useLocation();
+    // let productID = parseInt(location.search.slice(1));
 
     const [productsOrderedCount, setProductOrdered] = useState(1);
     useEffect(() => {
@@ -29,7 +44,7 @@ const ProductPage = ({ products }) => {
     }
 
     const [chosenSize, setChosenSize] = useState(products[productID].sizes[0].id);
-    
+
     function findPriceBySize(sizes, bigSizes, chosenSize) {
         let price = null;
         const sizeObj = sizes.find(sizeObj => sizeObj.id === chosenSize);
@@ -42,7 +57,7 @@ const ProductPage = ({ products }) => {
             }
         }
         return price;
-    };
+    }
 
     const price = findPriceBySize(products[productID].sizes, products[productID].bigSizes, chosenSize);
 
@@ -57,14 +72,15 @@ const ProductPage = ({ products }) => {
         ? addToCart = () => { dispatch(addCartItem({ productId: productID, count: productsOrderedCount })); }
         : addToCart = () => { dispatch(addGuestCartItem({ productId: productID, count: productsOrderedCount })); }
 
-
     return (
-        <>
+        <main className="main">
+
             {
                 products.map((product, index) => {
                     if (product.id === productID) {
                         return (
-                            <div className={`${styles["product-info-container"]} container`}>
+
+                            <div className={`${styles["product-info-container"]} container`} key={product.id}>
                                 <img src={product.image} alt="" />
                                 <div className={styles["product-info"]}>
                                     <h2 className={styles["product-card_title"]}>
@@ -107,17 +123,16 @@ const ProductPage = ({ products }) => {
                                         </a>
                                     </div>
                                     <p className={styles["price"]}>Ціна: <span>{price}</span>  $</p>
-
                                 </div>
                             </div>
-                        )
+                        );
                     }
                 })
             }
 
-            <NewFragnances products={products} />
+            <NewFragrances products={products} />
             <Bestsellers products={products} />
-        </>
+        </main>
     );
 };
 
