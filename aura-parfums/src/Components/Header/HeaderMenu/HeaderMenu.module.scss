@@ -115,14 +115,7 @@ a {
 }
 
 .header-contacts,
-.header-brands {
-    border-bottom-color: $red;
-}
-
+.header-brands,
 .header-cart {
-    max-width: 80%;
-
-    .header-menu-container {
-        margin: 0px;
-    }
+    border-bottom-color: $red;
 }
