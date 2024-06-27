@@ -17,6 +17,8 @@ import OrdersPage from './Components/OrdersPage/OrdersPage';
 import WorkshopPage from './Components/WorkshopPage/WorkshopPage';
 import { useAuth } from './Hooks/useAuth';
 import ProductPage from './Components/ProductPage/ProductPage';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 
 function App() {
   const { isAuth } = useAuth();
@@ -562,7 +564,7 @@ function App() {
               <Route index element={<HomePage brands={brands} products={products} />} />
               <Route path="catalogs/*" element={<Catalogs brands={brands} products={products} />} />
               <Route path="contacts" element={<Contacts />} />
-              <Route path="brands" element={<Brands />} />
+              <Route path="brands" element={<Brands brands={brands} />} />
               <Route path="product-page" element={<ProductPage products={products} ></ProductPage>}></Route>
               <Route path="fragnance-choice" element={<FragnanceChoice />} />
               <Route path="user-page/*" element={<UserPage />}>

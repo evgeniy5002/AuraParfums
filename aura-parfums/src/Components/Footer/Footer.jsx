@@ -11,16 +11,19 @@ const Footer = () => {
                     <FooterInfoBlock
                         title={"Каталог"}
                         items={["Нішева парфумерія", "Люксова парфумерія", "Жіноча парфумерія", "Чоловіча парфумерія", "Сети парфумів", "Цілі флакони", "Бренди"]}
+                        links={["/catalogs?category=niche", "/catalogs?category=lux", "/catalogs?category=female", "/catalogs?category=male", "#", "/catalogs?category=fullBottles", "/brands"]}
                     />
 
                     <FooterInfoBlock
                         title={"Контакти"}
                         items={["Політика конфіденційності", "Публічний договір", "Умови доставки"]}
+                        links={["#", "#", "#"]}
                     />
 
                     <FooterInfoBlock
                         title={"Додатково"}
                         items={["Огляди", "Контакти"]}
+                        links={["#", "/contacts"]}
                     />
                 </div>
 
