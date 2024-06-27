@@ -5,10 +5,10 @@ import UserPageMenu from "./UserPageMenu/UserPageMenu";
 
 const UserPage = () => {
     return (
-        <div className={styles["user-page"]}>
+        <main className="main">
             <UserPageMenu />
             <Outlet />
-        </div>
+        </main>
     );
 }
 

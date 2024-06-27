@@ -1,0 +1,101 @@
+@import '../../variables.scss';
+
+.cart_container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 25px;
+    @include AV("gap", 113, 50);
+    h2{
+        @include fsz48;
+        font-weight: 700;
+    }
+
+    
+    h3{
+        font-weight: 600;
+        @include fsz32;
+    }
+
+    .order-info{
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+
+ 
+
+
+        .options{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .option{
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    max-width: 80%;
+                }
+                h4{
+                    @include fsz24;
+                    font-weight: 400;
+                }
+                p{
+                    color: #969696;
+                }
+
+                span{
+                    font-weight: 600;
+                    color: $red;
+                }
+                border: 1px solid $red;
+                padding: 25px 30px;
+            }
+        }
+
+
+        .delivery{
+            
+        }
+        .payment{
+            .payment_methods{
+                .payment_method{
+
+                }
+            }
+        }
+
+        .client-form{
+            max-width: 560px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(2, 1fr); // Две колонки по 1fr каждая
+            *{
+                &:first-child{
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                }
+                &:nth-child(2){
+                    grid-column-start: 2;
+                    grid-column-end: 3;
+                }
+                grid-column: 1 / 3;
+            }
+            hr{
+                height: 1px;
+                background: #000;
+                width: 100%;
+
+            }
+            textarea{
+                border: 1.5px solid #000000;
+                padding: 25px;
+                resize: vertical;
+                width: 100%;
+                &::placeholder {
+                    @include fsz16;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}

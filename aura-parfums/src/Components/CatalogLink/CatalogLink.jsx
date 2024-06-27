@@ -12,7 +12,7 @@ const CatalogLink = ({ title, items }) => {
                     </h2>
                     <p>Відкрий світ оригінальної парфумерії з нами</p>
                     <Link to="/catalogs">
-                        <div className={"default-button"} >Каталог</div>
+                        <a className={"default-button"} >Каталог</a>
                     </Link>
                 </div>
             </div>

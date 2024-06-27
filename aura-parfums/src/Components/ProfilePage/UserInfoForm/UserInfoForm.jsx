@@ -4,9 +4,9 @@ import styles from "./UserInfoForm.module.scss";
 const UserInfoForm = () => {
     return (
         <div className={styles["grid-container"]}>
-            <input type="text" placeholder="Номер телефону" />
-            <input type="text" placeholder="Ім’я" />
-            <input type="text" placeholder="Прізвище" />
+            <input className="dflt-input" type="text" placeholder="Номер телефону" />
+            <input className="dflt-input" type="text" placeholder="Ім’я" />
+            <input className="dflt-input" type="text" placeholder="Прізвище" />
         </div>
     );
 }

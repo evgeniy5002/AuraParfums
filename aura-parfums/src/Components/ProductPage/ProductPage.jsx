@@ -1,17 +1,14 @@
-import { React, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import NewFragnances from "../NewFragnances/NewFragnances";
+import NewFragrances from "../NewFragnances/NewFragnances";
 import Bestsellers from "../Bestsellers/Bestsellers";
 import { useLocation } from "react-router-dom";
-import styles from "./ProductPage.module.scss"
-import { getStoredUsers } from "../../Utils/getStoredUsers";
-import { setStoredUsers } from "../../Utils/setStoredUsers";
+import styles from "./ProductPage.module.scss";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../../Store/Actions/userActions";
 
 const ProductPage = ({ products }) => {
     const dispatch = useDispatch();
-
     const key = 'cartItems';
 
     function checkAndCreateArrayInLocalStorage() {
@@ -19,29 +16,30 @@ const ProductPage = ({ products }) => {
         if (!storedArray) {
             const newArray = [];
             localStorage.setItem(key, JSON.stringify(newArray));
-            console.log(`Массив с ключом "${key}" создан в localStorage.`);
+            console.log(`Array with key "${key}" created in localStorage.`);
         } else {
-            console.log(`Массив с ключом "${key}" уже существует в localStorage.`);
+            console.log(`Array with key "${key}" already exists in localStorage.`);
         }
     }
 
     const location = useLocation();
-    let productID = parseInt((location.search).slice(1));
-
+    let productID = parseInt(location.search.slice(1));
 
     const [productsOrderedCount, setProductOrdered] = useState(1);
     useEffect(() => {
         setProductOrdered(1);
     }, [productID]);
+
     function minusItem() {
         setProductOrdered(prevCount => Math.max(prevCount - 1, 1));
     }
+
     function plusItem() {
         setProductOrdered(prevCount => prevCount + 1);
     }
 
-
     const [chosenSize, setChosenSize] = useState(products[productID].sizes[0].id);
+
     function findPriceBySize(sizes, bigSizes, chosenSize) {
         let price = null;
         const sizeObj = sizes.find(sizeObj => sizeObj.id === chosenSize);
@@ -54,40 +52,29 @@ const ProductPage = ({ products }) => {
             }
         }
         return price;
-    };
+    }
 
     const price = findPriceBySize(products[productID].sizes, products[productID].bigSizes, chosenSize);
 
-
-
     function addToCart() {
-
         checkAndCreateArrayInLocalStorage();
-        const storedArray = JSON.parse(localStorage.getItem(key));
-        console.log("STORED ARRAY: ", storedArray);
+        const storedArray = JSON.parse(localStorage.getItem(key)) || [];
 
-        let itemExists = false;
-        // storedArray.forEach(item => {
-        //     if (item.productId === productID) {
-        //         item.count += productsOrderedCount;
-        //         itemExists = true;
-        //     }
-        // });
-        // if (!itemExists) {
-        storedArray.push({ productId: productID, count: productsOrderedCount });
+        const newItem = { productId: productID, sizeId: chosenSize, count: productsOrderedCount };
+        storedArray.push(newItem);
         localStorage.setItem(key, JSON.stringify(storedArray));
-        // }
-
-        dispatch(addCartItem({ productId: productID, count: productsOrderedCount }));
+        dispatch(addCartItem(newItem));
     }
 
     return (
-        <>
+        <main className="main">
+
             {
                 products.map((product, index) => {
                     if (product.id === productID) {
                         return (
-                            <div className={`${styles["product-info-container"]} container`}>
+                            
+                            <div className={`${styles["product-info-container"]} container`} key={product.id}>
                                 <img src={product.image} alt="" />
                                 <div className={styles["product-info"]}>
                                     <h2 className={styles["product-card_title"]}>
@@ -130,17 +117,16 @@ const ProductPage = ({ products }) => {
                                         </a>
                                     </div>
                                     <p className={styles["price"]}>Ціна: <span>{price}</span>  $</p>
-
                                 </div>
                             </div>
-                        )
+                        );
                     }
                 })
             }
 
-            <NewFragnances products={products} />
+            <NewFragrances products={products} />
             <Bestsellers products={products} />
-        </>
+            </main>
     );
 };
 
