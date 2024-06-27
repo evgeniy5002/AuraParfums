@@ -6,8 +6,8 @@ const Brands = ({ brands }) => {
     return (
         <div className={styles.container}>
             <img src={"Images/LargeLogo.png"} alt="" className={styles.logoImg}/>
-            <h2>БРЕНДЫ</h2>
-            <p>ароматы, которые подчеркивают вашу неповторимость</p>
+            <h2>БРЕНДИ</h2>
+            <p>аромати, які підкреслююють вашу неповторність</p>
             <div className={styles.brands}>
             {brands.map(brand => (
                 <div key={brand.id} className={styles.brand} >

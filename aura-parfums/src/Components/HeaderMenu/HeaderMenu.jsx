@@ -63,13 +63,13 @@ export const HeaderMenu = () => {
                             <Link to="/catalogs" onClick={closeMenu}>Каталог</Link>
                         </li>
                         <li>
-                            <Link to="/brands" onClick={closeMenu}>Бренды</Link>
+                            <Link to="/brands" onClick={closeMenu}>Бренди</Link>
                         </li>
                         <li>
-                            <Link to="/contacts" onClick={closeMenu}>Контакты</Link>
+                            <Link to="/contacts" onClick={closeMenu}>Контакти</Link>
                         </li>
                         <li>
-                            <Link to="/fragnance-choice" onClick={closeMenu}>Подобрать аромат</Link>
+                            <Link to="/fragnance-choice" onClick={closeMenu}>Підібрати аромат</Link>
                         </li>
                     </ul>
                 </div>
@@ -82,13 +82,13 @@ export const HeaderMenu = () => {
                         {/* <img src={"Images/header/arrow-icon.svg"} alt="arrow-down" /> */}
                     </li>
                     <li>
-                        <Link to="/brands"><span>Бренды</span></Link>
+                        <Link to="/brands"><span>Бренди</span></Link>
                     </li>
                     <li>
-                        <Link to="/contacts"><span>Контакты</span></Link>
+                        <Link to="/contacts"><span>Контакти</span></Link>
                     </li>
                     <li>
-                        <Link to="/fragnance-choice"><span>Подобрать аромат</span></Link>
+                        <Link to="/fragnance-choice"><span>Підібрати аромат</span></Link>
                     </li>
                 </ul>
             </nav>
