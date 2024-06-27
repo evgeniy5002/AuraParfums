@@ -19,14 +19,16 @@ import { useAuth } from './Hooks/useAuth';
 import ProductPage from './Components/ProductPage/ProductPage';
 import { useEffect } from 'react';
 import { getStoredUsers } from './Utils/getStoredUsers';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from './Store/Actions/userActions';
+import { setStoredUsers } from './Utils/setStoredUsers';
 // import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 function App() {
   const { isAuth } = useAuth();
   const dispatch = useDispatch();
+  const userState = useSelector((state) => state.user);
 
   const brands = [
     { id: 1, image: "Images/brands/abercombie.png", name: "Abercombie" },
@@ -560,24 +562,24 @@ function App() {
 
   // Эта штука при загрузке страницы берет из localStorage id активного пользователя, затем находит его и устанавливает в state
   useEffect(() => {
-    console.log("BEFORE ------", getStoredUsers()[0].cartItems[0]);
     const storedUsers = getStoredUsers();
     const activeUserId = parseInt(localStorage.getItem("activeUserId"));
 
     if (activeUserId) {
-      const activeUser = storedUsers.find(user => user.id === activeUserId);
+      let activeUser = storedUsers.find(user => user.id === activeUserId);
 
-      console.log("ACTIVE USER ----", activeUser)
-
-      // console.log("STORED USERS ---- ", storedUsers);
-      // console.log("ACTIVE USER ID ---- ", activeUserId);
-      
-      if (activeUser)
+      if (activeUser) {
         dispatch(setUser(activeUser));
-    }
+      }
 
-    console.log("AFTER ------", getStoredUsers()[0].cartItems[0]);
-  }, []);
+      console.log("USER STATE -- -- --", userState);
+    }
+    // let activeUser = storedUsers[storedUsers.length - 1];
+    // dispatch(setUser(activeUser));
+    // console.log("USER STATE -- -- --", activeUser);
+
+  }, [dispatch]);
+
 
   return (
     <div className="App">

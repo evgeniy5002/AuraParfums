@@ -61,7 +61,8 @@ const ProductPage = ({ products }) => {
         count: productsOrderedCount,
         size: sizeObj,
         name: products[productID].name,
-        brand: products[productID].brand
+        brand: products[productID].brand,
+        image: products[productID].image
     };
 
     isAuth

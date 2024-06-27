@@ -8,7 +8,8 @@ const initialState = {
 export const guestReducer = (state = initialState, action) => {
     switch (action.type) {
         case "ADD_GUEST_CART_ITEM": {
-            const itemIndex = state.cartItems.findIndex(item => item.productId === action.payload.cartItem.productId);
+            const { productId, count, size, brand, name } = action.payload.cartItem;
+            const itemIndex = state.cartItems.findIndex(item => item.productId === productId);
 
             let newCartItems;
 
@@ -25,7 +26,7 @@ export const guestReducer = (state = initialState, action) => {
                 });
             }
             else {
-                newCartItems = [...state.cartItems, action.payload.cartItem];
+                newCartItems = [...state.cartItems, { brand, count, productId, size, name }];
             }
 
             const newState = {

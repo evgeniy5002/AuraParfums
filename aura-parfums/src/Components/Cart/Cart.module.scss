@@ -19,8 +19,8 @@
     }
 
     .cart {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
 
         .cart-item {
             display: flex;

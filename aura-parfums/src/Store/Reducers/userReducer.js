@@ -14,6 +14,9 @@ const initialState = {
 const userReducer = (state = initialState, action) => {
     switch (action.type) {
         case "SET_USER": {
+
+            console.log("ACTION EMAIL: ",action.payload.email )
+
             return {
                 ...state,
                 email: action.payload.email,
@@ -29,7 +32,7 @@ const userReducer = (state = initialState, action) => {
         case "ADD_CART_ITEM": {
             const storedUsers = getStoredUsers();
             const userIndex = storedUsers.findIndex(user => user.id === state.id);
-            const { productId, count, size, brand, name } = action.payload.cartItem;
+            const { productId, count, size, brand, name, image} = action.payload.cartItem;
 
             const existingItemIndex = state.cartItems.findIndex(item =>
                 item.productId === productId && item.size.id === size.id
@@ -49,7 +52,8 @@ const userReducer = (state = initialState, action) => {
                     return item;
                 });
             } else {
-                newCartItems = [...state.cartItems, productId, count, size, brand, name];
+                const newItem = { brand, count, productId, size, name, image };
+                newCartItems = [...state.cartItems, newItem];
             }
 
             const newState = {
@@ -64,6 +68,7 @@ const userReducer = (state = initialState, action) => {
 
             return newState;
         }
+
 
         case "REMOVE_USER": {
             return initialState;
