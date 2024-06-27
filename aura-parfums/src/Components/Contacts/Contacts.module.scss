@@ -19,24 +19,24 @@
    
 
 }
-h2 {
-    @include fsz48;
-margin-top: 10%;
-}
-p {
-    color: $red;
-    font-style: italic;
-    @include fsz20
-}
-a {
-    text-decoration: none;
-    color: inherit;
-}
-    i {
-      font-size: 40px; // Задайте размер иконок
-      margin: 0 10px; // Пример отступов между иконками
-      transition: color 0.3s ease; // Плавный переход цвета при наведении
-    }
-      a:hover {
-        color: #791616; // Изменение цвета при наведении
-      }
+// h2 {
+//     @include fsz48;
+// margin-top: 10%;
+// }
+// p {
+//     color: $red;
+//     font-style: italic;
+//     @include fsz20
+// }
+// a {
+//     text-decoration: none;
+//     color: inherit;
+// }
+//     i {
+//       font-size: 40px; // Задайте размер иконок
+//       margin: 0 10px; // Пример отступов между иконками
+//       transition: color 0.3s ease; // Плавный переход цвета при наведении
+//     }
+//       a:hover {
+//         color: #791616; // Изменение цвета при наведении
+//       }

@@ -4,7 +4,7 @@ import styles from "./Brands.module.scss";
 
 const Brands = ({ brands }) => {
     return (
-        <div className={styles.container}>
+        <div className={`${styles.brands_container} container`}>
             <img src={"Images/LargeLogo.png"} alt="" className={styles.logoImg}/>
             <h2>БРЕНДИ</h2>
             <p>аромати, які підкреслююють вашу неповторність</p>

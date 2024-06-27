@@ -17,7 +17,7 @@ import OrdersPage from './Components/OrdersPage/OrdersPage';
 import WorkshopPage from './Components/WorkshopPage/WorkshopPage';
 import { useAuth } from './Hooks/useAuth';
 import ProductPage from './Components/ProductPage/ProductPage';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+// import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 function App() {
