@@ -24,7 +24,7 @@ const HeaderMenu = ({ styleName }) => {
 
     return (
         <div className={`${styles["header-menu"]} ${styles[styleName]}`}>
-            <div className={`${styles["header-menu-container"]}`}>
+            <div className={`${styles["header-menu-container"]} container`}>
                 <FontAwesomeIcon className={styles.burger_icon} icon={faBars} />
 
                 <nav className={styles["nav-container"]}>

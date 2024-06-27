@@ -568,7 +568,7 @@ function App() {
 
       // console.log("STORED USERS ---- ", storedUsers);
       // console.log("ACTIVE USER ID ---- ", activeUserId);
-      // console.log("ACTIVE USER ---- ", activeUser);
+      console.log("ACTIVE USER ---- ", activeUser.cartItems.size);
       if (activeUser)
         dispatch(setUser(activeUser));
     }

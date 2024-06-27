@@ -16,6 +16,8 @@ const Cart = ({ products }) => {
     isAuth ? state.user.cartItems : state.guest.cartItems
   ));
 
+  console.log("FROM CART ----", cartItems[0].size);
+
   return (
     <main className='main'>
       <div className={`${styles["cart_container"]} container`}>
@@ -33,8 +35,8 @@ const Cart = ({ products }) => {
               </div>
               <div className={`${styles.delivery_option} ${styles.option}`}>
                 <div>
-                    <h4>Укр Пошта (Відділення за індексом)</h4>
-                    <p>Безкоштовна доставка від 900 грн</p>
+                  <h4>Укр Пошта (Відділення за індексом)</h4>
+                  <p>Безкоштовна доставка від 900 грн</p>
                 </div>
               </div>
             </div>
@@ -64,7 +66,7 @@ const Cart = ({ products }) => {
                   </h4>
                   <span>На суму замовлення від 900 грн діє безкоштовна доставка. Термін відправки   замовлення 1-4 дні.</span>
                   <p>
-                  Ваші особисті дані використовуватимуться для підтримки вашого досвіду на цьому  веб-сайті, для керування доступом до вашого облікового запису та для інших   цілей, описаних у нашій політика конфіденційності.
+                    Ваші особисті дані використовуватимуться для підтримки вашого досвіду на цьому  веб-сайті, для керування доступом до вашого облікового запису та для інших   цілей, описаних у нашій політика конфіденційності.
                   </p>
                 </div>
                 <div>
@@ -94,10 +96,19 @@ const Cart = ({ products }) => {
           {cartItems.length > 0 ? (
             cartItems.map(item => (
               <div key={`${item.productId}-${item.sizeId}`}>
-                <h1>Product ID: {item.productId}</h1>
-                <h1>Count: {item.count}</h1>
-                <h1>Size ID: {item.sizeId}</h1>
-                <p>Email: {email}</p>
+                <span>Product ID: {item.productId}</span>
+                <span>Count: {item.count}</span>
+                {item.size ? (
+                  <>
+                    <span>Size ID: {item.size.id}</span>
+                    <span>Price: {item.size.price}</span>
+                    <span>Size: {item.size.size}</span>
+                  </>
+                ) : (
+                  <span>Size information not available</span>
+                )}
+                <span>Brand: {item.brand}</span>
+                <span>Name: {item.name}</span>
               </div>
             ))
           ) : (

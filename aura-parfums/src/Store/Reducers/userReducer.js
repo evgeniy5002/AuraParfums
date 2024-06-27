@@ -29,25 +29,26 @@ const userReducer = (state = initialState, action) => {
         case "ADD_CART_ITEM": {
             const storedUsers = getStoredUsers();
             const userIndex = storedUsers.findIndex(user => user.id === state.id);
-            const itemIndex = state.cartItems.findIndex(item => item.productId === action.payload.cartItem.productId);
+            const { productId, count, size, brand, name } = action.payload.cartItem;
+
+            const existingItemIndex = state.cartItems.findIndex(item =>
+                item.productId === productId && item.size.id === size.id
+            );
 
             let newCartItems;
 
-            if (itemIndex !== -1) {
+            if (existingItemIndex !== -1) {
+                // Если элемент с таким productId и size.id уже есть в корзине, увеличиваем count
                 newCartItems = state.cartItems.map((item, index) => {
-                    if (index === itemIndex) {
-                        // item = {count: _, productId: _}
+                    if (index === existingItemIndex) {
                         return {
                             ...item,
-                            count: item.count + action.payload.cartItem.count
+                            count: item.count + count,
                         };
                     }
-
                     return item;
                 });
-                console.log("NCI: ", newCartItems);
-            }
-            else {
+            } else {
                 newCartItems = [...state.cartItems, action.payload.cartItem];
             }
 
@@ -63,6 +64,8 @@ const userReducer = (state = initialState, action) => {
 
             return newState;
         }
+
+
 
         case "REMOVE_USER": {
             return initialState;
