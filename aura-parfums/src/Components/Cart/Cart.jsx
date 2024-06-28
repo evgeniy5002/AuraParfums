@@ -84,41 +84,82 @@ const Cart = ({ products }) => {
           </div>
         </div>
         <div className={styles["cart"]}>
-          {
-            cartItems.length > 0 ? (
-              cartItems.map((item, index) => (
-                <div className={styles["cart-item"]} key={index}>
-                  <div>
-                    <img src={`/${item.image}`} alt="" />
-                  </div>
 
-                  <div className={styles["cart-item-info"]}>
-                    <div className={styles["cart-item-info_top"]}>
-                      <span className={styles['cart-name']}>{item.name}</span>
-                      <span className={styles['cart-brand']}>{item.brand}</span>
+          <h1>Кошик</h1>
+          <div className={styles["cart-items"]}>
+            {
+              cartItems.length > 0 ? (
+                cartItems.map((item, index) => (
+                  <div className={styles["cart-item"]} key={index}>
+                    <div>
+                      <img src={`/${item.image}`} alt="" />
                     </div>
 
-                    <div className={styles["cart-item-info_bottom"]}>
-                      <div className={styles["counter-block"]}>
-                        <span className={styles["cart-size"]}>{item.size.size}</span>
-                        <div className={styles["cart-counter"]}>
-                          <img src="/Images/minussmall.svg" alt="" />
-                          <span>{item.count}</span>
-                          <img src="/Images/plussmall.svg" alt="" />
+                    <div className={styles["cart-item-info"]}>
+                      <div className={styles["cart-item-info_top"]}>
+                        <span className={styles['cart-name']}>{item.name}</span>
+                        <span className={styles['cart-brand']}>{item.brand}</span>
+                      </div>
+
+                      <div className={styles["cart-item-info_bottom"]}>
+                        <div className={styles["counter-block"]}>
+                          <span className={styles["cart-size"]}>{item.size.size}</span>
+                          <div className={styles["cart-counter"]}>
+                            <img src="/Images/minussmall.svg" alt="" />
+                            <span>{item.count}</span>
+                            <img src="/Images/plussmall.svg" alt="" />
+                          </div>
+                        </div>
+
+                        <div className={styles["price-block"]}>
+                          <span className={styles["cart-price"]}>{item.size.price}</span>
                         </div>
                       </div>
-
-                      <div>
-                        <span className={styles["cart-price"]}>{item.size.price}</span>
-                      </div>
                     </div>
                   </div>
-                </div>
-              ))
-            ) : (
-              <p>Ваша корзина пуста</p>
-            )
-          }
+                ))
+              ) : (
+                <p>Ваша корзина пуста</p>
+              )
+            }
+          </div>
+
+          <div>
+            <div className={styles['cashback-info']}>
+              <div>
+                <img src="/Images/creditcard.svg" alt="" />
+                <p>
+                  Оплачуйте замовлення онлайн і отримуйте кешбек 5% на наступні покупки у нашому магазині. Ваш поточний баланс кешбеку: Накопичено 0 грн. Стежне за особистим кабінетом - кешбек буде нараховано вже за декілька днів.
+                </p>
+              </div>
+
+              <p className={styles["example"]}>
+                Наприклад, при покупці на суму 1000 грн ви отримуєте
+                50 грн нанаступні замовлення!
+              </p>
+            </div>
+
+            <div className={styles["cashback-balance"]}>
+              <span >
+                Ваш поточний баланс кешбеку: 0 грн
+              </span>
+            </div>
+
+
+            <div className={styles["btns"]}>
+              <input className={styles["promocode"]} type="text" placeholder="ПРОМОКОД" />
+              <button className={styles["apply-btn"]}>ЗАСТОСУВАТИ</button>
+            </div>
+
+            <div className={styles["payment-info"]}>
+              <span>Сума до сплати:</span>
+              <span>870 грн</span>
+            </div>
+
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <button className={styles["to-catalog-btn"]}>До каталогу</button>
+            </div>
+          </div>
         </div>
       </div>
     </main >
