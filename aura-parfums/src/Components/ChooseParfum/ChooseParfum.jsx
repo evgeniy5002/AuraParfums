@@ -119,7 +119,7 @@ const ChooseParfum = () => {
 
   return (
     <div className={styles["choose-parfum"]}>
-      <div className={styles.FormContainer}>
+      <div className={`${styles.FormContainer} container`}>
         <div className={styles.text}>
           <h2>Підібрати Аромат</h2>
           <p>
