@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Counter = ({ size, count }) => {
+    
     return (
         <div className={styles["counter-block"]}>
             <span className={styles["cart-size"]}>{size}</span>
@@ -28,21 +29,49 @@ const PriceBlock = ({ price }) => {
 
 
 
-const CartItem = ({ item }) => {
-    console.log("cart ----------- item ------", item);
+const CartItem = ({ item,products }) => {
 
     return (
         <Link to={`/product-page?${encodeURIComponent(item.productId)}`} >
             <div className={styles["cart-item"]}>
                 <div>
-                    <img src={`/${item.image}`} alt={item.name} />
+                {
+                                
+                    products.map((product) => {
+                        if (product.id == item.productId ) {
+                            console.log(product);
+                            return (
+                                <>
+                                       <img src={`/${product.image}`} alt={item.name} />
+                                </>
+        
+                            )
+                        }
+                    })
+                }
+                
                 </div>
 
                 <div className={styles["cart-item-info"]}>
                     <div className={styles["cart-item-info_top"]}>
                         <div className={styles["product-info"]}>
-                            <span className={styles['cart-name']}>{item.name}</span>
-                            <span className={styles['cart-brand']}>{item.brand}</span>
+                            {
+                                
+                                products.map((product) => {
+                                    if (product.id == item.productId ) {
+                                        console.log(product);
+                                        return (
+                                            <>
+                                                <span className={styles['cart-name']}>{product.name}</span>
+                                                <span className={styles['cart-brand']}>{product.brand}</span>
+                                            </>
+                    
+                                        )
+                                    }
+                                })
+                            }
+                            {/* <span className={styles['cart-name']}>{item.name}</span> */}
+                          
                         </div>
                         <div className={styles["remove-btn"]}>
                             <img src="/Images/remove_btn.svg" alt="" />

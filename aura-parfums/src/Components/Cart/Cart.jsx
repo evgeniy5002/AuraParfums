@@ -7,7 +7,7 @@ import CartItem from "./CartItem/CartItem";
 
 const Cart = ({ products }) => {
   const { isAuth } = useAuth();
-
+  console.log(products);
   let cartItems = useSelector(state => (
     isAuth ? state.user.cartItems : state.guest.cartItems
   ));
@@ -95,7 +95,8 @@ const Cart = ({ products }) => {
                 {
                   cartItems.length > 0 ? (
                     cartItems.map((item, index) => (
-                      <CartItem item={item} />
+                      
+                      <CartItem item={item} products={products} />
                     ))
                   ) : (
                     <p>Ваша корзина пуста</p>
