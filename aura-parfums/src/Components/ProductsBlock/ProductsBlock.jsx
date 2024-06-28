@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from "./ProductsBlock.module.scss";
 import { ProductCard } from "./ProductCard/ProductCard";
 
 export const ProductsBlock = ({ niche = false, fullBottles = false, lux = false, male = false, female = false, newProducts = false, bestsellers = false, products, loadCardsCount = 0, maxColumns = 4 }) => {
     if (!products) {
-        return null; // Или другое поведение, если данные не загружены
+        return null;
     }
 
     products.sort((a, b) => b.rating - a.rating);
-    if (loadCardsCount == 0) {
+    if (loadCardsCount === 0) {
         loadCardsCount = products.length
     }
 
@@ -44,7 +44,7 @@ export const ProductsBlock = ({ niche = false, fullBottles = false, lux = false,
     ));
 
 
-    if (maxColumns == 3) {
+    if (maxColumns === 3) {
         return (
             <div className="container">
                 <div className={`${styles.products_block} ${styles.products_block_three_columns}`}>
@@ -52,7 +52,7 @@ export const ProductsBlock = ({ niche = false, fullBottles = false, lux = false,
                 </div>
             </div>
         );
-    } else if (maxColumns == 4) {
+    } else if (maxColumns === 4) {
         return (
             <div className="container">
                 <div className={`${styles.products_block} ${styles.products_block_four_columns}`}>

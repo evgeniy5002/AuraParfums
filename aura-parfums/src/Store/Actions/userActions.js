@@ -6,10 +6,16 @@ const UPDATE_NAME = "UPDATE_NAME";
 const UPDATE_SURNAME = "UPDATE_SURNAME";
 const ADD_CART_ITEM = "ADD_CART_ITEM";
 
-export const setUser = ({ email, password, id, cartItems }) => ({
-    type: SET_USER,
-    payload: { email, password, id, cartItems },
-});
+export const setUser = ({ email, password, id, cartItems }) => {
+    console.log("SU EMAIL", email);
+    console.log("SU ID", id);
+    console.log("SU CARTITEMS", cartItems);
+
+    return {
+        type: SET_USER,
+        payload: { email, password, id, cartItems },
+    }
+};
 
 export const removeUser = () => ({
     type: REMOVE_USER,

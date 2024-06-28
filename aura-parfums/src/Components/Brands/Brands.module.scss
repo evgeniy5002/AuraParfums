@@ -1,54 +1,60 @@
 @import '../../variables.scss';
 
 .brands_container {
-
     margin-top: 175px;
     display: flex;
     flex-direction: column;
-    
-   
     align-items: center;
+    margin-bottom: 15px;
 
-    .logoImg{
+    .logoImg {
         max-width: 960px;
         width: 100%;
     }
 
-h2 {
-    @include fsz48;
-margin-top: 10%;
-}
-p {
-    color: $red;
-    font-style: italic;
-    @include fsz20;
-    text-align:center;
-}
-.brands{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    @include AV('gap', 100, 40);
-    @include AV('margin-top', 84, 40);
-    @media (max-width:1400) {
-        grid-template-columns: repeat(5,1fr);
+    h2 {
+        @include fsz48;
+        margin-top: 10%;
     }
-    @media (max-width:1100px) {
-        grid-template-columns: repeat(4,1fr);
+
+    p {
+        color: $red;
+        font-style: italic;
+        @include fsz20;
+        text-align: center;
     }
-    @media (max-width:900px) {
-        grid-template-columns: repeat(3,1fr);
-    }
-    @media (max-width:768px) {
-        grid-template-columns: repeat(2,1fr);
-    }
-    div{
+
+    .brands {
+        width: 100%;
         display: grid;
-        place-items: center;
-        img{
-            max-width: 100%;
+        grid-template-columns: repeat(6, 1fr);
+        @include AV('gap', 100, 40);
+        @include AV('margin-top', 84, 40);
+
+        @media (max-width:1400) {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        @media (max-width:1100px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width:900px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width:768px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        div {
+            display: grid;
+            place-items: center;
+
+            img {
+                max-width: 100%;
+            }
         }
     }
-}
 
 }

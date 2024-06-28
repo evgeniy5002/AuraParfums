@@ -5,8 +5,13 @@ import styles from "./ProductPage.module.scss"
 import NewFragrances from "../NewFragnances/NewFragnances";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../../Store/Actions/userActions";
+// <<<<<<< HEAD
 import { addGuestCartItem } from "../../Store/Actions/guestActions";
 import { useAuth } from "../../Hooks/useAuth";
+// =======
+// import FragnanceChoice from "../FragnanceChoice/FragnanceChoice";
+// import OftenQuestion from "../OftenQuestions/OftenQuestions"
+// >>>>>>> origin/fasteks1
 
 const ProductPage = ({ products }) => {
     const dispatch = useDispatch();
@@ -14,63 +19,67 @@ const ProductPage = ({ products }) => {
     const { isAuth } = useAuth();
 
     let productID = parseInt((location.search).slice(1));
-    // const key = 'cartItems';
+    let productSize = products[productID].sizes;
 
-    // function checkAndCreateArrayInLocalStorage() {
-    //     const storedArray = localStorage.getItem(key);
-    //     if (!storedArray) {
-    //         const newArray = [];
-    //         localStorage.setItem(key, JSON.stringify(newArray));
-    //         console.log(`Array with key "${key}" created in localStorage.`);
-    //     } else {
-    //         console.log(`Array with key "${key}" already exists in localStorage.`);
-    //     }
-    // }
+    console.log("PRODUCT ID SLICE: ", productID);
+    console.log("PRODUCTS ID: ", products[productID].id);
 
-    // const location = useLocation();
-    // let productID = parseInt(location.search.slice(1));
-
+    const [chosenSize, setChosenSize] = useState(products[productID].sizes[0].id);
     const [productsOrderedCount, setProductOrdered] = useState(1);
+
     useEffect(() => {
         setProductOrdered(1);
     }, [productID]);
 
-    function minusItem() {
-        setProductOrdered(prevCount => Math.max(prevCount - 1, 1));
-    }
+    // productID = products[productID].id;
 
-    function plusItem() {
-        setProductOrdered(prevCount => prevCount + 1);
-    }
+    function minusItem() { setProductOrdered(prevCount => Math.max(prevCount - 1, 1)); }
+    function plusItem() { setProductOrdered(prevCount => prevCount + 1); }
 
-    const [chosenSize, setChosenSize] = useState(products[productID].sizes[0].id);
+    console.log("location.search", location.search);
+    console.log("products[productID] --- ", productSize);
+    console.log("CHOSEN SIZE: ---- ", products[productID].sizes[chosenSize - 1]);
 
     function findPriceBySize(sizes, bigSizes, chosenSize) {
         let price = null;
+
         const sizeObj = sizes.find(sizeObj => sizeObj.id === chosenSize);
+
         if (sizeObj) {
             price = sizeObj.price;
-        } else {
+        }
+        else {
             const bigSizeObj = bigSizes.find(sizeObj => sizeObj.id === chosenSize);
             if (bigSizeObj) {
                 price = bigSizeObj.price;
             }
         }
+
         return price;
     }
 
     const price = findPriceBySize(products[productID].sizes, products[productID].bigSizes, chosenSize);
 
-    // Используется на onClick
-    // function addToCart() {
-    //     dispatch(addCartItem({ productId: productID, count: productsOrderedCount }));
-    // };
-
     let addToCart;
 
+    const sizeObj = chosenSize <= products[productID].sizes.length
+        ? products[productID].sizes[chosenSize - 1]
+        : products[productID].bigSizes[chosenSize - products[productID].sizes.length - 1];
+
+    console.log("PRODUCT IDDDD: ", productID);
+
+    const cartItem = {
+        productId: productID,
+        count: productsOrderedCount,
+        size: sizeObj,
+        name: products[productID].name,
+        brand: products[productID].brand,
+        image: products[productID].image
+    };
+
     isAuth
-        ? addToCart = () => { dispatch(addCartItem({ productId: productID, count: productsOrderedCount })); }
-        : addToCart = () => { dispatch(addGuestCartItem({ productId: productID, count: productsOrderedCount })); }
+        ? addToCart = () => { dispatch(addCartItem(cartItem)); }
+        : addToCart = () => { dispatch(addGuestCartItem(cartItem)); }
 
     return (
         <main className="main">
@@ -79,7 +88,6 @@ const ProductPage = ({ products }) => {
                 products.map((product, index) => {
                     if (product.id === productID) {
                         return (
-
                             <div className={`${styles["product-info-container"]} container`} key={product.id}>
                                 <img src={product.image} alt="" />
                                 <div className={styles["product-info"]}>
@@ -93,7 +101,9 @@ const ProductPage = ({ products }) => {
                                     <div className={styles["product_sizes"]}>
                                         {product.sizes.map((sizeObj, index) => (
                                             <a
-                                                onClick={() => setChosenSize(sizeObj.id)}
+                                                onClick={() => {
+                                                    setChosenSize(sizeObj.id);
+                                                }}
                                                 key={index}
                                                 className={`${styles["product_size"]} ${chosenSize === sizeObj.id ? styles["black"] : ""} ${styles["product_square-block"]}`}
                                             >
@@ -103,7 +113,9 @@ const ProductPage = ({ products }) => {
 
                                         {product.bigSizes.map((sizeObj, index) => (
                                             <a
-                                                onClick={() => setChosenSize(sizeObj.id)}
+                                                onClick={() => {
+                                                    setChosenSize(sizeObj.id);
+                                                }}
                                                 key={index}
                                                 className={`${styles["product_size"]} ${chosenSize === sizeObj.id ? styles["black"] : ""} ${styles["product_square-block"]}`}
                                             >
@@ -118,7 +130,7 @@ const ProductPage = ({ products }) => {
                                             <a onClick={plusItem}>+</a>
                                         </div>
                                         <a onClick={addToCart} className={styles["buy-product-btn"]}>
-                                            <p>Додати в кошик</p>
+                                            <p style={{color: "white"}}>Додати в кошик</p>
                                             <img className={styles["cart-image"]} src="/Images/cart.svg" alt="" />
                                         </a>
                                     </div>
@@ -132,7 +144,13 @@ const ProductPage = ({ products }) => {
 
             <NewFragrances products={products} />
             <Bestsellers products={products} />
+{/* <<<<<<< HEAD */}
         </main>
+// =======
+//             <FragnanceChoice />
+//             <OftenQuestion/>
+//         </>
+// >>>>>>> origin/fasteks1
     );
 };
 

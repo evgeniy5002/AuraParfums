@@ -10,13 +10,3 @@
 .header-brands {
     display: none;
 }
-
-.header-cart {
-    display: block;
-}
-
-@media (max-width: 1400px) {
-    .header-cart {
-        display: none;
-    }
-}

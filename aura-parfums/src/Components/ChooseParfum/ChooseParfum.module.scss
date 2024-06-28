@@ -1,0 +1,139 @@
+@import '../../variables.scss';
+
+.FormContainer {
+  margin-bottom: 95px;
+}
+
+.error-message {
+  font-size: x-small;
+}
+
+.block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.other {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.other input {
+  width: 100%;
+}
+
+.namenumber div {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.namenumber {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.namenumber div input {
+  width: 100%;
+  border: 2px solid #791616;
+}
+
+.namenumber input::placeholder {
+  color: #791616;
+}
+
+input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.text {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.redBorder {
+  border: 1.5px solid #791616;
+}
+
+.redBorder::placeholder {
+  color: #791616;
+}
+
+.blackBorder {
+  border: 1.5px solid black;
+}
+
+.blackBorder::placeholder {
+  color: black;
+}
+
+.opacity {
+  border: 1.5px solid grey;
+}
+
+.opacity::placeholder {
+  color: grey;
+}
+
+.PrForm {
+  max-width: 752px;
+  width: 100%;
+
+  display: flex;
+  margin-top: 5vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.PrForm input {
+  margin-top: 18px;
+  height: 8vh;
+  padding: 25px 0px 25px 25px;
+}
+
+.PrForm button {
+  padding: 15px 60px;
+  background-color: black;
+  color: aliceblue;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+h2 {
+  margin-top: 10%;
+  font-size: 48px;
+}
+
+p {
+  color: $red;
+  font-style: italic;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+i {
+  font-size: 40px;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #791616;
+}
