@@ -21,11 +21,15 @@
                     margin-bottom: 15px;
                     @include fsz16;
                 }
-
+              
                 input::placeholder {
                     color: $red;
                     @include fsz16;
                     font-weight: 300;
+                }
+
+                .input-error {
+                    border: 1.5px solid red !important; /* Важно, чтобы избежать переопределений */
                 }
             }
 

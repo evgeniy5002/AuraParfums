@@ -15,7 +15,7 @@ const FragnanceChoice = () => {
                     <p>
                         Дайте відповідь на декілька запитань і отримайте свій перелік парфумів, які вам варто спробувати.
                     </p>
-                    <a href="#" className="default-button-white">Отримати підбірку</a>
+                    <a href="/choose-parfum" className="default-button-white">Отримати підбірку</a>
                 </div>
             </div>
         </div>

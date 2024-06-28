@@ -6,6 +6,7 @@ import FragnanceChoice from "../FragnanceChoice/FragnanceChoice";
 import BrandsBlock from "../BrandsBlock/BrandsBlock";
 import NewFragnances from "../NewFragnances/NewFragnances";
 import CatalogMenu from "../CatalogMenu/CatalogMenu";
+import OftenQuestions from "../OftenQuestions/OftenQuestions";
 
 const HomePage = ({products, brands}) => {
     return (
@@ -16,6 +17,7 @@ const HomePage = ({products, brands}) => {
             <Bestsellers products={products}></Bestsellers>
             <FragnanceChoice></FragnanceChoice>
             <BrandsBlock brands={brands}></BrandsBlock>
+            <OftenQuestions/>
         </main>
     )
 }

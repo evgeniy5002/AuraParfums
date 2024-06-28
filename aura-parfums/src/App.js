@@ -17,6 +17,7 @@ import OrdersPage from './Components/OrdersPage/OrdersPage';
 import WorkshopPage from './Components/WorkshopPage/WorkshopPage';
 import { useAuth } from './Hooks/useAuth';
 import ProductPage from './Components/ProductPage/ProductPage';
+import ChooseParfum from './Components/ChooseParfum/ChooseParfum';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
@@ -567,6 +568,7 @@ function App() {
               <Route path="brands" element={<Brands brands={brands} />} />
               <Route path="product-page" element={<ProductPage products={products} ></ProductPage>}></Route>
               <Route path="fragnance-choice" element={<FragnanceChoice />} />
+              <Route path="choose-parfum" element={<ChooseParfum />} />
               <Route path="user-page/*" element={<UserPage />}>
                 {
                   isAuth ? (

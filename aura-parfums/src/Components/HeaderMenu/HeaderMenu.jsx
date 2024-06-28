@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import styles from "./HeaderMenu.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 
 export const HeaderMenu = () => {
     const navigate = useNavigate();
     const [isMenuOpen, setIsMenuOpen] = useState(false); // State для открытия/закрытия меню
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State для открытия/закрытия выпадающего списка
 
     useEffect(() => {
         const handleResize = () => {
@@ -47,6 +48,11 @@ export const HeaderMenu = () => {
         setIsMenuOpen(false);
     };
 
+    // Функция для переключения состояния открытия/закрытия выпадающего списка
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+
     return (
         <div className={`${styles.header_container} container`}>
             <FontAwesomeIcon
@@ -77,9 +83,22 @@ export const HeaderMenu = () => {
 
             <nav>
                 <ul className={styles.menu}>
-                    <li>
-                        <Link to="/catalogs"><span>Каталог</span></Link>
-                        {/* <img src={"Images/header/arrow-icon.svg"} alt="arrow-down" /> */}
+                    <li className={styles.dropdown} onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+                        <Link to="/catalogs">
+                            <span>Каталог</span>
+                        </Link>
+                        <FontAwesomeIcon icon={faAngleDown} onClick={toggleDropdown} />
+                        {isDropdownOpen && (
+                            <ul className={styles.dropdown_menu}>
+                                <li><Link to="/catalogs?category=niche">Нішева парфумерія</Link></li>
+                                <li><Link to="/catalogs?category=lux">Люксова парфумерія</Link></li>
+                                <li><Link to="/catalogs?category=female">Жіноча парфумерія</Link></li>
+                                <li><Link to="/catalogs?category=male">Чоловіча парфумерія</Link></li>
+                                <li><Link to="#">Сети парфумів</Link></li>
+                                <li><Link to="/catalogs?category=fullBottles">Цілі флакони</Link></li>
+                                <li><Link to="/brands">Бренди</Link></li>
+                            </ul>
+                        )}
                     </li>
                     <li>
                         <Link to="/brands"><span>Бренди</span></Link>
@@ -95,7 +114,7 @@ export const HeaderMenu = () => {
 
             <form onSubmit={applySearch} className={styles.search_form}>
                 <button type="submit">
-                    <img src="Images/header/search-icon.svg" alt="" />
+                    <img src="Images/header/search-icon.svg" alt="search" />
                 </button>
                 <input onChange={handleSearch} type="text" />
             </form>

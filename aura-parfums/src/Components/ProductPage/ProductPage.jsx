@@ -8,6 +8,8 @@ import { getStoredUsers } from "../../Utils/getStoredUsers";
 import { setStoredUsers } from "../../Utils/setStoredUsers";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../../Store/Actions/userActions";
+import FragnanceChoice from "../FragnanceChoice/FragnanceChoice";
+import OftenQuestion from "../OftenQuestions/OftenQuestions"
 
 const ProductPage = ({ products }) => {
     const dispatch = useDispatch();
@@ -140,6 +142,8 @@ const ProductPage = ({ products }) => {
 
             <NewFragnances products={products} />
             <Bestsellers products={products} />
+            <FragnanceChoice />
+            <OftenQuestion/>
         </>
     );
 };

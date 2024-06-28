@@ -1,0 +1,130 @@
+@import '../../variables.scss';
+
+.FormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+ 
+  height: 90vh;
+
+}
+.error-message{
+    font-size: x-small;
+}
+.block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.other {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.other input {
+  width: 100%;
+}
+.namenumber div{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.namenumber {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.namenumber div input {
+  width: 100%;
+  border: 1.5px solid #791616;
+}
+
+.namenumber input::placeholder {
+  color: #791616;
+}
+
+.text {
+  text-align: center;
+}
+
+.redBorder {
+  border: 1.5px solid #791616;
+}
+
+.redBorder::placeholder {
+  color: #791616;
+}
+
+.blackBorder {
+  border: 1.5px solid black;
+}
+
+.blackBorder::placeholder {
+  color: black;
+}
+
+.opacity {
+  border: 1.5px solid grey;
+}
+
+.opacity::placeholder {
+  color: grey;
+}
+
+.PrForm {
+  width: 40vw;
+  display: flex;
+  margin-top: 5vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.PrForm input {
+  margin-top: 1vh;
+  height: 8vh;
+}
+
+.PrForm button {
+  margin-top: 1vh;
+  background-color: black;
+  color: aliceblue;
+  width: 10vw;
+  height: 4vh;
+}
+
+h2 {
+  margin-top: 10%;
+  font-size: 48px; /* Установите размер шрифта */
+}
+
+p {
+  color: $red; /* Убедитесь, что $red определен в variables.scss */
+  font-style: italic;
+  font-size: 20px; /* Установите размер шрифта */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+i {
+  font-size: 40px; /* Задайте размер иконок */
+  margin: 0 10px; /* Пример отступов между иконками */
+  transition: color 0.3s ease; /* Плавный переход цвета при наведении */
+}
+
+a:hover {
+  color: #791616; /* Изменение цвета при наведении */
+}
