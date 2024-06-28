@@ -16,9 +16,8 @@ const ProductPage = ({ products }) => {
     let productID = parseInt((location.search).slice(1));
     let productSize = products[productID].sizes;
 
+    console.log("PRODUCT ID SLICE: ", productID);
     console.log("PRODUCTS ID: ", products[productID].id);
-
-    productID = products[productID].id;
 
     const [chosenSize, setChosenSize] = useState(products[productID].sizes[0].id);
     const [productsOrderedCount, setProductOrdered] = useState(1);
@@ -26,6 +25,8 @@ const ProductPage = ({ products }) => {
     useEffect(() => {
         setProductOrdered(1);
     }, [productID]);
+
+    // productID = products[productID].id;
 
     function minusItem() { setProductOrdered(prevCount => Math.max(prevCount - 1, 1)); }
     function plusItem() { setProductOrdered(prevCount => prevCount + 1); }
@@ -59,6 +60,8 @@ const ProductPage = ({ products }) => {
     const sizeObj = chosenSize <= products[productID].sizes.length
         ? products[productID].sizes[chosenSize - 1]
         : products[productID].bigSizes[chosenSize - products[productID].sizes.length - 1];
+
+    console.log("PRODUCT IDDDD: ", productID);
 
     const cartItem = {
         productId: productID,

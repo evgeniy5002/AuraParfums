@@ -29,11 +29,7 @@ const PriceBlock = ({ price }) => {
 
 
 const CartItem = ({ item }) => {
-
-    const removeItem = (event) => {
-        event.stopPropagation();
-        alert("hello");
-    }
+    console.log("cart ----------- item ------", item);
 
     return (
         <Link to={`/product-page?${encodeURIComponent(item.productId)}`} >
@@ -49,7 +45,7 @@ const CartItem = ({ item }) => {
                             <span className={styles['cart-brand']}>{item.brand}</span>
                         </div>
                         <div className={styles["remove-btn"]}>
-                            <img onClick={removeItem} src="/Images/remove_btn.svg" alt="" />
+                            <img src="/Images/remove_btn.svg" alt="" />
                         </div>
                     </div>
 

@@ -21,7 +21,6 @@ import { useEffect } from 'react';
 import { getStoredUsers } from './Utils/getStoredUsers';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from './Store/Actions/userActions';
-import { setStoredUsers } from './Utils/setStoredUsers';
 // import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
@@ -560,7 +559,7 @@ function App() {
     }
   ];
 
-  // Эта штука при загрузке страницы берет из localStorage id активного пользователя, затем находит его и устанавливает в state
+
   useEffect(() => {
     const storedUsers = getStoredUsers();
     const activeUserId = parseInt(localStorage.getItem("activeUserId"));
