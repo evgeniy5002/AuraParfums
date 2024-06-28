@@ -31,7 +31,7 @@
             height: 400px;
             overflow: scroll;
         }
-       
+
 
         h1 {
             font-size: 48px;
@@ -277,6 +277,47 @@
                     @include fsz16;
                     font-weight: 300;
                 }
+            }
+        }
+    }
+
+}
+
+
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 130px 0px;
+    gap: 50px;
+
+    img {
+        max-width: 440px;
+        width: 100%;
+    }
+
+    .heading {
+        font-size: 64px;
+        font-weight: 700;
+    }
+
+    .message-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        .to-catalog {
+            font-size: 36px;
+            font-style: italic;
+            font-weight: 400;
+            text-align: center;
+            padding: 0px 10%;
+
+            span {
+                color: $red;
+                cursor: pointer;
+                text-decoration: underline;
             }
         }
     }
