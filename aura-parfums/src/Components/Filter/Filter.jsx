@@ -6,6 +6,7 @@ const Filter = ({ filterName, brandsAvailable = [], filterTitle, options = [] })
     const location = useLocation();
     const navigate = useNavigate();
 
+
     const [optionsShown, setOptionsState] = useState(false);
     const params = new URLSearchParams(location.search);
 

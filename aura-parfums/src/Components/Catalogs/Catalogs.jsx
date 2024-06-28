@@ -10,6 +10,7 @@ import Filters from "../Filters/Filters";
 import OftenQuestion from "../OftenQuestions/OftenQuestions"
 
 const Catalogs = ({ products = [], brands = [], sizes = [] }) => {
+    console.log("HEHRHERHEHR", sizes);
     const location = useLocation();
     const [searchParams] = useSearchParams();
     const [category, setCategory] = useState("");

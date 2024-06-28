@@ -588,7 +588,7 @@ function App() {
           <Routes >
             <Route path="/" element={<Main />}>
               <Route index element={<HomePage brands={brands} products={products} />} />
-              <Route path="catalogs/*" element={<Catalogs brands={brands} products={products} />} />
+              <Route path="catalogs/*" element={<Catalogs brands={brands} sizes={sizes} products={products} />} />
               <Route path="contacts" element={<Contacts />} />
               <Route path="brands" element={<Brands brands={brands} />} />
               <Route path="product-page" element={<ProductPage products={products} ></ProductPage>} />
