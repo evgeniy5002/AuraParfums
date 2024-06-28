@@ -21,7 +21,8 @@ import { useEffect } from 'react';
 import { getStoredUsers } from './Utils/getStoredUsers';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from './Store/Actions/userActions';
-// import 'bootstrap-icons/font/bootstrap-icons.css';
+import ChooseParfum from './Components/ChooseParfum/ChooseParfum';
+
 
 
 function App() {
@@ -592,6 +593,7 @@ function App() {
               <Route path="brands" element={<Brands brands={brands} />} />
               <Route path="product-page" element={<ProductPage products={products} ></ProductPage>} />
               <Route path="fragnance-choice" element={<FragnanceChoice />} />
+              <Route path="choose-parfum" element={<ChooseParfum />} />
               <Route path="user-page/*" element={<UserPage />}>
                 {
                   isAuth ? (

@@ -18,7 +18,9 @@ const FragnanceChoice = () => {
                         Дайте відповідь на декілька запитань і отримайте свій перелік парфумів, які вам варто спробувати.
                     </p>
 
-                    <Link to={"/fragnance-choice"} className="default-button-white">Отримати підбірку</Link>
+                    {/* <Link to={"/fragnance-choice"} className="default-button-white">Отримати підбірку</Link> */}
+
+                    <Link to="/choose-parfum" className="default-button-white">Отримати підбірку</Link>
                 </div>
             </div>
         </div>

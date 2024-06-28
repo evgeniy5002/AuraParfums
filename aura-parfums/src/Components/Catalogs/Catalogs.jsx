@@ -7,6 +7,7 @@ import Bestsellers from "../Bestsellers/Bestsellers";
 import FragnanceChoice from "../FragnanceChoice/FragnanceChoice";
 import BrandsBlock from "../BrandsBlock/BrandsBlock";
 import Filters from "../Filters/Filters";
+import OftenQuestion from "../OftenQuestions/OftenQuestions"
 
 const Catalogs = ({ products = [], brands = [], sizes = [] }) => {
     const location = useLocation();
@@ -74,7 +75,7 @@ const Catalogs = ({ products = [], brands = [], sizes = [] }) => {
             );
         }
     }
-    
+
     if (sizesChosen.length > 0) {
         filteredProducts = filteredProducts.filter(product => {
             return sizesChosen.every(sizeChosen =>
@@ -98,6 +99,7 @@ const Catalogs = ({ products = [], brands = [], sizes = [] }) => {
             <Bestsellers products={products} />
             <FragnanceChoice />
             <BrandsBlock brands={brands} />
+            <OftenQuestion />
         </main>
     );
 };

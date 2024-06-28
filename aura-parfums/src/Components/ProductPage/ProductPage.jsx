@@ -5,8 +5,13 @@ import styles from "./ProductPage.module.scss"
 import NewFragrances from "../NewFragnances/NewFragnances";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../../Store/Actions/userActions";
+// <<<<<<< HEAD
 import { addGuestCartItem } from "../../Store/Actions/guestActions";
 import { useAuth } from "../../Hooks/useAuth";
+// =======
+// import FragnanceChoice from "../FragnanceChoice/FragnanceChoice";
+// import OftenQuestion from "../OftenQuestions/OftenQuestions"
+// >>>>>>> origin/fasteks1
 
 const ProductPage = ({ products }) => {
     const dispatch = useDispatch();
@@ -125,7 +130,7 @@ const ProductPage = ({ products }) => {
                                             <a onClick={plusItem}>+</a>
                                         </div>
                                         <a onClick={addToCart} className={styles["buy-product-btn"]}>
-                                            <p>Додати в кошик</p>
+                                            <p style={{color: "white"}}>Додати в кошик</p>
                                             <img className={styles["cart-image"]} src="/Images/cart.svg" alt="" />
                                         </a>
                                     </div>
@@ -139,7 +144,13 @@ const ProductPage = ({ products }) => {
 
             <NewFragrances products={products} />
             <Bestsellers products={products} />
+{/* <<<<<<< HEAD */}
         </main>
+// =======
+//             <FragnanceChoice />
+//             <OftenQuestion/>
+//         </>
+// >>>>>>> origin/fasteks1
     );
 };
 
