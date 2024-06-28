@@ -16,8 +16,20 @@
 
         .cart-item-info_top {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            justify-content: space-between;
+
+            .product-info {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .remove-btn {
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
         }
 
         .cart-item-info_bottom {
