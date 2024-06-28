@@ -1,11 +1,13 @@
 @import '../../variables.scss';
 
 
-.catalog-body{
+.catalog-body {
     width: 100%;
-    .catalog-container{
-        display: flex; 
+
+    .catalog-container {
+        display: flex;
         gap: 20px;
+
         @media (max-width: 1100px) {
             flex-direction: column;
             gap: 100px;

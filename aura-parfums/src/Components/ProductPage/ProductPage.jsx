@@ -16,6 +16,10 @@ const ProductPage = ({ products }) => {
     let productID = parseInt((location.search).slice(1));
     let productSize = products[productID].sizes;
 
+    console.log("PRODUCTS ID: ", products[productID].id);
+
+    productID = products[productID].id;
+
     const [chosenSize, setChosenSize] = useState(products[productID].sizes[0].id);
     const [productsOrderedCount, setProductOrdered] = useState(1);
 
@@ -76,7 +80,6 @@ const ProductPage = ({ products }) => {
                 products.map((product, index) => {
                     if (product.id === productID) {
                         return (
-
                             <div className={`${styles["product-info-container"]} container`} key={product.id}>
                                 <img src={product.image} alt="" />
                                 <div className={styles["product-info"]}>

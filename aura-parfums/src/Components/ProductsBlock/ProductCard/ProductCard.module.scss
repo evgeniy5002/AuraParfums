@@ -1,42 +1,47 @@
-
 @import '../../../variables.scss';
-.product-card{
+
+.product-card {
     text-align: center;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+
     @media (max-width:768px) {
         max-width: 368px;
         margin: 0 auto;
     }
-    img{
+
+    img {
         width: 100%;
         max-width: 368px;
     }
-    &_content{
+
+    &_content {
         width: 100%;
         max-width: 282px;
     }
-    &_rating{
-        .rating_star{
-            
-        }
+
+    &_rating {
+        .rating_star {}
     }
-    .product-card_brand{
+
+    .product-card_brand {
         color: $red;
         font-weight: 500;
         @include fsz20;
         line-height: 25.1px;
         margin: 10px 0 8px 0;
     }
-    .product-card_title{
+
+    .product-card_title {
         font-weight: 700;
         @include fsz20;
         text-transform: uppercase;
         text-wrap: nowrap;
     }
-    .product_sizes{
+
+    .product_sizes {
         display: grid;
         margin-top: 16px;
         gap: 5px;
@@ -44,35 +49,36 @@
 
     }
 
-    .product_big-sizes{
+    .product_big-sizes {
         display: flex;
         margin-top: 8px;
         gap: 5px;
-        *{
+
+        * {
             width: 100%;
         }
     }
 
-    .product_big-sizes_column{
+    .product_big-sizes_column {
         gap: 8px;
         flex-direction: column;
     }
 
 
-    .product_size{
+    .product_size {}
 
-    }
-    .product_square-block{
+    .product_square-block {
         @include fsz14;
         padding: 9px 0;
         border: 1px $red solid;
-        &:hover{
+
+        &:hover {
             background: $red;
             color: #FFFFFF;
         }
     }
 
-    .red{
+    .red {
         background: $red;
         @include fsz14;
         padding: 9px 0;
@@ -83,17 +89,19 @@
         //     color: $red;
         // }
     }
-    
-    .product_buy-block{
+
+    .product_buy-block {
         margin-top: 9px;
         display: grid;
         width: 100%;
         grid-template-columns: 45fr 55fr;
-        *{
-            &:first-child{
+
+        * {
+            &:first-child {
                 border-width: 1px 0 1px 1px;
             }
-            &:last-child{
+
+            &:last-child {
                 @include fsz14;
                 padding: 9px 0;
                 border: 1px $red solid;
@@ -102,25 +110,27 @@
     }
 
 
-    .product-card_categories{
+    .product-card_categories {
         position: absolute;
         top: 0;
         left: 0;
         display: flex;
         flex-direction: column;
         gap: 8px;
-        .category{
+
+        .category {
             padding: 9px 17px;
             color: white;
             text-transform: uppercase;
         }
-        .bestseller{
+
+        .bestseller {
             background: #000;
         }
-        .sale{
+
+        .sale {
             width: min-content;
             background: $red;
         }
     }
 }
-

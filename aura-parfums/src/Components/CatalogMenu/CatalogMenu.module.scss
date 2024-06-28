@@ -24,18 +24,22 @@
         .categories {
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(6,1fr);
+            grid-template-columns: repeat(6, 1fr);
             justify-content: space-between;
             @include AV('margin-top', 92, 40);
+
             @media (max-width:1700px) {
-                grid-template-columns: repeat(3,1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
+
             @media (max-width:768px) {
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
+
             @media (max-width:500px) {
-                grid-template-columns: repeat(1,1fr);
+                grid-template-columns: repeat(1, 1fr);
             }
+
             .category {
                 padding: 23px 43px;
                 text-align: center;
