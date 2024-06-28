@@ -3,7 +3,7 @@ import styles from "./Contacts.module.scss"
 
 const Contacts = () => {
     return (
-        <div className={styles.container}>
+        <div className={`${styles.contacts_container} container`}>
             <div>
                 <h2>Контакти</h2>
                 <p>У нас відсутній кол-центр, однак всі питання ми максимально швидко вирішуємо у текстовому вигляді.</p>
