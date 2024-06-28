@@ -98,6 +98,8 @@ a {
     }
 }
 
+
+
 .userLinks {
     display: flex;
     align-items: center;
@@ -119,3 +121,54 @@ a {
 .header-cart {
     border-bottom-color: $red;
 }
+
+
+@media (max-width: 1400px) {
+    .mobile_menu_right {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 100;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(0);
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+
+            li {
+                padding: 20px;
+                font-size: 1.5rem;
+                text-align: center;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: #ccc;
+                    }
+                }
+            }
+        }
+    }
+
+    .burger_icon {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+}
+
